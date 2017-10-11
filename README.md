@@ -204,7 +204,7 @@ The installation method is as follows.
 * More photos with disassembly: http://www.kbdmania.net/xe/photo/7635809
 * Huge teardown article with photos, here: https://tieba.baidu.com/p/3742466012?red_tag=3259945445
 * More disassembly, with Breakout Box: https://www.wstx.com/p-15490
-* Connecting up a G80-9009. Includes Breakout Box and pinouts for PS/2. https://w.ebptt.com/b/Key_Mou_Pad/M.1499538853.A.F7F.html 
+* Connecting up a G80-9009. Includes Breakout Box and pinouts for PS/2. https://www.ptt.cc/bbs/Key_Mou_Pad/M.1499538853.A.F7F.html
 
 ###Other Links: For Sale
 
@@ -217,3 +217,39 @@ The installation method is as follows.
     * ¥238 = $36.16
     * Keyboard: https://world.taobao.com/item/35486837384.htm?fromSite=main&spm=a230r.1.14.31.7a40d2157HVjcO&ns=1&abbucket=18#detail
     * ¥328 = $49.59
+
+---
+##Connection Methods
+
+1. Yangdigi's controller card
+2. With (rare) Breakout boxes
+3. Directly
+
+###Connection Method #1, Yangdigi's controller card
+
+(notes)
+
+Re: TKG - TMK Keymap Generator [tkg.io] (no need to compile the firmware)
+    https://geekhack.org/index.php?topic=82693.msg2398215#msg2398215
+
+That Pro Micro is a Chinese clone one from taobao. It's 3.3v but 16Mhz quartz.
+Pro Micro 3.3v with 8Mhz quartz can work well too.
+
+If your Pro Micro is 8MHz, change F_CPU = 16000000 to F_CPU = 8000000 in Makefile
+
+Having a small issue with this, everything works perfectly as according to this image with the exception of the pipe/backslash key. It performs the same action as #/~ which I have next to my enter key.
+
+* Please write that key in the format according to http://tkg.io/#help
+
+TKG - TMK Keymap Generator [tkg.io] (no need to compile the firmware)
+    https://geekhack.org/index.php?topic=82693.msg2192962#msg2192962
+
+Re: TKG - TMK Keymap Generator [tkg.io]
+    https://geekhack.org/index.php?topic=82693.msg2192963#msg2192963
+
+G80-9009 "Rat's nest"
+    Making Stuff Together! / Re: Easy AVR USB Keyboard Firmware and Keymapper
+    https://geekhack.org/index.php?topic=51252.msg2141040#msg2141040
+
+    I use a pro micro and one 74hc154.
+
