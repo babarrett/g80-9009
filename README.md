@@ -253,3 +253,27 @@ G80-9009 "Rat's nest"
 
     I use a pro micro and one 74hc154.
 
+---
+##Available Modifications
+You can make MX Clear switches feel a whole lot more tactile by swapping the
+springs with Cherry MX Black springs. These are currently one of my favorite
+switches. I find them to be very similar to Black Alps, but they're more
+consistent and snappy than Black Alps IMO.
+
+from Chyros youtube review:    https://www.youtube.com/watch?v=N8FXw_QelQc
+
+Meow Wei
+2 months ago (edited)
+I have one currently in use (with original setup).
+
+You need to use a 12v 500mA adapter which converts to 15-pin D connector (I have
+an original adapter so I don't know what the pins are), and a cable from 9-pin D
+connector to PS/2. If anyone of you have this keyboard and interested I may
+write a documentation on this keyboard.
+
+The kmd3 or adapter box is not necessary. But if you have one, you can switch
+keyboard and mouse input between 2 computers on the keyboard.﻿
+
+---
+Users with this board:
+    Chyros (youtube reviews)
