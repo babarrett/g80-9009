@@ -8,12 +8,23 @@ MX Clear switches, 149 of them. High force at end of stroke to discourage bottom
 ###Caps:
 Most are Double-shot ABS. "Super thick."
 
-* The ones with (LED) windows are pad-printed.
-* 11 "lock lights" + 2 more positions adjacent to the space bar.
+* The 11 caps with (LED) windows are pad-printed.
+    * Caps Lock
+    * Scroll Lock
+    * Num Lock
+    * (4) Scrn1-4
+    * Desk PC
+    * Calc
+    * Setup
+    * Wkst
+* There are 2 more LEDs adjacent to the space bar, but no windows to shine through.
 * 10u space bar.
-* Odd bottom row with the extended spacebar and stepped Caps Lock, pretty much everything will fit on a modern board.
+* In spite of the odd bottom row with the extended spacebar, and stepped Caps Lock, pretty much everything will fit on a modern board.
 
-PCB revisions I've seen:
+
+###PCB
+
+Revisions I've seen:
 
 * :02
 * 5
@@ -22,16 +33,20 @@ PCB revisions I've seen:
 
 * G80-9009HAU
 * G80-9009HAG - Youtube Video
+* G80-9039HAAUS
 
 ###Serial numbers
 
-I've seen, alphabetized: (They don't seem to have manufacture dates)
+I've seen, sorted: (They don't seem to have manufacture dates.)
 
-* G 000410   H30	G80-9009HAG / 02
-* G 000707   P51    G8009039HAAUS / 07
+* G 000410   H30	G80-9009HAG / 02    ~$127/ea. 10 minimum
+            Yours & Mine keys, and 1/8 on num pad
+* G 000707   P51    G80-9039HAAUS / 07  https://www.ptt.cc/bbs/Key_Mou_Pad/M.1499538853.A.F7F.html
             With Yours & Mine keys. #/3
+* G 000883   R31    G80-9039HAAUS / 07  $71 https://world.taobao.com/item/531556526722.htm
 * G 000780   H22	G80-9009HAU / 02	PCB Rev.05; Built March '95?
 			With Zone + FMT... & 1/8
+* G 002033   K33	G80-9009HAG / 10    Yangdigi owns, in instructions for controller
 * G 002191   K33?	G80-9009HAU / 04?
 
 * G 002439   M48	G80-9009HAG / 11	MX Clear switches
@@ -41,6 +56,9 @@ I've seen, alphabetized: (They don't seem to have manufacture dates)
 			With Zone + FMT on Yours and Mine keys & 1/8 on num pad
 * G 007037   K02    G80-9009HAU / 10    
 Mentioned in this thread: Easy AVR USB Keyboard Firmware and Keymapper (Nov 2013-Oct 2017+)
+++ * G 008113   K37    G80-9009HAU / 10    https://world.taobao.com/item/13080915768.htm
+			With Zone + FMT on Yours and Mine keys & 1/8 on num pad
+            $74 @ https://world.taobao.com; $134 @ https://www.hxlstore.com/13080915768.shtml
 ```
         https://geekhack.org/index.php?topic=51252.1650
 ```
@@ -55,11 +73,11 @@ Mentioned in this thread: Easy AVR USB Keyboard Firmware and Keymapper (Nov 2013
 
 ###Physical Specs:
 
-* 2.4Kg
+* 2.4Kg, 4Kg shipping weight
 * Width
 * Height
 * Depth
-* 12V 500ma? or 5v?
+* 12V 500mA = 6W on the label on the bottom but 5v ??mA powered by Yang's USB.
 
 ###Case:
 
@@ -251,10 +269,15 @@ G80-9009 "Rat's nest"
     Making Stuff Together! / Re: Easy AVR USB Keyboard Firmware and Keymapper
     https://geekhack.org/index.php?topic=51252.msg2141040#msg2141040
 
-    I use a pro micro and one 74hc154.
+The G80-9009HAU has two parts. Upper part is a 6x10 matrix and the lower part is
+10x10. I use a pro micro and one 74hc154 (4 to 16 mux). I am using TMK to run a 
+16x10 matrix.
 
 ---
 ##Available Modifications
+
+###New controller to USB, Modification #1
+
 You can make MX Clear switches feel a whole lot more tactile by swapping the
 springs with Cherry MX Black springs. These are currently one of my favorite
 switches. I find them to be very similar to Black Alps, but they're more
@@ -274,6 +297,57 @@ write a documentation on this keyboard.
 The kmd3 or adapter box is not necessary. But if you have one, you can switch
 keyboard and mouse input between 2 computers on the keyboard.﻿
 
+###Keyboard to Breakout Box, Modification #2
+
+* User Anfauglir (Jaws of Thirst) had access to a Reuters Breakout Box
+* Here: https://www.ptt.cc/bbs/Key_Mou_Pad/M.1499538853.A.F7F.html
+* This keyboard requires a 12V power supply to operate and can be supplied from
+the DB-15 HOST connector. (I don't know which pins)
+* The Desk PC / WkSt on the keyboard can be directly connected to the computer with DB9 to PS / 2. 
+* DB9 -> PS/2 PIN pin corresponds to:
+    * 1-> 4,
+    * 7-> 3,
+    * 8-> 1,
+    * 9-> 5.  
+* Special keys are basically un-responsive. 
+* Scrn1 / 2/3/4 keys have a light but can not determine how to use. 
+* There is no Windows (Command) Key on the keyboard. (Currently in the macOS will be specified to 
+the Command Command, Caps Lock assigned to Option) 
+* It is said to have NKRO, unconfirmed.
+
+Unknowns:
+
+* Are the DB-9 and DB-15 cables from keyboard to Breakout Box straight through?
+* What pins on the DB-15 are used for 12v?
+
+###Keyboard direct to PS/2, Modification #3
+
+In the comments of the Chyrosran22 Youtube review. https://www.youtube.com/watch?v=N8FXw_QelQc
+
+Meow Wei
+
+I have one currently in use (with original setup).
+
+You need to use a 12v 500mA adapter which converts to 15-pin D connector (I have
+an original adapter so I don't know what the pins are), and a cable from 
+9-pin D-connector to PS/2. (as defined in Keyboard to Breakout Box, Modification #2)
+If anyone of you have this keyboard and interested I may write a documentation on 
+this keyboard.
+The kmd3 or adapter box is not necessary. But if you have one, you can switch
+keyboard and mouse input between 2 computers on the keyboard.﻿
+
+
 ---
-Users with this board:
+###Users with this board:
+
     Chyros (youtube reviews)
+
+###My Purchase history
+¥488.00 = $74.14 for second keyboard attempt; https://item.taobao.com/item.htm?id=13080915768&toSite=main
+    G80-9009HAU -- " " left of Z, ~/` in upper left, |/\ near Return
+    Dispensers: ershoubaoku
+
+----
+I have in my shopping cart: "CHERRY cherry G80-9009HAU white shaft mechanical keyboard with light keycap"
+I would like to buy it. It looks like it would be sent to Shenzhen warehouse.
+Is that OK? Or should I sent it to Hong Kong warehouse?
