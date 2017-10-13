@@ -5,7 +5,7 @@ AK 124
 MX Clear switches, 149 of them. High force at end of stroke to discourage bottoming out.
 	Diode soldered into every switch.
 
-###Caps:
+### Caps:
 Most are Double-shot ABS. "Super thick."
 
 * The 11 caps with (LED) windows are pad-printed.
@@ -22,20 +22,20 @@ Most are Double-shot ABS. "Super thick."
 * In spite of the odd bottom row with the extended spacebar, and stepped Caps Lock, pretty much everything will fit on a modern board.
 
 
-###PCB
+### PCB
 
 Revisions I've seen:
 
 * :02
 * 5
 
-###Models:
+### Models:
 
 * G80-9009HAU
 * G80-9009HAG - Youtube Video
 * G80-9039HAAUS
 
-###Serial numbers
+### Serial numbers
 
 I've seen, sorted: (They don't seem to have manufacture dates.)
 
@@ -63,15 +63,15 @@ Mentioned in this thread: Easy AVR USB Keyboard Firmware and Keymapper (Nov 2013
         https://geekhack.org/index.php?topic=51252.1650
 ```
 
-###KVM Boxes:
+### KVM Boxes:
 
 * KMD-3		https://geekhack.org/index.php?topic=36702.0
 * Reuters Breakout Box
 
 ---
-##Attrubutes
+## Attrubutes
 
-###Physical Specs:
+### Physical Specs:
 
 * 2.4Kg, 4Kg shipping weight
 * Width
@@ -79,7 +79,7 @@ Mentioned in this thread: Easy AVR USB Keyboard Firmware and Keymapper (Nov 2013
 * Depth
 * 12V 500mA = 6W on the label on the bottom but 5v ??mA powered by Yang's USB.
 
-###Case:
+### Case:
 
 * Top (51) keys are plate mounted
 * Lower (main 09 keys) are PCB mounted
@@ -95,13 +95,13 @@ Mentioned in this thread: Easy AVR USB Keyboard Firmware and Keymapper (Nov 2013
                                                                  Workstation     
 ```
 
-###Built-in functions
+### Built-in functions
 
 * Macros up to 80 characters
 * Has calculator mode with memory, sqrt(), percent, etc.
 
 
-###Custom Controller (Yang, yangdigi)
+### Custom Controller (Yang, yangdigi)
 
 * 2 x 32 pin ribbon cables connect
 * keyboard matrix to use/replacate is 16x10
@@ -109,11 +109,11 @@ Mentioned in this thread: Easy AVR USB Keyboard Firmware and Keymapper (Nov 2013
 * G80-9009HAU has two parts. Upper part is 6x10 and lower is 10x10. 
 * Now I am using TMK to run 16x10 matrix. I want to try EasyAVR on it to make it easier to use.
 
-###LCD:
+### LCD:
 
 * Displays "IBM PS/2" at some point.
 
-###Connections
+### Connections
 
 * Serial communications takes place across both connectors. The host can assert control at any time. 
 * DB9 -> PS/2 PIN pin corresponds to:
@@ -154,7 +154,7 @@ Mentioned in this thread: Easy AVR USB Keyboard Firmware and Keymapper (Nov 2013
          Mouse / keyboard, PS/2  ----------------- DB9 ---------------+
 ```
 
-###The Yang (yangdigi) controller
+### The Yang (yangdigi) controller
 New USB controller.
 
 yang.tkg.io - Select English from top-right drop-down.
@@ -204,19 +204,19 @@ The installation method is as follows.
     how to burn firmware.
 
 
-###Videos:
+### Videos:
 
 * Review: https://www.youtube.com/watch?v=N8FXw_QelQc
 * Working G80-9009HAU to Windows pad (Surface?) key test and typing. Uses yangdigi controller. https://v.qq.com/x/page/v019406oqmc.html
 * Demo of Yang cobnversion? https://www.xiaobaiban.net/video/play-JESdXA5_2B0eZvfsKGvp6tqRccTMcF3jPN.htm
 * Quick demo, types on computer. Includes Set-up and macro definition. Cherry G80-9039HAAUS / Reuters AK125. https://www.youtube.com/watch?v=r_-dMFUNv-k
     
-###Photos:
+### Photos:
 
 * Same photos also here: http://tieba.baidu.com/photo/p?kw=%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98%E4%B9%8B%E5%AE%B6&flux=1&tid=3742466012
 * Deskthority: Reuters Battlecruiser (Cherry G80-9009HAU) https://deskthority.net/photos-f62/reuters-battlecruiser-cherry-g80-9009hau-t753.html
 
-###Disassembly and Yang's development:
+### Disassembly and Yang's development:
 * Geekhack, Easy AVR USB Keyboard Firmware and Keymapper. Actually the start of *yangdigi's* Pro Micro and mux: https://geekhack.org/index.php?topic=51252.msg2140927#msg2140927
 * More on *yangdigi's* controller development? with photos. http://tieba.baidu.com/p/4489516023
 * More photos with disassembly: http://www.kbdmania.net/xe/photo/7635809
@@ -224,7 +224,7 @@ The installation method is as follows.
 * More disassembly, with Breakout Box: https://www.wstx.com/p-15490
 * Connecting up a G80-9009. Includes Breakout Box and pinouts for PS/2. https://www.ptt.cc/bbs/Key_Mou_Pad/M.1499538853.A.F7F.html
 
-###Other Links: For Sale
+### Other Links: For Sale
 
 * https://world.taobao.com/item/12254371144.htm
 * $111.11 each, Min. order 10: http://www.taodepot.com/item/13621819071
@@ -237,13 +237,21 @@ The installation method is as follows.
     * ¥328 = $49.59
 
 ---
-##Connection Methods
+## Available Modifications
+
+You can make MX Clear switches feel a whole lot more tactile by swapping the
+springs with Cherry MX Black springs. These are currently one of my favorite
+switches. I find them to be very similar to Black Alps, but they're more
+consistent and snappy than Black Alps IMO.
+
+---
+## Connection Methods
 
 1. Yangdigi's controller card
 2. With (rare) Breakout boxes
 3. Directly
 
-###Connection Method #1, Yangdigi's controller card
+### Connection Method #1, Yangdigi's controller card
 
 (notes)
 
@@ -273,31 +281,11 @@ The G80-9009HAU has two parts. Upper part is a 6x10 matrix and the lower part is
 10x10. I use a pro micro and one 74hc154 (4 to 16 mux). I am using TMK to run a 
 16x10 matrix.
 
----
-##Available Modifications
 
-###New controller to USB, Modification #1
+### New controller to USB, Modification #1
 
-You can make MX Clear switches feel a whole lot more tactile by swapping the
-springs with Cherry MX Black springs. These are currently one of my favorite
-switches. I find them to be very similar to Black Alps, but they're more
-consistent and snappy than Black Alps IMO.
 
-from Chyros youtube review:    https://www.youtube.com/watch?v=N8FXw_QelQc
-
-Meow Wei
-2 months ago (edited)
-I have one currently in use (with original setup).
-
-You need to use a 12v 500mA adapter which converts to 15-pin D connector (I have
-an original adapter so I don't know what the pins are), and a cable from 9-pin D
-connector to PS/2. If anyone of you have this keyboard and interested I may
-write a documentation on this keyboard.
-
-The kmd3 or adapter box is not necessary. But if you have one, you can switch
-keyboard and mouse input between 2 computers on the keyboard.﻿
-
-###Keyboard to Breakout Box, Modification #2
+### Keyboard to Breakout Box, Modification #2
 
 * User Anfauglir (Jaws of Thirst) had access to a Reuters Breakout Box
 * Here: https://www.ptt.cc/bbs/Key_Mou_Pad/M.1499538853.A.F7F.html
@@ -320,7 +308,21 @@ Unknowns:
 * Are the DB-9 and DB-15 cables from keyboard to Breakout Box straight through?
 * What pins on the DB-15 are used for 12v?
 
-###Keyboard direct to PS/2, Modification #3
+---
+from Chyros youtube review:    https://www.youtube.com/watch?v=N8FXw_QelQc
+
+Meow Wei -- 2 months ago (edited)
+I have one [G80-9009] currently in use (with original setup, kmd3 box).
+
+You need to use a 12v 500mA adapter which converts to 15-pin D connector (I have
+an original adapter so I don't know what the pins are), and a cable from 9-pin D
+connector to PS/2. If anyone of you have this keyboard and interested I may
+write a documentation on this keyboard.
+
+The kmd3 or adapter box is not necessary. But if you have one, you can switch
+keyboard and mouse input between 2 computers on the keyboard.﻿
+
+### Keyboard direct to PS/2, Modification #3
 
 In the comments of the Chyrosran22 Youtube review. https://www.youtube.com/watch?v=N8FXw_QelQc
 
@@ -338,16 +340,12 @@ keyboard and mouse input between 2 computers on the keyboard.﻿
 
 
 ---
-###Users with this board:
+### Users with this board:
 
     Chyros (youtube reviews)
 
-###My Purchase history
+### My Purchase history
 ¥488.00 = $74.14 for second keyboard attempt; https://item.taobao.com/item.htm?id=13080915768&toSite=main
     G80-9009HAU -- " " left of Z, ~/` in upper left, |/\ near Return
     Dispensers: ershoubaoku
 
-----
-I have in my shopping cart: "CHERRY cherry G80-9009HAU white shaft mechanical keyboard with light keycap"
-I would like to buy it. It looks like it would be sent to Shenzhen warehouse.
-Is that OK? Or should I sent it to Hong Kong warehouse?
