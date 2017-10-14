@@ -27,7 +27,7 @@ a 16x10 matrix.
 ---
 ### Installing the card
 
-How to install the card is in [this PDF](../master/pdf/Yangdigi-controller-to-USB-G80-9009.pdf "Yangdigi controller instructions").
+How to install the card is in [this PDF](../master/pdfs/Yangdigi-controller-to-USB-G80-9009.pdf "Yangdigi controller instructions").
 
 
 ---
