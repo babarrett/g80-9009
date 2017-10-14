@@ -1,9 +1,35 @@
 ## g80-9009
-Cherry keyboard, G80-9009. For Reuters. 149 keys. LCD display. Create macros on the fly. From the 1990's.
-AK 124
+Cherry built keyboard, G80-9009. For Reuters. 149 keys. LCD display. Create macros on
+the fly. From the 1990's. Model number AK 124
 
-MX Clear switches, 149 of them. High force at end of stroke to discourage bottoming out.
-	Diode soldered into every switch.
+
+---
+## Connection Methods
+
+Let's start with what I presume everyone cares most about. "How to I connect this to my computer?"
+
+As near as I can tell there are three ways:
+
+1. Yangdigi's [controller card](../master/method-1-yangdigi-controller.md "Yangdigi controller instructions")
+    - A "drop in" solution
+    - Might still require a 12V power connection to the keyboard
+    - Ends up with a USB connection. No need for a further PS/2 to USB converter
+    - Includes a Pro Micro running TMK software
+2. [Directly](../master/method-2-direct.md  ) from the "Desk PC/Workstation" connector to a PS/2 connector
+    - Very few parts, essentially one DB-9 to PS/2 cable
+    - Might still require a 12V power connection to the keyboard
+    - Requires a PS/2 to USB adapter if you want USB
+3. With (rare) [Breakout boxes](../master/method-3-keyboard-to-breakout-box.md)
+    - 
+
+---
+## Specifications
+
+### Switches
+* MX Clear switches, 149 of them. 
+* High force at end of stroke to discourage bottoming out.
+* Diode soldered into every switch.
+
 
 ### Caps:
 Most are Double-shot ABS. "Super thick."
@@ -22,18 +48,38 @@ Most are Double-shot ABS. "Super thick."
 * In spite of the odd bottom row with the extended spacebar, and stepped Caps Lock, pretty much everything will fit on a modern board.
 
 
-### PCB
+### Case:
 
-Revisions I've seen:
+* Top (51) keys are plate mounted
+* Lower (main 09 keys) are PCB mounted
+* Flip-out feet on bottom, at back
+* Under the rectangulat plate on the bottom (4 screws) is a 27 x 2 pin ribbon cable, not connected. For expansion modual?
+* Back of keyboard, left to right has the following: http://i.imgur.com/lwkKiGb.jpg
+```
+    [Grill]    [Knob]   [Knob]      [button]
+    Buzzer     Volume   Contrast    Reset 
+    
+    Then, 3 ports                               [Female DB-9]   [Male DB-9]     [Male DB-15]
+                                                 Mouse           Desk PC/        Host
+                                                                 Workstation     
+```
+### Physical Specs:
 
-* :02
-* 5
+* 2.4Kg, 4Kg shipping weight
+* Width
+* Height
+* Depth
+* 12V 500mA = 6W on the label on the bottom but 5v ??mA powered by Yang's USB.
+* Shipping weight ~ 2570g
+* Shipping dimensions: 54.6 * 30.8 * 9.2 cm
+
 
 ### Models:
 
 * G80-9009HAU
 * G80-9009HAG - Youtube Video
 * G80-9039HAAUS
+* G80-9035 - comment on youtube review
 
 ### Serial numbers
 
@@ -59,9 +105,7 @@ Mentioned in this thread: Easy AVR USB Keyboard Firmware and Keymapper (Nov 2013
 ++ * G 008113   K37    G80-9009HAU / 10    https://world.taobao.com/item/13080915768.htm
 			With Zone + FMT on Yours and Mine keys & 1/8 on num pad
             $74 @ https://world.taobao.com; $134 @ https://www.hxlstore.com/13080915768.shtml
-```
-        https://geekhack.org/index.php?topic=51252.1650
-```
+
 
 ### KVM Boxes:
 
@@ -71,43 +115,13 @@ Mentioned in this thread: Easy AVR USB Keyboard Firmware and Keymapper (Nov 2013
 ---
 ## Attrubutes
 
-### Physical Specs:
 
-* 2.4Kg, 4Kg shipping weight
-* Width
-* Height
-* Depth
-* 12V 500mA = 6W on the label on the bottom but 5v ??mA powered by Yang's USB.
-
-### Case:
-
-* Top (51) keys are plate mounted
-* Lower (main 09 keys) are PCB mounted
-* Flip-out feet on bottom, at back
-* Under the rectangulat plate on the bottom (4 screws) is a 27 x 2 pin ribbon cable, not connected. For expansion modual?
-* Back of keyboard, left to right has the following: http://i.imgur.com/lwkKiGb.jpg
-```
-    [Grill]    [Knob]   [Knob]      [button]
-    Buzzer     Volume   Contrast    Reset 
-    
-    Then, 3 ports                               [Female DB-9]   [Male DB-9]     [Male DB-15]
-                                                 Mouse           Desk PC/        Host
-                                                                 Workstation     
-```
 
 ### Built-in functions
 
 * Macros up to 80 characters
 * Has calculator mode with memory, sqrt(), percent, etc.
 
-
-### Custom Controller (Yang, yangdigi)
-
-* 2 x 32 pin ribbon cables connect
-* keyboard matrix to use/replacate is 16x10
-* uses a 4 to 16 mux for the 16 lines (columns?)
-* G80-9009HAU has two parts. Upper part is 6x10 and lower is 10x10. 
-* Now I am using TMK to run 16x10 matrix. I want to try EasyAVR on it to make it easier to use.
 
 ### LCD:
 
@@ -239,74 +253,10 @@ The installation method is as follows.
 ---
 ## Available Modifications
 
-You can make MX Clear switches feel a whole lot more tactile by swapping the
-springs with Cherry MX Black springs. These are currently one of my favorite
-switches. I find them to be very similar to Black Alps, but they're more
-consistent and snappy than Black Alps IMO.
-
----
-## Connection Methods
-
-1. Yangdigi's controller card
-2. With (rare) Breakout boxes
-3. Directly
-
-### Connection Method #1, Yangdigi's controller card
-
-(notes)
-
-Re: TKG - TMK Keymap Generator [tkg.io] (no need to compile the firmware)
-    https://geekhack.org/index.php?topic=82693.msg2398215#msg2398215
-
-That Pro Micro is a Chinese clone one from taobao. It's 3.3v but 16Mhz quartz.
-Pro Micro 3.3v with 8Mhz quartz can work well too.
-
-If your Pro Micro is 8MHz, change F_CPU = 16000000 to F_CPU = 8000000 in Makefile
-
-Having a small issue with this, everything works perfectly as according to this image with the exception of the pipe/backslash key. It performs the same action as #/~ which I have next to my enter key.
-
-* Please write that key in the format according to http://tkg.io/#help
-
-TKG - TMK Keymap Generator [tkg.io] (no need to compile the firmware)
-    https://geekhack.org/index.php?topic=82693.msg2192962#msg2192962
-
-Re: TKG - TMK Keymap Generator [tkg.io]
-    https://geekhack.org/index.php?topic=82693.msg2192963#msg2192963
-
-G80-9009 "Rat's nest"
-    Making Stuff Together! / Re: Easy AVR USB Keyboard Firmware and Keymapper
-    https://geekhack.org/index.php?topic=51252.msg2141040#msg2141040
-
-The G80-9009HAU has two parts. Upper part is a 6x10 matrix and the lower part is
-10x10. I use a pro micro and one 74hc154 (4 to 16 mux). I am using TMK to run a 
-16x10 matrix.
-
-
-### New controller to USB, Modification #1
-
-
-### Keyboard to Breakout Box, Modification #2
-
-* User Anfauglir (Jaws of Thirst) had access to a Reuters Breakout Box
-* Here: https://www.ptt.cc/bbs/Key_Mou_Pad/M.1499538853.A.F7F.html
-* This keyboard requires a 12V power supply to operate and can be supplied from
-the DB-15 HOST connector. (I don't know which pins)
-* The Desk PC / WkSt on the keyboard can be directly connected to the computer with DB9 to PS / 2. 
-* DB9 -> PS/2 PIN pin corresponds to:
-    * 1-> 4,
-    * 7-> 3,
-    * 8-> 1,
-    * 9-> 5.  
-* Special keys are basically un-responsive. 
-* Scrn1 / 2/3/4 keys have a light but can not determine how to use. 
-* There is no Windows (Command) Key on the keyboard. (Currently in the macOS will be specified to 
-the Command Command, Caps Lock assigned to Option) 
-* It is said to have NKRO, unconfirmed.
-
-Unknowns:
-
-* Are the DB-9 and DB-15 cables from keyboard to Breakout Box straight through?
-* What pins on the DB-15 are used for 12v?
+Vineshroom (Youtube name) You can make MX Clear switches feel a whole lot more
+tactile by swapping the springs with Cherry MX Black springs. These are
+currently one of my favorite switches. I find them to be very similar to Black
+Alps, but they're more consistent and snappy than Black Alps IMO.
 
 ---
 from Chyros youtube review:    https://www.youtube.com/watch?v=N8FXw_QelQc
@@ -326,26 +276,8 @@ keyboard and mouse input between 2 computers on the keyboard.﻿
 
 In the comments of the Chyrosran22 Youtube review. https://www.youtube.com/watch?v=N8FXw_QelQc
 
-Meow Wei
-
-I have one currently in use (with original setup).
-
-You need to use a 12v 500mA adapter which converts to 15-pin D connector (I have
-an original adapter so I don't know what the pins are), and a cable from 
-9-pin D-connector to PS/2. (as defined in Keyboard to Breakout Box, Modification #2)
-If anyone of you have this keyboard and interested I may write a documentation on 
-this keyboard.
-The kmd3 or adapter box is not necessary. But if you have one, you can switch
-keyboard and mouse input between 2 computers on the keyboard.﻿
-
-
 ---
-### Users with this board:
 
-    Chyros (youtube reviews)
+### Sources/reference material
 
-### My Purchase history
-¥488.00 = $74.14 for second keyboard attempt; https://item.taobao.com/item.htm?id=13080915768&toSite=main
-    G80-9009HAU -- " " left of Z, ~/` in upper left, |/\ near Return
-    Dispensers: ershoubaoku
-
+* https://geekhack.org/index.php?topic=51252.1650
