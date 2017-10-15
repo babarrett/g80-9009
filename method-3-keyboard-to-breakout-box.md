@@ -1,4 +1,4 @@
-### Keyboard to Breakout Box, Modification #3
+## Keyboard to Breakout Box, Modification #3
 
 * User Anfauglir (Jaws of Thirst) had access to a Reuters Breakout Box
 * Here: https://www.ptt.cc/bbs/Key_Mou_Pad/M.1499538853.A.F7F.html
@@ -16,8 +16,50 @@ the DB-15 HOST connector. (I don't know which pins)
 the Command Command, Caps Lock assigned to Option) 
 * It is said to have NKRO, unconfirmed.
 
-Unknowns:
+### Unknowns:
 
 * Are the DB-9 and DB-15 cables from keyboard to Breakout Box straight through?
 * What pins on the DB-15 are used for 12v?
 
+### Connectors:
+
+```
+    The currently available connection method: (Update: the mouse has been working
+    properly) http://i.imgur.com/WrXa1Tl.jpg 
+
+           (Unknown, speculation is
+            it is SUN workstations)--- DIN8 ---+                    +------ (4pin 12V power supply)
+                                               |                    |
+    +------------+                     +---(Work Station-Sun)-----(Power)---+
+    |  Reuters   |                     |              Reuters                |
+    |   AK124    |                     |         AK125 Breakout Box          |
+    |            |                     |                                     |
+    |         (Host) --- DB15 --- (AK125-System)                       (HOST-SYSTEM)--(DB15 can supply power too)
+    |            |                     |                                     |      
+    |    (Desk PC/WkSt) -- DB9 -- (AK125-Desk-PC-Workstation)                |
+    |            |                     |                                     |
+    |            |                     |                           (Workstation-Generic)--(DB9
+    |        (Mouse) ----- DB9 -- (AK125-Mouse)                              |             unknown)
+    |            |                     |                                     |
+    |            |                     |                           (Workstation-PC-Mouse)--(DB9)
+    +------------+                     |                                     | Then the second machine
+                                       |                                     |    mouse PS/2
+                                       |                                     |
+       (actual mouse,                  |                                     |
+        PS/2, sitting  -- PS/2 --- (Mouse IN)                     (Workstation-PC-KBD)----(DB9)
+        on the desktop)                |                                     | Then the second machine
+                                       |                                     |    Keyboard PS/2
+                                       |                                     |
+                                       +-(Desk-PC-Mouse)-------(Desk-PC-KBD)-+
+                                               |                      |
+      Take the first computer    ----- DB9 ----+                      |
+         Mouse / keyboard, PS/2  ----------------- DB9 ---------------+
+```
+
+
+### kmd3
+
+Lots of info available here:
+    https://deskthority.net/workshop-f7/looking-for-handyman-to-mod-g80-9009hau-t3931.html
+    
+    
