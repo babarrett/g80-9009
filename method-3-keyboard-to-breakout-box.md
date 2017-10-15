@@ -1,4 +1,4 @@
-## Keyboard to Breakout Box, Modification #3
+## Keyboard to Breakout Box
 
 * User Anfauglir (Jaws of Thirst) had access to a Reuters Breakout Box
 * Here: https://www.ptt.cc/bbs/Key_Mou_Pad/M.1499538853.A.F7F.html

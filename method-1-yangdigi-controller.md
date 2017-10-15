@@ -107,6 +107,7 @@ Burning firmware instructions:
         line, you can use a long line, you can also use a short line and an
         extension line.
 
+    (rewrite this)
     The following figure is to use an extension of the line, the external exposed
     that the small head is microUSB connector, plug a microUSB line can be used.
  
