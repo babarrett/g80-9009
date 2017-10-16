@@ -4,9 +4,26 @@
 the DB-15 HOST connector. (I don't know which pins)
 * The Desk PC / WkSt port on the keyboard can be directly connected to the computer with DB9 to PS/2 cable. 
 
+### Pros:
+* Simplest solution in terms of hardware. 
+    - Do not have to open the keyboard
+    - No special controller needed
+    - No additional boxes (kdm3, Breakout Box) needed
+    - Need to create a DB-9 tp PS/2 cable
+* Likely, the built in functions, display commands (on the fly macro creation,
+calculator) still work.
+
+### Cons:
+
+* You have to create a custom cable, which shouldn't be too bad.
+* You'll need another converter if you want to get to USB. 
+* You'll have to use a Soarer (or similar?) converter if you want to get to USB and programmable. 
+An [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Remapping-Macros-NKRO-Support-/282575686221) link.
+
 ### Unknowns:
 
-* What pins on the DB-15 are used for 12v?
+* May, likely does, require an additional 12V power-supply 
+* Unknown what pins on the DB-15 are used for 12v and ground. 
 
 ### Connectors:
 
@@ -23,21 +40,18 @@ the DB-15 HOST connector. (I don't know which pins)
     |            |
     +------------+
 ```
-* DB9 -> PS/2 PIN pin correspond to:
-    * 1-> 4,
-    * 7-> 3,
-    * 8-> 1,
-    * 9-> 5.  
-
 ### Connections
 
 * Serial communications takes place across both connectors. The host can assert control at any time. 
-* DB9 -> PS/2 PIN pin corresponds to:
-    * 1-> 4,
-    * 7-> 3,
-    * 8-> 1,
-    * 9-> 5.  
-* Breakout box.
+* DB9 (male on keyboard, female on connector) -> PS/2 PIN pin (female on computer, male on cable) correspond to:
+    DB9 ---->>---- PS/2 male
+    ]≣≣≣≣≣≣≣≣≣≣≣≣|◼
+    * 1-> 4     +5V
+    * 7-> 3     Ground
+    * 8-> 1     +Keyboard Data
+    * 9-> 5     Clock
+    
+    I can't locate any of these that are commercially made. Likely you'll have t wire it yourself.
 
 Even though this seems to be a video of a kmd3 connection it looks like
 there is useful information for "direct connection:"

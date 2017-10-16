@@ -133,13 +133,14 @@ https://www.youtube.com/watch?v=N8FXw_QelQc
 ### Photos:
 
 * Total teardown article with photos, here: https://tieba.baidu.com/p/3742466012?red_tag=3259945445
-* Deskthority: Reuters Battlecruiser (Cherry G80-9009HAU) Great set of photos, all angles. https://deskthority.net/photos-f62/reuters-battlecruiser-cherry-g80-9009hau-t753.html
+* Deskthority: Reuters Battlecruiser (Cherry G80-9009HAU) Great *overview* set of photos,
+all angles. https://deskthority.net/photos-f62/reuters-battlecruiser-cherry-g80-9009hau-t753.html
 * Same photos also here: http://tieba.baidu.com/photo/p?kw=%E6%9C%BA%E6%A2%B0%E9%94%AE%E7%9B%98%E4%B9%8B%E5%AE%B6&flux=1&tid=3742466012
 * More photos some of PCB: http://www.kbdmania.net/xe/photo/7635809
 
 ### Disassembly and Yang's development:
 * *yangdigi's* early controller development with photos. http://tieba.baidu.com/p/4489516023
-* A couple more photos including a Breakout Box in the original keyboard box: https://www.wstx.com/p-15490
+* Only four more photos including a Breakout Box in the original keyboard box: https://www.wstx.com/p-15490
 
 ---
 ## Available Modifications

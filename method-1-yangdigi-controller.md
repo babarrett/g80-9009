@@ -3,6 +3,7 @@
 ### What it is:
 
 * A "drop in" solution. A separate new electronic card that plugs into the inside of the keyboard. Nothing needs to be changed on the keyboard.
+* **Aparently** it takes all the power off the USB port. I have not confirmed this.
 * Might still require a 12V power connection to the keyboard
 * Ends up with a USB connection. No need for a further PS/2 to USB converter
 * Includes a Pro Micro running TMK software
@@ -23,7 +24,6 @@ change usb, Reuters cherry g80-9009hau replace the master, the whole key can be
 programmed - Question and Answer on Alibaba
     * The Chinese title is: 老机械键盘改usb，路透社樱桃g80-9009hau替换主控，全键可编程-淘宝网全球站
 * It was created by "yangdigi" (Geekhack name)
-* **Aparently** it takes all the power off the USB port. I have not confirmed this.
 
 ### Details
 * Making Stuff Together! / Re: Easy AVR USB Keyboard Firmware and Keymapper article: https://geekhack.org/index.php?topic=51252.msg2141040#msg2141040
@@ -38,6 +38,25 @@ a 16x10 matrix.
 
 
 ---
+### Pros
+
+* Designed to work together
+* "Drops right in"
+* Makes it a USB keyboard
+* *Apparently* does not require an additional power supply
+
+
+### Cons
+
+* More expensive than the Direct method
+* Must open the keyboard case
+
+### Unknown
+
+* Can the USB actually provide enough power?
+* Do the built in functions, display commands (on the fly macro creation, calculator) still work?
+
+---
 ### Installing the card
 
 How to install the card is in [this PDF](../master/pdfs/Yangdigi-controller-to-USB-G80-9009.pdf "Yangdigi controller instructions"). 
@@ -45,25 +64,11 @@ It is a printed PDF of a Taobao for sale listing of the card.
 
 
 ---
-### Pros
-
-* Designed to work together
-* "Drops right in"
-* Makes it a USB keyboard
-* Apparently does not require an additional power supply
-
-
-### Cons
-
-* More expensive than the Direct method
-
-### Unknown
-
-* Can the USB actually provide enough power?
-* Do the built in functions (on the fly macro creation, calculator) still work?
-
----
 ### Burning new firmware for the Yang (yangdigi) controller
+
+TKG - TMK Keymap Generator instructions [../master/tkg-tmk-instructions.md](here)
+
+Here are GH60-9009 (Chinese) general instructions for you：[https://imgur.com/a/rfezG]
 
 Go to [http://yang.tkg.io](http://yang.tkg.io) - Select English from top-right drop-down.
 

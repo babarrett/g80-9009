@@ -1,41 +1,56 @@
 ## Keyboard to Breakout Box
 
-### There are KVM Boxes:
+### There are two "KVM" Boxes:
 
 * KMD-3		https://geekhack.org/index.php?topic=36702.0
 * Reuters Breakout Box
 
-### TODO: title for this
+### What it is:
 
 * User Anfauglir (Jaws of Thirst) had access to a Reuters Breakout Box
 * Here: https://www.ptt.cc/bbs/Key_Mou_Pad/M.1499538853.A.F7F.html
 * This keyboard requires a 12V power supply to operate and can be supplied from
 the DB-15 HOST connector. (I don't know which pins)
-* The Desk PC / WkSt port on the keyboard can be directly connected to the computer with DB9 to PS/2 cable. 
-* DB9 -> PS/2 PIN pin corresponds to:
+* The usual configuration is: 
+    - The Keyboard Desk PC/WorkStation port to KVM
+    - The "Host" port to KVM
+    - The desktop mouse (PS/2) to the KVM
+    - The rest of the connections go from the KVM to the Keyboard, Video, and
+    Mouse connectors on the (multiple) attached computers.
+* The output keyboard ports on the KVM can be connected, via adapters, to the
+(multiple) attached computers.
+* DB9 -> PS/2 adapter pinout is, likely (unconfirmed):
     * 1-> 4,
     * 7-> 3,
     * 8-> 1,
     * 9-> 5.  
-* Special keys are basically un-responsive. 
-* Scrn1/2/3/4 keys have a light but he cannot determine how to use them. 
-* There is no Windows (Command) Key on the keyboard. (Currently in the macOS will be specified to 
-the Command Command, Caps Lock assigned to Option) 
-* It is said to have NKRO, unconfirmed.
+* Special keys are totally available. 
+* Scrn1/2/3/4 keys are usable. 
 
-### Connections
+### Pros:
+* Everything works as designed, once you convert the serial keyboard out port(s)
+of the KVM to PS/2, and from there USB, if needed.
+* Simple solution in terms of hardware, if you can locate the boxes and cables. 
+    - Do not have to open the keyboard
+    - No special controller needed
+* The built in functions, display commands (on the fly macro creation,
+calculator) still work.
+* The screen, keyboard and mouse switching would work, so you get a 2 or 3
+station KVM "for free."
 
-* Serial communications takes place across both connectors. The host can assert control at any time. 
-* Breakout box.
+### Cons:
 
-
-
-### TODO: Pros cons unknowns
+* Almost impossible to find the breakout boxes, and if you do it's likely you
+won't find the right cables. (There also seems to be no documentation on the
+cable pinouts)
+* You have to create a custom cable, which shouldn't be too bad.
+* You'll need another converter if you want to get to USB. 
+* You'll have to use a Soarer (or similar?) converter if you want to get to USB and programmable. 
+An [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Remapping-Macros-NKRO-Support-/282575686221) link.
 
 ### Unknowns:
 
-* Are the DB-9 and DB-15 cables from keyboard to Breakout Box straight through?
-* What pins on the DB-15 are used for 12v?
+* (none)
 
 ### Connectors:
 
@@ -79,11 +94,11 @@ TODO: logical diagram
 Lots of info available here:
     https://deskthority.net/workshop-f7/looking-for-handyman-to-mod-g80-9009hau-t3931.html
    
- Application note, 2006:
+Application note, 2006:
     http://www.industrycortex.com/datasheets/profile/1250934827
     
 ---
-from comments after Chyros youtube review:    https://www.youtube.com/watch?v=N8FXw_QelQc
+From comments after Chyros youtube review:    https://www.youtube.com/watch?v=N8FXw_QelQc
 
 Meow Wei -- 2 months ago (edited)
 I have one [G80-9009] currently in use (with original setup, kmd3 box).
@@ -115,5 +130,4 @@ Cherry G80-9039HAAUS / Reuters AK124. 2 cables coming off the rear:
 ### Photos:
 
 * Shots of 4 kmd3's: https://deskthority.net/f-o-r-s-a-l-e-f58/g80-9009hau-4x-kmd3-t4023.html
-
 * Connecting up a G80-9009. Includes Breakout Box and pinouts for PS/2. https://www.ptt.cc/bbs/Key_Mou_Pad/M.1499538853.A.F7F.html
