@@ -127,3 +127,19 @@ image with the exception of the pipe/backslash key. It performs the same action
 as #/~ which I have next to my enter key.
 
 A: Please write that key in the format according to http://tkg.io/#help
+
+
+---
+### Videos:
+
+* Working G80-9009HAU to Windows pad (Surface?) key test and typing. Uses yangdigi controller. https://v.qq.com/x/page/v019406oqmc.html
+* Demo of Yang conversion. Using Windows pad (surface?) Same as above, but "Flash." https://www.xiaobaiban.net/video/play-JESdXA5_2B0eZvfsKGvp6tqRccTMcF3jPN.htm
+Video Description: be the world's first change this stuff it, giant keyboard.
+Did not destroy any one button, take the hole board made a master control,
+connected to the original 9009 above the two keyboard use.
+
+### Photos:
+
+* Geekhack, Easy AVR USB Keyboard Firmware and Keymapper. Actually the start of
+*yangdigi's* Pro Micro and mux. yangdigi's "rats nest" photos of early
+development of his controller. https://geekhack.org/index.php?topic=51252.1650
