@@ -19,10 +19,35 @@ As near as I can tell there are three ways to get this keyboard to work with a m
     - Very few parts, essentially one DB-9 to PS/2 cable
     - Might still require a 12V power connection to the keyboard
     - Requires a PS/2 to USB adapter if you want USB
-3. With (rare) [Breakout boxes](../master/method-3-keyboard-to-breakout-box.md)
+3. [Direct+Soarer](../master/method-3-direct+soarer.md  ) from the "Desk PC/Workstation" connector to a PS/2 connector
+
+4. With (rare) [Breakout boxes](../master/method-4-keyboard-to-breakout-box.md)
     - These are KVM switches (keyboard, video and mouse)
     - kdm3 (keyboard, display and mouse)
     - Reuters Breakout Box
+
+## Method vs features  
+
+| Feature                      | Controler | Direct | Direct+Soarer | KVM  |
+| ---------------------------- |:---------:| :-----:| :------------:| :---:|
+| Map all 149 keys             | y | n | n | n |
+| Display functions wk         | n | y | y | y |
+| Req. hand-made power on Host | n | y | y | n |
+| Support kbd-only switching   | n | n | n | y |
+| Lock LEDs work               | n? | y | n? | y? |
+| Requires "rare" KVM box      | n | n | n | y |
+
+Controller  
+Direct  
+KVM
+Direct + Hybrid (Scorer)
+----------------------------
+Map all 149 keys -- ynn n
+Display functions wk -- nyyy
+Req. hand-made power on Host -- nyny  
+Support kbd-only switching-- nnyn  
+Lock LEDs work -- n?yy?n?
+Requires "rare" KVM box -- nnyn
 
 ---
 ## Physical Attributes
