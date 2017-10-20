@@ -1,44 +1,53 @@
-## Keyboard direct to computer
+## Connection Method #2, Keyboard direct to computer
 
-* This keyboard requires a 12V power supply to operate and can be supplied from
-the DB-15 HOST connector. (I don't know which pins)
-* The Desk PC / WkSt port on the keyboard can be directly connected to the computer with DB9 to PS/2 cable. 
+### What it is:
 
+* This keyboard requires a 12V, 500mA power supply to operate. The power is
+supplied to the keyboard through the DB-15 "HOST" connector. (I don't know which
+pins.) 
+* The Desk PC / WkSt port on the keyboard can be directly connected to the
+computer with:
+    - a DB9 to PS/2 passive cable. 
+    - a DB9 to PS/2 passive cable and a PS/2 to USB passive adapter.
+    - a DB9 to PS/2 passive cable and a Soarer PS/2 to USB converter.
+    (See the next method: Direct+Soarer method #3 for information) 
+* Can End up with a PS/2 or USB option, your choice
+* The built in functions, display commands (on the fly macro creation,
+calculator) should all still work. TODO: test this.
+
+---
 ### Pros:
+
 * Simplest solution in terms of hardware. 
     - Do not have to open the keyboard
     - No special controller needed
     - No additional boxes (kdm3, Breakout Box) needed
-    - Need to create a DB-9 tp PS/2 cable
-* Likely, the built in functions, display commands (on the fly macro creation,
-calculator) still work.
+    - Need to create a DB-9 to PS/2 cable
+    - Need to add a PS/2 to USB adapter, if you want USB
+* Cheapest hardware solution
 
 ### Cons:
 
-* You have to create a custom cable, which shouldn't be too bad.
+* You have to create a custom cable, which shouldn't be too hard to do.
 * You'll need another converter if you want to get to USB. 
-* You'll have to use a Soarer (or similar?) converter if you want to get to USB and programmable. 
-An [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Remapping-Macros-NKRO-Support-/282575686221) link.
+* You'll have to purchase and wire up a 12V, 500mA power-supply.
 
 ### Unknowns:
 
-* May, likely does, require an additional 12V power-supply 
-* Unknown what pins on the DB-15 are used for 12v and ground. 
+* Unknown what pins on the DB-15 are used for 12v and ground. This must be determined!
+* Lock LEDs (caps, scroll, num) might, or might not work
+
+---
 
 ### Connectors:
 
+![The configuration](../master/images/Cherry%20G80-9009%20Functional%20Diagram.png "Direct connect diagram")
 ```
-    +------------+ 
-    |  Reuters   | 
-    |   AK124    | 
-    |  Keyboard  | 
-    |         (Host) --- DB15 --- (Used for 12V power)
-    |            | 
-    |    (Desk PC/WkSt) -- DB9 -- (to PS/2) --- 6 pin DIN --- (to PS/2 to USB adapter)
-    |            |
-    |        (Mouse) ----- DB9 -- (noot connected)              
-    |            |
-    +------------+
+   Reuters AK124 Keyboard
+   
+   (Host) ---------- DB15 --- 12V power and ground to the keyboard
+   (Desk PC/WkSt) -- DB9 -- (to 6 pin DIN PS/2) ---- (PS/2 to USB adapter) -- to computer
+   (Mouse) --------- DB9 -- (not connected)
 ```
 ### Connections
 
