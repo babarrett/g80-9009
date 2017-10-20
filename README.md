@@ -43,7 +43,9 @@ keyboard to a modern computer:
     - Includes a Pro Micro, running TMK software, allowing the mapping of all 149 keys.
     - Probably does not, but still might, require a 12V power connection to the keyboard
     - A good solution for getting up-and-running quickly, without much thinking
-    or assembly required. A known solution.
+    or assembly required. A known solution. Unless the LCD display being
+    operational was a significant motivation for acquiring this keyboard, this is
+    likely your best choice.
 2. [Directly](../master/method-2-direct.md  ) from the "Desk PC/Workstation" connector to a PS/2 connector
     - Very few parts, essentially one DB-9 to PS/2 cable
     - Likely requires a 12V power connection to the keyboard (host port)
