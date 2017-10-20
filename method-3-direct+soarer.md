@@ -1,44 +1,55 @@
-## Keyboard direct to computer
+## Connection Method #3, Keyboard direct to computer and a Soarer PS/2 to USB converter
 
+
+### What it is:
+
+* This method enhances Method #2 by adding Soarer PS/2 to USB converter
+* The result is a keyboard with full programability and (most of) the built-in functions of the G80-9009.
 * This keyboard requires a 12V power supply to operate and can be supplied from
 the DB-15 HOST connector. (I don't know which pins)
-* The Desk PC / WkSt port on the keyboard can be directly connected to the computer with DB9 to PS/2 cable. 
+* The Desk PC / WkSt port on the keyboard can be directly connected to the
+computer with a DB9 to PS/2 passive cable and a Soarer PS/2 to USB converter.
+
+The Soarer converters are available on 
+[ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Remapping-Macros-NKRO-Support-/282575686221).
 
 ### Pros:
-* Simplest solution in terms of hardware. 
-    - Do not have to open the keyboard
-    - No special controller needed
+* Has the greatest capability of the 4 proposed methods.
+    - The Soarer converter is programable. It adds the ability to remap keys,
+    add macros, add additional function layers, and be able to toggle different
+    layouts. Any key can be assigned any function or character.
+    - 
+    - The built in functions, display commands (on the fly macro creation,
+    calculator) *should* still work.
+* Installation is not too difficult:
+    - Do not have to open the keyboard case
     - No additional boxes (kdm3, Breakout Box) needed
-    - Need to create a DB-9 tp PS/2 cable
-* Likely, the built in functions, display commands (on the fly macro creation,
-calculator) still work.
+    - Need to create a DB-9 to PS/2 cable
 
 ### Cons:
 
 * You have to create a custom cable, which shouldn't be too bad.
-* You'll need another converter if you want to get to USB. 
-* You'll have to use a Soarer (or similar?) converter if you want to get to USB and programmable. 
-An [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Remapping-Macros-NKRO-Support-/282575686221) link.
+* You'll have to purchase and wire up a 12V, 500mA power-supply.
 
 ### Unknowns:
 
-* May, likely does, require an additional 12V power-supply 
 * Unknown what pins on the DB-15 are used for 12v and ground. 
+* Lock LEDs (caps, scroll, num) might, or might not work
 
 ### Connectors:
 
 ```
-    +------------+ 
-    |  Reuters   | 
-    |   AK124    | 
-    |  Keyboard  | 
-    |         (Host) --- DB15 --- (Used for 12V power)
-    |            | 
-    |    (Desk PC/WkSt) -- DB9 -- (to PS/2) --- 6 pin DIN --- (to PS/2 to USB adapter)
-    |            |
-    |        (Mouse) ----- DB9 -- (noot connected)              
-    |            |
-    +------------+
+    +-----+
+    |photo|
+    +-----+
+```
+            
+```
+   Reuters AK124 Keyboard
+   
+   (Host) ---------- DB15 <--- 12V power and ground to the keyboard
+   (Desk PC/WkSt) -- DB9 ----> (to 6 pin DIN PS/2) ---- (PS/2 to USB Soarer converter) -- to computer
+   (Mouse) --------- DB9 ----- (not connected)
 ```
 ### Connections
 
@@ -51,10 +62,10 @@ An [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Rema
     * 8-> 1     +Keyboard Data
     * 9-> 5     Clock
     
-    I can't locate any of these that are commercially made. Likely you'll have t wire it yourself.
+    I can't locate any of these that are commercially made. Likely you'll have to wire it yourself.
 
 Even though this seems to be a video of a kmd3 connection it looks like
-there is useful information for "direct connection:"
+there is useful information for "direct connection and Soarer conversion:"
 
 * Using kmd3. Quick demo, types on computer. Includes Set-up and macro definition. 
 Cherry G80-9039HAAUS / Reuters AK124. 2 cables coming off the rear: 

@@ -19,7 +19,7 @@ calculator) should all still work. TODO: test this.
 ### Pros:
 
 * Simplest solution in terms of hardware. 
-    - Do not have to open the keyboard
+    - Do not have to open the keyboard case
     - No special controller needed
     - No additional boxes (kdm3, Breakout Box) needed
     - Need to create a DB-9 to PS/2 cable
@@ -39,15 +39,13 @@ calculator) should all still work. TODO: test this.
 
 ---
 
-### Connectors:
-
 ![The configuration](../master/images/Cherry%20G80-9009%20Functional%20Diagram.png "Direct connect diagram")
 ```
    Reuters AK124 Keyboard
    
-   (Host) ---------- DB15 --- 12V power and ground to the keyboard
-   (Desk PC/WkSt) -- DB9 -- (to 6 pin DIN PS/2) ---- (PS/2 to USB adapter) -- to computer
-   (Mouse) --------- DB9 -- (not connected)
+   (Host) ---------- DB15 <--- 12V power and ground to the keyboard
+   (Desk PC/WkSt) -- DB9 ----> (to 6 pin DIN PS/2) ---- (PS/2 to USB adapter) -- to computer
+   (Mouse) --------- DB9 ----- (not connected)
 ```
 ### Connections
 
@@ -60,7 +58,7 @@ calculator) should all still work. TODO: test this.
     * 8-> 1     +Keyboard Data
     * 9-> 5     Clock
     
-    I can't locate any of these that are commercially made. Likely you'll have t wire it yourself.
+    I can't locate any of these that are commercially made. Likely you'll have to wire it yourself.
 
 Even though this seems to be a video of a kmd3 connection it looks like
 there is useful information for "direct connection:"
@@ -78,7 +76,7 @@ Cherry G80-9039HAAUS / Reuters AK124. 2 cables coming off the rear:
     https://www.youtube.com/watch?v=r_-dMFUNv-k
 
 ---
-### Keyboard direct to PS/2
+### Keyboard direct to PS/2 mention
 
 In the comments of the Chyrosran22 Youtube review. https://www.youtube.com/watch?v=N8FXw_QelQc
 

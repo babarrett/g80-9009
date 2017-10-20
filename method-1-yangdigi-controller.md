@@ -4,7 +4,7 @@
 
 * A "drop in" solution. A separate new electronic card that plugs into the
 inside of the keyboard. Nothing needs to be changed on the keyboard.
-* **Aparently** it takes all the power off the USB port. I have not confirmed
+* **Apparently** it takes all the power off the USB port. I have not confirmed
 this.
 * Might still require a 12V power connection to the keyboard
 * Ends up with a USB connection. No need for a further PS/2 to USB converter
@@ -32,6 +32,7 @@ October 2017:
 * It was created by "yangdigi" (Geekhack name)
 
 ### Details
+
 * Making Stuff Together! / Re: Easy AVR USB Keyboard Firmware and Keymapper article: 
 https://geekhack.org/index.php?topic=51252.msg2141040#msg2141040
 * The G80-9009HAU has two groups of keys. Upper part is a 6x10 matrix (51 keys)
@@ -63,10 +64,11 @@ on it to make it easier to use."
 
 ### Unknown
 
-* *Apparently* does not require an additional power supply
+* *Apparently* does not require an additional power supply. TODO: test
 * Can the USB actually provide enough power? Likely only for the matrix scan + TMK functions
-* Do the built in functions, display commands (on the fly macro creation, calculator) still work?
-* Lock LEDs (caps, scroll, num) might, ro might not work
+* Do the built in functions, display commands (on the fly macro creation, calculator) still work? Likely not.
+* Lock LEDs (caps, scroll, num) might, or might not work
+* What will the supply of these controllers be like in the future?
 
 ---
 ### Installing the card
@@ -140,8 +142,6 @@ Select Keyboard = 80_9009HAU from the drop-down list.
 (3 layers) Copy raw code, paste it back in the page, "Simple"
 
 Download .c and/or .epp file(s)
-
-
 
 
 ---
