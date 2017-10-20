@@ -83,8 +83,8 @@ An [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Rema
                                        |                                     |
                                        +-(Desk-PC-Mouse)-------(Desk-PC-KBD)-+
                                                |                      |
-      Take the first computer    ----- DB9 ----+                      |
-         Mouse / keyboard, PS/2  ----------------- DB9 ---------------+
+      First computer mouse  ------- DB9 -------+                      |
+         Keyboard, PS/2  ------------------- DB9 ---------------------+
 ```
 
 TODO: logical diagram
@@ -120,7 +120,7 @@ TODO: links to web page
 * Using kmd3. Quick demo, types on computer. Includes Set-up and macro definition. 
 Cherry G80-9039HAAUS / Reuters AK124. 2 cables coming off the rear: 
     a) 15? pin D connector to another 15 pin D, attached to the keyboard at 
-    about the F5 and F6 key area. Also joining that second D connecter is a thick, black cable
+    about theater is a thick, black cable
     coming from a black "brick". (Power supply??) Labeled with a paper sticker saying 
     "REUTERS EQUIPMENT." This seems likely where the keyboard is being powered from.
     b) Thin cable DB-9 likely, adjacent to 1st cable. Enters the keyboard at approximately
