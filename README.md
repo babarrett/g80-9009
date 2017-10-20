@@ -1,66 +1,87 @@
-## g80-9009
-Cherry built keyboard, G80-9009. For Reuters. 149 keys. LCD display. Create macros on
-the fly. From the 1990's. Model number AK 124
+# g80-9009
+Cherry built keyboard, G80-9009, and similar model numbers, for Reuters. 
+The Reuters model number is AK124. 
+
+Presumption:
+Reuters is an old and a leading newswire service.
+All of the specialized keys are for trading functions.
+(Open Orders, Cancel orders, Bid, Offer, Change)
+
+What do traders need? Financial markets move on news. Clearly they a portal into
+the trading system (or network) and they need access to up to date news. So
+then, the "workstation" is for the trading and the "PC" is for the news.
+
+Two keys in the upper-right (Desk PC, Wkst) allow the trader to switch the
+keyboard from the desktop PC to Workstation, and back.
+
+It:
+
+* Was available in the 1990's. I have seen REUTERS logos created in 1965 (the
+"dot" wordmark) and in 1996 the rounded piece – or roundel – was developed. 1999
+the dots in the name gave way to a solid all-caps font, followed by an orange
+dotted semi-circle, and a solid blue semicircle.
+* has 149 available keys
+* has a, primarily text, LCD display
+* can create macros on the fly that are stored in the keyboard. 
+* can select any 1 of 4 screens
+* can select any 1 of 2 workstations with a kmd3, or 4(?) for a "Breakout Box"
+* can perform calculations within the keyboard, displaying the results on the LCD display
 
 
 ---
 ## Connection Methods
 
-Let's start with what I presume everyone cares most about. "How to I connect this to my computer?"
+Let's start with what I presume everyone cares most about. "How to I connect
+this to my computer?"
 
-As near as I can tell there are three ways to get this keyboard to work with a modern computer:
+As near as I can tell there are three ways and one variation for connecting this
+keyboard to a modern computer:
 
 1. Yangdigi's [controller card](../master/method-1-yangdigi-controller.md "Yangdigi controller instructions")
     - A "drop in" solution
-    - Might still require a 12V power connection to the keyboard
     - Ends up with a USB connection. No need for a further PS/2 to USB converter
-    - Includes a Pro Micro running TMK software
+    - Includes a Pro Micro, running TMK software, allowing the mapping of all 149 keys.
+    - Probably does not, but still might, require a 12V power connection to the keyboard
+    - A good solution for getting up-and-running quickly, without much thinking
+    or assembly required. A known solution.
 2. [Directly](../master/method-2-direct.md  ) from the "Desk PC/Workstation" connector to a PS/2 connector
     - Very few parts, essentially one DB-9 to PS/2 cable
-    - Might still require a 12V power connection to the keyboard
-    - Requires a PS/2 to USB adapter if you want USB
+    - Likely requires a 12V power connection to the keyboard (host port)
+    - Uses a passive PS/2 to USB adapter
 3. [Direct+Soarer](../master/method-3-direct+soarer.md  ) from the "Desk PC/Workstation" connector to a PS/2 connector
-
-4. With (rare) [Breakout boxes](../master/method-4-keyboard-to-breakout-box.md)
+    - Requires one DB-9 to PS/2 cable
+    - Likely requires a 12V power connection to the keyboard (host port)
+    - Uses an active Soarer PS/2 to USB converter. The Soarer adds the
+    ability to remap keys, add macros, add additional function layers, and be
+    able to toggle different layouts 
+4. With (rare) [KVM](../master/method-4-keyboard-to-breakout-box.md) boxes
     - These are KVM switches (keyboard, video and mouse)
     - kdm3 (keyboard, display and mouse)
     - Reuters Breakout Box
 
 ## Method vs features  
 
-| Feature                      | Controler | Direct | Direct+Soarer | KVM  |
-| ---------------------------- |:---------:| :-----:| :------------:| :---:|
-| Map all 149 keys             | y | n | n | n |
-| Display functions wk         | n | y | y | y |
+| Feature                      | Controller | Direct | Direct+Soarer | KVM  |
+| ---------------------------- |:----------:| :-----:| :------------:| :---:|
+| Maps all 149 keys            | y | n | n | n |
+| Display functions work       | n | y | y | y |
 | Req. hand-made power on Host | n | y | y | n |
 | Support kbd-only switching   | n | n | n | y |
 | Lock LEDs work               | n? | y | n? | y? |
 | Requires "rare" KVM box      | n | n | n | y |
-
-Controller  
-Direct  
-KVM
-Direct + Hybrid (Scorer)
-----------------------------
-Map all 149 keys -- ynn n
-Display functions wk -- nyyy
-Req. hand-made power on Host -- nyny  
-Support kbd-only switching-- nnyn  
-Lock LEDs work -- n?yy?n?
-Requires "rare" KVM box -- nnyn
 
 ---
 ## Physical Attributes
 
 ### Physical Specifications:
 
+* Shipping weight ~ 2570g
+* Shipping dimensions: 54.6 * 30.8 * 9.2 cm
 * 2.4Kg, 4Kg shipping weight
 * Width
 * Height
 * Depth
 * 12V 500mA = 6W on the label on the bottom but 5v ??mA powered by Yang's USB.
-* Shipping weight ~ 2570g
-* Shipping dimensions: 54.6 * 30.8 * 9.2 cm
 
 ### Switches
 
@@ -89,7 +110,7 @@ Most are Double-shot ABS. "Super thick." TODO: measure once in hand
 ### Case:
 
 * Top (51) keys are plate mounted
-* Lower (main 09 keys) are PCB mounted
+* Lower (main 99 keys) are PCB mounted
 * Flip-out feet on bottom, at back
 * Under the rectangulat plate on the bottom (4 screws) is a 27 x 2 pin ribbon cable, not connected. For expansion modual?
 * Back of keyboard, left to right has the following: http://i.imgur.com/lwkKiGb.jpg
@@ -102,7 +123,6 @@ Most are Double-shot ABS. "Super thick." TODO: measure once in hand
                                                                  Workstation     
 ```
 ---
-
 ### Models:
 
 * G80-9009HAU
