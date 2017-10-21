@@ -4,6 +4,8 @@
 
 TODO:  more here
 
+These are available with connection methods 2, 3, and 4.
+
 ### LCD:
 
 * Displays "IBM PS/2" at some point.

@@ -41,52 +41,52 @@ keyboard to a modern computer:
 1. Yangdigi's [controller card](../master/method-1-yangdigi-controller.md "Yangdigi controller instructions")
     - A "drop in" solution
     - Ends up with a USB connection. No need for a further PS/2 to USB converter
-    - Includes a Pro Micro, running TMK software, allowing the mapping of all 149 keys.
+    - Includes a Pro Micro (equivalent), running TMK software, allowing the mapping of all 149 keys.
     - Probably does not, but still might, require a 12V power connection to the keyboard
     - A good solution for getting up-and-running quickly, without much thinking
-    or assembly required. A known solution. Unless the LCD display being
-    operational was a significant motivation for acquiring this keyboard, this is
-    likely your best choice.
+    or assembly required. A known solution. Very useful if some part of your
+    keyboard's internals (other than the key matrixes) has failed. Unless the LCD
+    display being operational was a significant motivation for acquiring this
+    keyboard, this is likely your best and easiest choice.
 2. [Directly](../master/method-2-direct.md  ) from the "Desk PC/Workstation"
     connector to a PS/2 connector
-    - Very few parts, essentially one custom built DB-9 to PS/2 cable
-    - Uses a passive PS/2 to USB adapter
-    - Requires a 12V power connection to the keyboard (host port)
+    - Very few parts, essentially one custom built DB-9 to PS/2 cable and
+    - a 12V power connection to the keyboard (host port, DB-15)
+    - Uses a passive PS/2 to USB adapter to get to USB, if needed.
     - A good solution for getting a keyboard with working display functions,
     while the keyboard itself is not programable and you cannot control the
     keymap. If the LCD display being operational was a significant motivation
-    for acquiring this keyboard, this is likely your best choice. Biggest
-    downside is we don't know which pins of the port are used for +12V and
-    Ground.
+    for acquiring this keyboard, and having the whole keymap and layers be
+    programable is unimportant, this is likely your best choice. 
 3. [Direct+Soarer](../master/method-3-direct+soarer.md  ) from the "Desk
     PC/Workstation" connector to a PS/2 connector
-    - Few parts, essentially one custom built DB-9 to PS/2 cable
-    - Requires a 12V power connection to the keyboard (host port)
+    - Few parts, essentially one custom built DB-9 to PS/2 cable and
+    - a 12V power connection to the keyboard (host port, DB-15)
     - Uses an active Soarer PS/2 to USB converter. The Soarer adds the
     ability to remap keys, add macros, add additional function layers, and be
     able to toggle different layouts.
     - A good solution for getting everything you're likely to want out of the
-    keyboard: working display functions, with programmability and keymap
-    re-writing. If the LCD display being operational was a significant
+    keyboard: working display functions, with in-keyboard programmability and
+    keymap re-writing. If the LCD display being operational was a significant
     motivation for acquiring this keyboard, and you want it to be programable
-    too, this is likely your best choice. Biggest downside is we don't know
-    which pins of the port are used for +12V and Ground.
+    too, this is likely your best choice. 
 4. With (rare) [KVM](../master/method-4-keyboard-to-breakout-box.md) boxes
     - These are KVM switches (keyboard, video and mouse)
     - kdm3 (keyboard, display and mouse)
     - Reuters Breakout Box
+    - Covered here in less detail as the boxes are so rare.
     
 
 ## Method vs features  
 
 | Feature                      | Controller | Direct | Direct+Soarer | KVM  |
 | ---------------------------- |:----------:| :-----:| :------------:| :---:|
-| Maps all 149 keys            | y | n | n | n |
+| Maps all 149 keys            | y | n(141?) | n(141?) | n(141?) |
 | Display functions work       | n | y | y | y |
 | Req. hand-made power on Host | n | y | y | n |
-| Support kbd-only switching   | n | n | n | y |
 | Lock LEDs work               | n? | y? | n? | y? |
 | Requires "rare" KVM box      | n | n | n | y |
+| Support kbd-only switching   | n | n | n | y |
 
 ---
 ## Physical Attributes
@@ -99,7 +99,18 @@ keyboard to a modern computer:
 * Width
 * Height
 * Depth
-* 12V 500mA = 6W on the label on the bottom but 5v ??mA powered by Yang's USB.
+* 12V 500mA = 6W on the label on the bottom, but Meow Wei (Youtube) found 12V (12.6V measured), 2.5A.
+    - DB15 Female 
+    - In the following, "ø" represents others pins, not used or used for non-power/ground reasons.
+```
+            • +12V, Vin on pins: 12, 13, 14
+                ø,  ø,   ø,   -,   -,   -,   ø,   - 
+                  ø,   ø,   ø,  12,  13,  14,  ø
+            • GND, on pins: 4, 5, 6, 8﻿
+                ø,  ø,   ø,   4,   5,   6,   ø,  8 
+                  ø,   ø,   ø,   +,   +,   +,  ø
+```
+* but 5v ??mA powered by Yang's USB controller for the keyboard matrix, only.
 
 ### Switches
 
@@ -156,19 +167,22 @@ It seems to me that keys on this keyboard fall into 3 groups:
 1. "Normal keys" When struck their keycode is sent out the "Desk PC /
 Workstation" port. These are A-Z, 0-9, punctuation, etc. Normal keyboard
 operation. 
+
 2. Keys sent to control the keyboard modes itself. "Cacl" puts the keyboard into
 calculator mode (Likely exits the calc mode too) and "SetUp" lets you define
 macros, etc. These will never generate scan codes out the "Desk PC /
 Workstation" port, they are handled within the keyboard itself.
+
 3. "KVM" keys that control the switch boxes themselves. For example "Scrn 4" to
 change display to Screen 4. Also "Desk PC" and "Wkst" to select at least which
-computer was attached to. Probable which screen got displayed too. These will
-send signals (I have no ideas which) out the "Host" port. These will also never
-generate scan codes out the "Desk PC / Workstation" port.
+computer to attach the keyboard to. Probable which screen got displayed too.
+These will send signals (I have no ideas which) out the "Host" port. These will
+also never generate scan codes out the "Desk PC / Workstation" port.
 
 So it looks like of the 149 keys on the keyboard, all but the cluster of 8 at
 the top-right could be available. It's also possible that the F1-F24 don't send 
 scan codes directly, but only play back your pre-programmed keyboard macros.
+TODO: To be determined.
 
 A description of [Display Functions](../master/display-functions.md "Display Functions documentation") available on the G80-9009 keyboard.  
 

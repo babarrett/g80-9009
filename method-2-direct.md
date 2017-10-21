@@ -3,14 +3,13 @@
 ### What it is:
 
 * This keyboard requires a 12V, 500mA power supply to operate. The power is
-supplied to the keyboard through the DB-15 "HOST" connector. (I don't know which
-pins.) 
+supplied to the keyboard through the DB-15 "HOST" connector.
 * The Desk PC / WkSt port on the keyboard can be directly connected to the
 computer with:
     - a DB9 to PS/2 passive cable. 
     - a DB9 to PS/2 passive cable and a PS/2 to USB passive adapter.
     - a DB9 to PS/2 passive cable and a Soarer PS/2 to USB converter.
-    (See the next method: Direct+Soarer method #3 for information) 
+    (See the next method: Direct+Soarer method #3 for information on this this option) 
 * Can End up with a PS/2 or USB option, your choice
 * The built in functions, display commands (on the fly macro creation,
 calculator) should all still work. TODO: test this.
@@ -23,18 +22,18 @@ calculator) should all still work. TODO: test this.
     - No special controller needed
     - No additional boxes (kdm3, Breakout Box) needed
     - Need to create a DB-9 to PS/2 cable
+    - Need to create a 12V 500mA power-supply to DB-15 cable
     - Need to add a PS/2 to USB adapter, if you want USB
 * Cheapest hardware solution
 
 ### Cons:
 
 * You have to create a custom cable, which shouldn't be too hard to do.
-* You'll need another converter if you want to get to USB. 
-* You'll have to purchase and wire up a 12V, 500mA power-supply.
+* You'll have to purchase and wire up a 12V, 500mA power-supply to a second cable.
+* You'll need another converter if you want to get from PS/2 to USB. 
 
 ### Unknowns:
 
-* Unknown what pins on the DB-15 are used for 12v and ground. This must be determined!
 * Lock LEDs (caps, scroll, num) might, or might not work
 
 ---

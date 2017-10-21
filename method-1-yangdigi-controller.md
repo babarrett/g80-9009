@@ -4,16 +4,15 @@
 
 * A "drop in" solution. A separate new electronic card that plugs into the
 inside of the keyboard. Nothing needs to be changed on the keyboard.
-* **Apparently** it takes all the power off the USB port. I have not confirmed
-this.
-* Might still require a 12V power connection to the keyboard
+* Apparently it takes all the power off the USB port. TODO: confirm.
+* ~~Might still require a 12V power connection to the keyboard~~
 * Ends up with a USB connection. No need for a further PS/2 to USB converter
-* Includes a Pro Micro running TMK software
+* Includes a Pro Micro (equivalent) running TMK software
     * It's 3.3v at 16Mhz.
     * Pro Micro 3.3v at 8Mhz can work well too.
     * If your Pro Micro is 8MHz, change F_CPU = 16000000 to F_CPU = 8000000 in Makefile
     * There is a USB port on the controller card
-* The TMK enabled controller  is programable. It adds the ability to remap keys,
+* The TMK enabled controller is programable. It adds the ability to remap keys,
 add macros, add additional function layers, and be able to toggle different
 layouts. Any key can be assigned any function or character.
 * The TKG - TMK Keymap Generator [tkg.io] can be used to create new keyboard
@@ -54,6 +53,7 @@ on it to make it easier to use."
 * Maps all 149 keys
 * TKG - TMK Keymap Generator for ease of making and loading new keymaps
 * Does not requite the "rare" KVMs and their cables, and their power supply
+* As long as the keyboard keys and matrixes are intack this method will work. Good for "broken" boards.
 * Nothing else to buy, but a USB cable. No hand-made cables
 
 ### Cons
@@ -64,7 +64,7 @@ on it to make it easier to use."
 
 ### Unknown
 
-* *Apparently* does not require an additional power supply. TODO: test
+* Apparently does not require an additional power supply. TODO: test
 * Can the USB actually provide enough power? Likely only for the matrix scan + TMK functions
 * Do the built in functions, display commands (on the fly macro creation, calculator) still work? Likely not.
 * Lock LEDs (caps, scroll, num) might, or might not work

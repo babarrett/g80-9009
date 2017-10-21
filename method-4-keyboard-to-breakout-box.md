@@ -10,7 +10,7 @@
 * User Anfauglir (Jaws of Thirst) had access to a Reuters Breakout Box
 * Here: https://www.ptt.cc/bbs/Key_Mou_Pad/M.1499538853.A.F7F.html
 * This keyboard requires a 12V power supply to operate and can be supplied from
-the DB-15 HOST connector. (I don't know which pins)
+the DB-15 HOST connector.
 * The usual configuration is: 
     - The Keyboard Desk PC/WorkStation port to KVM
     - The "Host" port to KVM
@@ -44,7 +44,7 @@ station KVM "for free."
 won't find the right cables. (There also seems to be no documentation on the
 cable pinouts)
 * You have to create a custom cable, which shouldn't be too bad.
-* You'll need another converter if you want to get to USB. 
+* You'll need another converter if you want to get from PS/2 to USB. 
 * You'll have to use a Soarer (or similar?) converter if you want to get to USB and programmable. 
 An [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Remapping-Macros-NKRO-Support-/282575686221) link.
 

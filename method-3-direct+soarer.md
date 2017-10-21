@@ -6,7 +6,7 @@
 * This method enhances Method #2 by adding Soarer PS/2 to USB converter
 * The result is a keyboard with full programability and (most of) the built-in functions of the G80-9009.
 * This keyboard requires a 12V power supply to operate and can be supplied from
-the DB-15 HOST connector. (I don't know which pins)
+the DB-15 HOST connector.
 * The Desk PC / WkSt port on the keyboard can be directly connected to the
 computer with a DB9 to PS/2 passive cable and a Soarer PS/2 to USB converter.
 
@@ -18,22 +18,20 @@ The Soarer converters are available on
     - The Soarer converter is programable. It adds the ability to remap keys,
     add macros, add additional function layers, and be able to toggle different
     layouts. Any key can be assigned any function or character.
-    - 
     - The built in functions, display commands (on the fly macro creation,
-    calculator) *should* still work.
+    calculator) should still work. TODO: Test
 * Installation is not too difficult:
     - Do not have to open the keyboard case
-    - No additional boxes (kdm3, Breakout Box) needed
+    - No additional boxes (kdm3, Breakout Box) and their special cables needed
     - Need to create a DB-9 to PS/2 cable
 
 ### Cons:
 
 * You have to create a custom cable, which shouldn't be too bad.
-* You'll have to purchase and wire up a 12V, 500mA power-supply.
+* You'll have to purchase and wire up a 12V, 500mA power-supply to a DB-15.
 
 ### Unknowns:
 
-* Unknown what pins on the DB-15 are used for 12v and ground. 
 * Lock LEDs (caps, scroll, num) might, or might not work
 
 ### Connectors:
@@ -63,6 +61,18 @@ The Soarer converters are available on
     * 9-> 5     Clock
     
     I can't locate any of these that are commercially made. Likely you'll have to wire it yourself.
+
+* Power-supply connection/cable:
+    - DB15 Female 
+    - In the following, "ø" represents others pins, not used or used for non-power/ground reasons.
+```
+            • +12V, Vin on pins: 12, 13, 14
+                ø,  ø,   ø,   -,   -,   -,   ø,   - 
+                  ø,   ø,   ø,  12,  13,  14,  ø
+            • GND, on pins: 4, 5, 6, 8﻿
+                ø,  ø,   ø,   4,   5,   6,   ø,  8 
+                  ø,   ø,   ø,   +,   +,   +,  ø
+```
 
 Even though this seems to be a video of a kmd3 connection it looks like
 there is useful information for "direct connection and Soarer conversion:"
