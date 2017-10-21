@@ -93,6 +93,25 @@ keyboard to a modern computer:
 | Requires "rare" KVM box      | n | n | n | y |
 | Support kbd-only switching   | n | n | n | y |
 
+
+---
+## Costs for Keyboard and parts to assemble
+
+|                                 |         |:  Used in each of these methods           :|
+| Item                            |   Price | Controller | Direct | Direct+Soarer | KVM  |
+| ------------------------------- |--------:|:----------:| :-----:| :------------:| :---:|
+| G80-9009 Keyboard*              | $111.01 |    Y       |  Y     |     Y         |  Y   |
+| Yang Controller*                |  $57.25 |    Y       |        |               |      |
+| PS/2 cable, 6' Male to Male     |   $3.62 |            |  Y     |               |      |
+| 12VDC/500mA, Jameco             |  $11.95 |            |  Y     |     Y         |  Y   | 
+| DB-15 extension cable, 6'       |   $5.95 |            |  Y     |     Y         |  Y   |
+| DB-9, Female,SOLDER CUP 22AWG   |   $0.85 |            |  Y     |     Y         |  Y   |
+| DB-9, Hood, metalized           |   $0.85 |            |  Y     |     Y         |  Y   |
+| PS/2 to USB Soarer's Converter  |  $39.99 |            |        |     Y         |      |
+| TOTALS                          |         |   $168.26  | $134.23 |   $170.60    | $130.61† |
+
+\* International shipping from China allocated among these two items.
+† Does not include the price of the KVM boxe, if available.
 ---
 ## Physical Attributes
 
