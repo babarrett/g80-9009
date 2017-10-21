@@ -150,16 +150,6 @@ Most are Double-shot ABS. "Super thick." TODO: measure once in hand
 
 ---
 
-### Built-in functions
-
-* Macros up to 80 characters
-* Has calculator mode with memory, sqrt(), percent, etc.
-
-
-### LCD:
-
-* Displays "IBM PS/2" at some point.
-
 ### Key use groups
 It seems to me that keys on this keyboard fall into 3 groups:
 
@@ -180,6 +170,7 @@ So it looks like of the 149 keys on the keyboard, all but the cluster of 8 at
 the top-right could be available. It's also possible that the F1-F24 don't send 
 scan codes directly, but only play back your pre-programmed keyboard macros.
 
+A description of [Display Functions](../master/display-functions.md "Display Functions documentation") available on the G80-9009 keyboard.  
 
 ---
 ### Videos:
