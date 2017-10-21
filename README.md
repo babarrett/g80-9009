@@ -28,6 +28,11 @@ semi-circle, and a solid blue semicircle.
 * can select any 1 of 2 workstations with a kmd3, or 4(?) for a "Breakout Box"
 * can perform calculations within the keyboard, displaying the results on the LCD display
 
+---
+**CAUTION!** Not everything in here has been verified, and even if it has been
+verified your keyboard and revision could be different. The voltages are all, as
+far as I know, low 5V and 12V. It seems to me very unlikely that these voltages 
+will harm you, but reversing + and - could destroy some of your electronics.
 
 ---
 ## Connection Methods
