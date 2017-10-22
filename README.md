@@ -107,11 +107,12 @@ keyboard to a modern computer:
 | DB-9, Female,SOLDER CUP 22AWG   |   $0.85 |            |  Y     |     Y         |  Y   |
 | DB-9, Hood, metalized           |   $0.85 |            |  Y     |     Y         |  Y   |
 | PS/2 to USB Soarer's Converter  |  $39.99 |            |        |     Y         |      |
+| KVM box                         |       † |            |        |               |  Y   |
 | TOTALS                          |         |   $168.26  | $134.23 |   $170.60    | $130.61† |
 
 \* International shipping from China allocated among these two items.
 
-† Does not include the price of the KVM boxe, if available.
+† Does not include the price of the KVM box, if available.
 
 ---
 ## Physical Attributes
@@ -239,4 +240,22 @@ Vineshroom (Youtube name) You can make MX Clear switches feel a whole lot more
 tactile by swapping the springs with Cherry MX Black springs. These are
 currently one of my favorite switches. I find them to be very similar to Black
 Alps, but they're more consistent and snappy than Black Alps IMO.
+
+## Places to search for keyboards
+
+### Terms:
+* Soarer PS/2 USB converter
+
+### Web sites:
+Add List of urls to be used for searching for sale items
+
+| Where | Notes |  |
+| ------------------ | ---------------- | --------- |
+| eBay.com  | Soarer PS/2 USB converter, and others      |
+| item.taobao.com      | | |
+| world.taobao.com     | | |
+| www.taodepot.com  |  Min Order Quantity: 10   | China |
+| www.hxlstore.com  |  (https://www.hxlstore.com/buy-g80-9009.html)   |    | China |
+| https://shop35553647.taobao.com/  |  Yang store, for Yang controller. | click on "shop positive stuff" in upper left   |
+
 
