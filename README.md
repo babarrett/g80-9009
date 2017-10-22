@@ -112,6 +112,7 @@ keyboard to a modern computer:
 \* International shipping from China allocated among these two items.
 
 † Does not include the price of the KVM boxe, if available.
+
 ---
 ## Physical Attributes
 
