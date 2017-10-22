@@ -97,6 +97,7 @@ keyboard to a modern computer:
 ---
 ## Costs for Keyboard and parts to assemble
 
+|                                 |         |  Used in each of these methods           |
 | Item                            |   Price | Controller | Direct | Direct+Soarer | KVM  |
 | ------------------------------- |--------:|:----------:| :-----:| :------------:| :---:|
 | G80-9009 Keyboard*              | $111.01 |    Y       |  Y     |     Y         |  Y   |
@@ -110,6 +111,7 @@ keyboard to a modern computer:
 | TOTALS                          |         |   $168.26  | $134.23 |   $170.60    | $130.61† |
 
 \* International shipping from China allocated among these two items.
+
 † Does not include the price of the KVM boxe, if available.
 ---
 ## Physical Attributes
