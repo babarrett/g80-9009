@@ -1,7 +1,7 @@
 
 
 Taken from:
-    https://geekhack.org/index.php?topic=82693.msg2192963#msg2192963
+    [https://geekhack.org/index.php?topic=82693.msg2192963#msg2192963](https://geekhack.org/index.php?topic=82693.msg2192963#msg2192963)
     
 TKG - TMK Keymap Generator [tkg.io] (no need to compile the firmware)
 

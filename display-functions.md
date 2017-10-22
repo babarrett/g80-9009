@@ -2,7 +2,7 @@
 
 ### What this is:
 
-TODO:  more here
+TODO:  more here once I have the keyboard in hand.
 
 These are available with connection methods 2, 3, and 4.
 

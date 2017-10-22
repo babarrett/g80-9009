@@ -4,7 +4,7 @@
 
 * A "drop in" solution. A separate new electronic card that plugs into the
 inside of the keyboard. Nothing needs to be changed on the keyboard.
-* Apparently it takes all the power off the USB port. TODO: confirm.
+* Apparently it takes all the power off the USB port. 
 * ~~Might still require a 12V power connection to the keyboard~~
 * Ends up with a USB connection. No need for a further PS/2 to USB converter
 * Includes a Pro Micro (equivalent) running TMK software
@@ -64,7 +64,7 @@ on it to make it easier to use."
 
 ### Unknown
 
-* Apparently does not require an additional power supply. TODO: test
+* Apparently does not require an additional power supply. 
 * Can the USB actually provide enough power? Likely only for the matrix scan + TMK functions
 * Do the built in functions, display commands (on the fly macro creation, calculator) still work? Likely not.
 * Lock LEDs (caps, scroll, num) might, or might not work
@@ -105,16 +105,15 @@ I've "re-translated" the text to improve the clarity.
         can use a short cable, just to exit the keyboard then add a USB an
         extension cable, or B) use a single, ling cable.
 
-    (TODO: rewrite this)
-    The following figure is to use an extension of the line, the external exposed
-    that the small head is microUSB connector, plug a microUSB line can be used.
+    With the controller and ribbon cables in place you will note a microUSB conneector
+    on the left of the controller board. Insert a microUSB cable into that connector.
+    The cable should be long enough to feed out the back of the keyboard, for example 
+    through the "mouse" opening as shown below.
  
-    The rest is to set the button, and burn firmware method gh60 almost, with TKG + KLE,
-    full keyboard programmable, support multi-layer layout, support special keys. In
-    yang.tkg.io inside, select G80-9009HAU, the bottom will have a link to explain
-    how to burn firmware.
-
-
+    Finally, you'll need to burn your firmware into the controller. The method is 
+    using with TKG + KLE, very much like burning software for the gh60. See: 
+        https://geekhack.org/index.php?topic=82693.msg2192963#msg2192963
+    Select G80-9009HAU instead of gh60.
 
 ---
 ### Burning new firmware for the Yang (yangdigi) controller
