@@ -251,8 +251,8 @@ Add List of urls to be used for searching for sale items
 
 | Where | Notes |  |
 | ------------------ | ---------------- | --------- |
-| eBay.com  | Soarer PS/2 USB converter, and others      |
-| item.taobao.com      | | |
+| (eBay.com)  | Soarer PS/2 USB converter, and others      |
+| [item.taobao.com]      | | |
 | world.taobao.com     | | |
 | www.taodepot.com  |  Min Order Quantity: 10   | China |
 | www.hxlstore.com  |  (https://www.hxlstore.com/buy-g80-9009.html)   |    | China |
