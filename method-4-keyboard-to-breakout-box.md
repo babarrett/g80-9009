@@ -52,7 +52,7 @@ An [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Rema
 
 * (none)
 
-### Connectors:
+### Breakout Box Connectors:
 
 ```
     The currently available connection method: (Update: the mouse has been working
@@ -89,7 +89,7 @@ An [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Rema
 
 TODO: logical diagram
 
-### kmd3
+### kmd3 Connectors
 
 Lots of info available here:
     https://deskthority.net/workshop-f7/looking-for-handyman-to-mod-g80-9009hau-t3931.html
@@ -97,6 +97,20 @@ Lots of info available here:
 Application note, 2006:
     http://www.industrycortex.com/datasheets/profile/1250934827
     
+Ports on the box:
+
+Front
+* Dealing KYBD, DB25-male
+* Key pad/Kybd, DB9-female
+* PS/2 Mouse
+
+Back
+* Power (3 pin, round connector)
+* PS/2 Kybd and Mouse to Desk PC
+* Kybd data to Dealing system, DB-25 female
+* Serial mouse data to dealing system, DB-9, female
+
+
 ---
 From comments after Chyros youtube review:    https://www.youtube.com/watch?v=N8FXw_QelQc
 
