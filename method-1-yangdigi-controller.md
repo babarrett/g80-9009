@@ -59,15 +59,16 @@ on it to make it easier to use."
 ### Cons
 
 * More expensive than the Direct method (Price of controller > price of power-supply)
-* Must open the keyboard case (but that's easy, 9 screws)
+* Must open the keyboard case (but that's easy, about 11 screws)
 * Display functions do not work (calculator, macros)
 
-### Unknown
+### Unknown, check when keyboard arrives
 
 * Apparently does not require an additional power supply. 
 * Can the USB actually provide enough power? Likely only for the matrix scan + TMK functions
-* Do the built in functions, display commands (on the fly macro creation, calculator) still work? Likely not.
+* Do the built-in functions, display commands (on the fly macro creation, calculator) still work? Likely not.
 * Lock LEDs (caps, scroll, num) might, or might not work
+* Does buzzer work?
 * What will the supply of these controllers be like in the future?
 
 ---
@@ -81,9 +82,9 @@ It is a printed PDF of a Taobao for sale listing of the card.
 I've "re-translated" the text to improve the clarity.
 
 
-    Step 1: Remove the screws on the back of the G80-9009, 4 along both the top and bottom
-        edges and one in the center. The four "screwes" around the square in the base
-        do not need to come out.
+    Step 1: Remove the screws on the back of the G80-9009, 4 along both the top
+        and bottom edges one oe each side, and one in the center. The four "screwes"
+        around the square in the base do not need to come out.
     Step 2: Raise the keyboard shell, notice the upper and lower parts of the
         keyboard. Each has a gray ribbon-cable connected to the main PCB.
     Step 3: There is a transparent plastic piece to insulate the different 
@@ -122,14 +123,16 @@ TKG - TMK Keymap Generator instructions [here](../master/tkg-tmk-instructions.md
 
 Here are GH60-9009 (Chinese) general instructions for you：[https://imgur.com/a/rfezG]
 
-Go to [http://yang.tkg.io](http://yang.tkg.io) - Select English from top-right drop-down.
+Go to [http://yang.tkg.io](http://yang.tkg.io) - Select English from top-right
+drop-down.
 
 If you don't know how to use this, read these first:
 
 * [http://pan.baidu.com/s/1sltOsrV](http://pan.baidu.com/s/1sltOsrV)
 * Password: ek5h
 
-On the http://yang.tkg.io page there is a Permlink to the keyboard layout. Click it to see the default software layout (assignment of keys).
+On the http://yang.tkg.io page there is a Permlink to the keyboard layout. Click
+it to see the default software layout (assignment of keys).
 
 Select Keyboard = 80_9009HAU from the drop-down list.
 

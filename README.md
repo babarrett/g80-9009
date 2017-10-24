@@ -2,6 +2,11 @@
 Cherry built keyboard, G80-9009, and similar model numbers, for Reuters. 
 The Reuters model number is AK124. 
 
+The variations in model numbers seem to reflect some specialized key labeling,
+some language variation in 3 of the main keys (for USA they are labeled "~ `",
+"| \", and "blank" near the left shift), and finally technology. I have seen 
+photos of a G8-9039HAAUS that is all surface mount technology.
+
 Presumption:
 Reuters is an old and current leading newswire service.
 All of the specialized keys are for trading functions.
