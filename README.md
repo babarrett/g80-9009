@@ -7,7 +7,7 @@ some language variation in 3 of the main keys (for USA they are labeled "~ `",
 "| \", and "blank" near the left shift), and finally technology. I have seen 
 photos of a G8-9039HAAUS that is all surface mount technology.
 
-Presumption:
+### Presumption:
 Reuters is an old and current leading newswire service.
 All of the specialized keys are for trading functions.
 (Open Orders, Cancel orders, Bid, Offer, Change)
@@ -102,6 +102,8 @@ keyboard to a modern computer:
 ---
 ## Costs for Keyboard and parts to assemble
 
+This is one datapoint, based upon my experience. 
+
 | Item                            |   Price | Controller | Direct | Direct+Soarer | KVM  |
 | ------------------------------- |--------:|:----------:| :-----:| :------------:| :---:|
 | G80-9009 Keyboard*              | $111.01 |    Y       |  Y     |     Y         |  Y   |
@@ -193,29 +195,40 @@ Most are Double-shot ABS. "Super thick." TODO: measure once in hand
 ---
 
 ### Key use groups
-It seems to me that keys on this keyboard fall into 3 groups:
+It seems to me that keys on this keyboard fall into 4 groups:
 
 1. "Normal keys" When struck their keycode is sent out the "Desk PC /
-Workstation" port. These are A-Z, 0-9, punctuation, etc. Normal keyboard
-operation. 
+Workstation" DB-9 port as PS/2 protocol. These are A-Z, 0-9, punctuation, etc.
+Normal keyboard operation. Also includes modifiers like Shift, Alt, Control.
 
-2. Keys sent to control the keyboard modes itself. "Cacl" puts the keyboard into
+2. Keys sent to control the keyboard modes itself. "Calc" puts the keyboard into
 calculator mode (Likely exits the calc mode too) and "SetUp" lets you define
 macros, etc. These will never generate scan codes out the "Desk PC /
 Workstation" port, they are handled within the keyboard itself.
 
 3. "KVM" keys that control the switch boxes themselves. For example "Scrn 4" to
 change display to Screen 4. Also "Desk PC" and "Wkst" to select at least which
-computer to attach the keyboard to. Probable which screen got displayed too.
-These will send signals (I have no ideas which) out the "Host" port. These will
-also never generate scan codes out the "Desk PC / Workstation" port.
+computer to attach the keyboard to. They may also change which screen gets
+displayed too. These will send some form of signal put the "Host" port on the
+keyboard to the KVM box. This would be done by changing the Host pins. Maybe by
+setting them high or low. Maybe by sending serial data to a small processor on
+the KVM Box. I have no ideas which or how, or what protocol. 
+These will also never generate scan codes out the "Desk PC / Workstation" port.
 
-So it looks like of the 149 keys on the keyboard, all but the cluster of 8 at
-the top-right could be available. It's also possible that the F1-F24 don't send 
-scan codes directly, but only play back your pre-programmed keyboard macros.
+4. It looks like ABBR is another case we know little about. If the workstations
+come with special "workstation" functions that are activated by keys not found
+on "normal" keyboards. So pressing ABBR would get passed through the breakout
+box to the Workstation port, but never to the "Desk PC / Workstation" port.
+There may be other keys that behave this way.
+
+So it looks like of the 149 keys on the keyboard, **most** except the cluster of
+8 at the top-right could be available. It's also possible that the F1-F24 don't
+send scan codes directly, but only play back your pre-programmed keyboard macros.
+
 TODO: To be determined.
 
 A description of [Display Functions](../master/display-functions.md "Display Functions documentation") available on the G80-9009 keyboard.  
+
 
 ---
 ### Videos:
