@@ -38,7 +38,7 @@ calculator) should all still work. TODO: test this.
 
 ---
 
-![The configuration](../master/images/Cherry%20G80-9009%20Functional%20Diagram.png "Direct connect diagram")
+![The configuration](../master/images/Cherry%20G80-9009%20Direct.png "Direct connect diagram")
 ```
    Reuters AK124 Keyboard
    
