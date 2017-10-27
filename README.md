@@ -156,25 +156,25 @@ provide power to the keyboard via the DB-15 "Host" port on the back of the
 keyboard.
 
 ```
-Pin		Mwei	Bruce
+Pin     Mwei    Bruce
 ------  ----    ------
-Shield	.	    Gnd
-1		.		Gnd
-2		.		.
-3		.		.
-4		Gnd		Gnd
-5		Gnd		Gnd
-6		Gnd		.
-7		.		.
-8		Gnd		.
+Shield  .       Gnd
+1       .       Gnd
+2       .       .
+3       .       .
+4       Gnd     Gnd
+5       Gnd     Gnd
+6       Gnd     .
+7       .       .
+8       Gnd     .
 
-9		.		Gnd
-10		.		*
-11		.		*
-12		Vin     **
-13		Vin     **
-14		Vin     **
-15		.		.
+9       .       Gnd
+10      .       *
+11      .       *
+12      Vin     **
+13      Vin     **
+14      Vin     **
+15      .       .
 ```
 
 
