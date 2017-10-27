@@ -74,43 +74,49 @@ on it to make it easier to use."
 ---
 ### Installing the card
 
-TODO: recheck all this when I get my keyboard.
+TODO: Photograph my install.
 
-How to install the card is in [this PDF](../master/pdfs/Yangdigi-controller-to-USB-G80-9009.pdf "Yangdigi controller instructions"). 
-It is a printed PDF of a Taobao for sale listing of the card.
-
-I've "re-translated" the text to improve the clarity.
-
+How to install the card is in these saved PDFs of a Taobao for sale listing of the card.
+    * [this English PDF](../master/pdfs/Yangdigi-controller-to-USB-G80-9009.pdf "Yangdigi controller instructions") Google-translated from Chinese.
+    * [this Chinese PDF](../master/pdfs/Yangdigi-controller-to-USB-G80-9009_Chinese.pdf "Yangdigi controller Chinese instructions") with more complete photos.
+    
+I've "re-translated" the text below to improve the clarity. The steps still correspond to the photos in the PDFs.
 
     Step 1: Remove the screws on the back of the G80-9009, 4 along both the top
         and bottom edges one oe each side, and one in the center. The four "screwes"
         around the square in the base do not need to come out.
+        
     Step 2: Raise the keyboard shell, notice the upper and lower parts of the
         keyboard. Each has a gray ribbon-cable connected to the main PCB.
+        
     Step 3: There is a transparent plastic piece to insulate the different 
         parts of the keyboard from each other. Gently pull it back to revel the
         ends of the two, wide, ribbon cables. Remove the ends of the two cables 
         that attach to the main PCB. They are next to each other.
-    Step 4: There are two of female headers coming out of the bottom of the controller. 
-        Conect the controller to the main PCB by carefully placing the two  female 
-        headers onto the two sets of pins coming out of the board.
-        Be careful not to bend the original pins. Make sure they all line up (no 
-        extra pins hanging off the end of the connector).
-        The card fits relatively tight. If you want it to be even more secure you
-        you can solder PCB to the J4 and J5 marked square jumper pads.
+        
+    Step 4: There are two sets of holes in the controller the controller. Conect
+        the controller to the main PCB by carefully placing two sets of holes over
+        the two sets of pins coming out of the board. Be careful not to bend the
+        original pins. Make sure they all line up (no extra pins hanging off the
+        end). The card fits relatively tight. If you want it to be even more secure
+        you you can solder PCB to the two of the pads numbered J4 and J5. They are
+        marked with square jumper pads. Unsoldering (if you ever change your mind) 
+        may prove dificult.
+        
     Step 5: Re-plug the origional ribbon-cables back into the new controller card. 
         The keyboard ribbon-cable(s) will need to be re-folded like the original
-        bends to lie flat. In addition, when inserting make sure the
-        connectors are straight, and make sure that all the pins are
-        inserted into the corresponding holes. Then add a miniUSB cable. A) You
-        can use a short cable, just to exit the keyboard then add a USB an
-        extension cable, or B) use a single, ling cable.
+        bends to lie flat. In addition, when inserting make sure the connectors
+        are straight, and make sure that all the pins are inserted into the
+        corresponding holes. 
 
-    With the controller and ribbon cables in place you will note a microUSB conneector
-    on the left of the controller board. Insert a microUSB cable into that connector.
-    The cable should be long enough to feed out the back of the keyboard, for example 
-    through the "mouse" opening as shown below.
- 
+    With the controller and ribbon cables in place you will note a microUSB
+    conneector on the left of the controller board. Insert a microUSB cable into
+    that connector. The cable should be at least long enough to feed out the
+    back of the keyboard, for example through the "mouse" opening as shown
+    below. Your choice for miniUSB cable length are: A) You can use a short
+    cable, just to exit the keyboard then add a USB an extension cable, or B)
+    use a single, long cable. 
+
     Finally, you'll need to burn your firmware into the controller. The method is 
     using with TKG + KLE, very much like burning software for the gh60. See: 
         https://geekhack.org/index.php?topic=82693.msg2192963#msg2192963
