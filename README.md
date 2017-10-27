@@ -51,8 +51,10 @@ keyboard to a modern computer:
 1. Yangdigi's [controller card](../master/method-1-yangdigi-controller.md "Yangdigi controller instructions")
     - A "drop in" solution
     - Ends up with a USB connection. No need for a further PS/2 to USB converter
-    - Includes a Pro Micro (equivalent), running TMK software, allowing the mapping of all 149 keys.
-    - Probably does not, but still might, require a 12V power connection to the keyboard
+    - Includes a Pro Micro (equivalent), running TMK software, allowing the
+    mapping of all 149 keys. This includes special "workstation" keys that do
+    not generate scancodes in "normal" use.
+    - Does not require a 12V power connection to the keyboard
     - A good solution for getting up-and-running quickly, without much thinking
     or assembly required. A known solution. Very useful if some part of your
     keyboard's internals (other than the key matrixes) has failed. Unless the LCD
@@ -63,6 +65,7 @@ keyboard to a modern computer:
     - Very few parts, essentially one custom built DB-9 to PS/2 cable and
     - a 12V power connection to the keyboard (host port, DB-15)
     - Uses a passive PS/2 to USB adapter to get to USB, if needed.
+    - Special "workstation" keys do not generate scancodes.
     - A good solution for getting a keyboard with working display functions,
     while the keyboard itself is not programable and you cannot control the
     keymap. If the LCD display being operational was a significant motivation
@@ -75,6 +78,7 @@ keyboard to a modern computer:
     - Uses an active Soarer PS/2 to USB converter. The Soarer adds the
     ability to remap keys, add macros, add additional function layers, and be
     able to toggle different layouts.
+    - Special "workstation" keys do not generate scancodes.
     - A good solution for getting everything you're likely to want out of the
     keyboard: working display functions, with in-keyboard programmability and
     keymap re-writing. If the LCD display being operational was a significant
@@ -82,9 +86,11 @@ keyboard to a modern computer:
     too, this is likely your best choice. 
 4. With (rare) [KVM](../master/method-4-keyboard-to-breakout-box.md) boxes
     - These are KVM switches (keyboard, video and mouse)
+    - Special "workstation" keys and PC/Workstation, and Screen keys likely
+    control the attached KVM via the "Host" port.
     - kdm3 (keyboard, display and mouse)
     - Reuters Breakout Box
-    - Covered here in less detail as the boxes are so rare.
+    - Covered here in less detail as the boxes (and cables) are so rare.
     
 
 ## Method vs features  
@@ -129,21 +135,48 @@ This is one datapoint, based upon my experience.
 * Shipping weight ~ 2570g
 * Shipping dimensions: 54.6 * 30.8 * 9.2 cm
 * 2.4Kg, 4Kg shipping weight
-* Width
-* Height
-* Depth
-* 12V 500mA = 6W on the label on the bottom, but Meow Wei (Youtube) found 12V (12.6V measured), 2.5A.
-    - DB15 Female 
-    - In the following, "ø" represents others pins, not used or used for non-power/ground reasons.
+* Width: 20"
+* Height: 3-1/4"
+* Depth: 10"
+* 12V 500mA = 6W on the label on the bottom, but Meow Wei (Youtube) found 12V
+(12.6V measured), 2.5A. 
+
+### Host port pins
+
+* The Host port is a male DB-15 connector
+* Meow Wei measured the voltage on the pins going from a Breakout
+Box to the keyboard. His results are in the table, below.
+* Bruce "traced" the pins on the connector where they either went to ground, or
+were tied together. See below.
+* From this I conclude (TODO: but have not tested) that Pins 4 and 5 should be used as ground, 
+and that pins 12, 13, and 14 should be used as power. (12V)
+
+If you choose either option 2 (Direct) or 3 (Direct + Soarer) you'll need to
+provide power to the keyboard via the DB-15 "Host" port on the back of the
+keyboard.
+
 ```
-            • +12V, Vin on pins: 12, 13, 14
-                ø,  ø,   ø,   -,   -,   -,   ø,   - 
-                  ø,   ø,   ø,  12,  13,  14,  ø
-            • GND, on pins: 4, 5, 6, 8﻿
-                ø,  ø,   ø,   4,   5,   6,   ø,  8 
-                  ø,   ø,   ø,   +,   +,   +,  ø
+Pin     Mwei    Bruce
+------  ----    ------
+Shield  .       Gnd
+1       .       Gnd
+2       .       .
+3       .       .
+4       Gnd     Gnd
+5       Gnd     Gnd
+6       Gnd     .
+7       .       .
+8       Gnd     .
+
+9       .       Gnd
+10      .       *
+11      .       *
+12      Vin     **
+13      Vin     **
+14      Vin     **
+15      .       .
 ```
-* but 5v ??mA powered by Yang's USB controller for the keyboard matrix, only.
+
 
 ### Switches
 
@@ -184,12 +217,15 @@ Most are Double-shot ABS. "Super thick." TODO: measure once in hand
                                                  Mouse           Desk PC/        Host
                                                                  Workstation     
 ```
+
+The use of the mouse port is unknown to me.
+
 ---
 ### Models:
 
 * G80-9009HAU
 * G80-9009HAG - Youtube Video
-* G80-9039HAAUS
+* G80-9039HAAUS - Newer, SMT PCBs.
 * G80-9035 - comment on youtube review
 
 ---
