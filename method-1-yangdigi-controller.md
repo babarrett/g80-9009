@@ -1,17 +1,17 @@
 ## Connection Method #1, Yangdigi's custom controller card to USB
 
-### What it is:
+## What it is:
 
 * A "drop in" solution. A separate new electronic card that plugs into the
-inside of the keyboard. Nothing needs to be changed on the keyboard.
-* Apparently it takes all the power off the USB port. 
-* ~~Might still require a 12V power connection to the keyboard~~
+inside of the keyboard. Nothing needs to be changed on the keyboard. The process
+is reversible.
+* It takes all the power off the USB port. 
 * Ends up with a USB connection. No need for a further PS/2 to USB converter
 * Includes a Pro Micro (equivalent) running TMK software
     * It's 3.3v at 16Mhz.
     * Pro Micro 3.3v at 8Mhz can work well too.
     * If your Pro Micro is 8MHz, change F_CPU = 16000000 to F_CPU = 8000000 in Makefile
-    * There is a USB port on the controller card
+    * There is a USB Mini-b (5-pin) port on the controller card
 * The TMK enabled controller is programable. It adds the ability to remap keys,
 add macros, add additional function layers, and be able to toggle different
 layouts. Any key can be assigned any function or character.
@@ -60,49 +60,64 @@ on it to make it easier to use."
 ### Cons
 
 * More expensive than the Direct method (Price of controller > price of power-supply)
-* Must open the keyboard case (but that's easy, about 11 screws)
-* Display functions do not work (calculator, macros)
+* Must open the keyboard case (but that's easy, 11 screws)
+* Built-in functions, display commands (on the fly macro creation, calculator) do not work
+* LEDs (caps, scroll, num) don't work
 
 ### Unknown, check when keyboard arrives
 
-* Apparently does not require an additional power supply. 
-* Can the USB actually provide enough power? Likely only for the matrix scan + TMK functions
 * Do the built-in functions, display commands (on the fly macro creation, calculator) still work? Likely not.
-* Lock LEDs (caps, scroll, num) might, or might not work
 * Does buzzer work?
-* What will the supply of these controllers be like in the future?
+* What will the supply of these controllers be like in the future? They may not continue to be available.
 
 ---
 ### Installing the card
 
 TODO: Photograph my install.
 
-How to install the card is in these saved PDFs of a Taobao for sale listing of the card.
-    * [this English PDF](../master/pdfs/Yangdigi-controller-to-USB-G80-9009.pdf "Yangdigi controller instructions") Google-translated from Chinese.
-    * [this Chinese PDF](../master/pdfs/Yangdigi-controller-to-USB-G80-9009_Chinese.pdf "Yangdigi controller Chinese instructions") with more complete photos.
-    
-I've "re-translated" the text below to improve the clarity. The steps still correspond to the photos in the PDFs.
+Note: You could elect to (re)program the controller first, the logistics may be
+easier when it's outside of the keyboard.
 
-    Step 1: Remove the screws on the back of the G80-9009, 4 along both the top
-        and bottom edges one oe each side, and one in the center. The four "screwes"
-        around the square in the base do not need to come out.
+How to install the card is in these saved PDFs of a Taobao for sale listing of the card.
+
+* [this English PDF](../master/pdfs/Yangdigi-controller-to-USB-G80-9009.pdf "Yangdigi controller instructions") Google-translated from Chinese.
+* [this Chinese PDF](../master/pdfs/Yangdigi-controller-to-USB-G80-9009_Chinese.pdf "Yangdigi controller Chinese instructions") with more complete photos.
+    
+I've "re-translated" the text below to improve the clarity. The steps still
+correspond to the photos in the PDFs.
+
+    Step 1: Remove the 11 screws on the back of the G80-9009, 4 along both the
+        top and bottom edges one on each side, and one in the center. The four
+        "screws" around the square in the base do not need to come out.
         
-    Step 2: Raise the keyboard shell, notice the upper and lower parts of the
-        keyboard. Each has a gray ribbon-cable connected to the main PCB.
+    Step 2: Raise the keyboard shell, lifting the front edge up with the back
+        edge being used as a hinge. Notice there are several sets of wires and
+        cables connecting the top and bottom halves. Notice that the upper and lower
+        parts of the keyboard keys PCBs each has a gray ribbon-cable connected to
+        the main PCB.
         
     Step 3: There is a transparent plastic piece to insulate the different 
-        parts of the keyboard from each other. Gently pull it back to revel the
-        ends of the two, wide, ribbon cables. Remove the ends of the two cables 
-        that attach to the main PCB. They are next to each other.
+        parts of the keyboard from each other. A single screw holds this in
+        place and seems to ground the plastic, perhaps reducing electrical
+        interference between the display electronics and the main PCB. Either
+        gently pull back the plastic to revel the ends of the two, wide, ribbon
+        cables, or remove the screw and entire plastic piece. Remove the ends of
+        the two cables that attach to the main PCB. They are next to each other.
         
-    Step 4: There are two sets of holes in the controller the controller. Conect
-        the controller to the main PCB by carefully placing two sets of holes over
-        the two sets of pins coming out of the board. Be careful not to bend the
-        original pins. Make sure they all line up (no extra pins hanging off the
-        end). The card fits relatively tight. If you want it to be even more secure
-        you you can solder PCB to the two of the pads numbered J4 and J5. They are
-        marked with square jumper pads. Unsoldering (if you ever change your mind) 
-        may prove dificult.
+    TODO: Add suggestion of insulation beneth the Yang controller.
+    Step 4: There are two sets of holes in the controller. Conect the controller
+        to the main PCB by carefully placing two sets of holes over the two sets
+        of pins coming out of the board. (Where you just removed the gray ribbon
+        cables.) Make sure the pins and holes all line up. The card fit is
+        relatively tight. If you want it to be even more secure you can solder
+        two pins on the PCB to the two of the pads numbered J4 and J5. They are
+        marked with square jumper pads. Unsoldering (if you ever change your
+        mind) may prove dificult.
+        
+        It turns out that my cable from the lower, main, keyboard PCB was too
+        short, even when flattened all the way out, to reach the closest row of
+        pins on the controller. I had to move the controller toward the front of
+        the keyboard to get it to reach. YMMV.
         
     Step 5: Re-plug the origional ribbon-cables back into the new controller card. 
         The keyboard ribbon-cable(s) will need to be re-folded like the original
@@ -110,11 +125,11 @@ I've "re-translated" the text below to improve the clarity. The steps still corr
         are straight, and make sure that all the pins are inserted into the
         corresponding holes. 
 
-    With the controller and ribbon cables in place you will note a microUSB
-    conneector on the left of the controller board. Insert a microUSB cable into
-    that connector. The cable should be at least long enough to feed out the
-    back of the keyboard, for example through the "mouse" opening as shown
-    below. Your choice for miniUSB cable length are: A) You can use a short
+    With the controller and ribbon cables in place you will note a USB Mini-b
+    conneector on the left of the controller board. Insert a USB Mini-b cable
+    into that connector. The cable should be at least long enough to feed out
+    the back of the keyboard, for example through the "mouse" opening as shown
+    below. Your choice for USB Mini-b cable length are: A) You can use a short
     cable, just to exit the keyboard then add a USB an extension cable, or B)
     use a single, long cable. 
 
@@ -124,7 +139,7 @@ I've "re-translated" the text below to improve the clarity. The steps still corr
     Select G80-9009HAU instead of gh60.
 
 ---
-### Burning new firmware for the Yang (yangdigi) controller
+## Burning new firmware for the Yang (yangdigi) controller
 
 TKG - TMK Keymap Generator instructions [here](../master/tkg-tmk-instructions.mds)
 

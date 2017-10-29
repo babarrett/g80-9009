@@ -51,10 +51,13 @@ keyboard to a modern computer:
 1. Yangdigi's [controller card](../master/method-1-yangdigi-controller.md "Yangdigi controller instructions")
     - A "drop in" solution
     - Ends up with a USB connection. No need for a further PS/2 to USB converter
+    - Requires a USB to USB Mini-5 (5 pin) cable
     - Includes a Pro Micro (equivalent), running TMK software, allowing the
     mapping of all 149 keys. This includes special "workstation" keys that do
     not generate scancodes in "normal" use.
-    - Does not require a 12V power connection to the keyboard
+    - Gets power from the USB connector. Does not require a 12V power connection
+    to the keyboard.
+    - Requires disassembly of your keyboard case.
     - A good solution for getting up-and-running quickly, without much thinking
     or assembly required. A known solution. Very useful if some part of your
     keyboard's internals (other than the key matrixes) has failed. Unless the LCD
@@ -63,9 +66,10 @@ keyboard to a modern computer:
 2. [Directly](../master/method-2-direct.md  ) from the "Desk PC/Workstation"
     connector to a PS/2 connector
     - Very few parts, essentially one custom built DB-9 to PS/2 cable and
-    - a 12V power connection to the keyboard (host port, DB-15)
+    - a 12V power-supply and connection to the keyboard (host port, DB-15)
     - Uses a passive PS/2 to USB adapter to get to USB, if needed.
     - Special "workstation" keys do not generate scancodes.
+    - Fairly inexpensive solution.
     - A good solution for getting a keyboard with working display functions,
     while the keyboard itself is not programable and you cannot control the
     keymap. If the LCD display being operational was a significant motivation
