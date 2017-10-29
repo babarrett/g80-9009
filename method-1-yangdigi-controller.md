@@ -39,6 +39,7 @@ and the lower part is 10x10 (98 keys). Using a pro micro and one 74hc154 (4 to
 16 mux) with TMK to run a 16x10 matrix using 4+10=14 pins.
 * 2 x 32 pin ribbon cables connect to the top and bottom grpups of keys. (51 and 98 keys)
 * uses a 4 to 16 mux for the 16 lines (columns?)
+* The USB connector on the controller is a USB Mini-b, (5 pin)
 * Yang once said: "Now I am using TMK to run 16x10 matrix. I want to try EasyAVR
 on it to make it easier to use."
 
