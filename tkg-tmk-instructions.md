@@ -114,5 +114,9 @@ Here is one example that how I use TKG. It is a complex one and you can see what
 My Keyboard layout:http://www.keyboard-layout-editor.com/#/gists/bf8248eb6dd0416ecf2dbdf18b5ad4a0
 
 One tip:
-You can export your fn settings and save them to  Keyboard Properties of Keyboard-Layout-Editor.
+You can export your fn settings and save them to Keyboard Properties of Keyboard-Layout-Editor.
 Next time when you use tkg, just import them.
+
+-------------------------------------------
+
+git clone https://github.com/kairyu/tkg-toolkit.git
