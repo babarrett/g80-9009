@@ -269,6 +269,15 @@ TODO: To be determined.
 
 A description of [Display Functions](../master/display-functions.md "Display Functions documentation") available on the G80-9009 keyboard.  
 
+---
+### Remaining open questions:
+
+1. Are the Yang controllers still generally available?
+2. What are the non-power, non-ground pins on the Host connector used for?
+3. Which keys will still not be sent out the "Desk PC / Workstation" port when using the "Direct" method?
+4. What triggers the buzzer?
+5. Do the LEDs work without a KVM box?
+6. 
 
 ---
 ### Videos:
