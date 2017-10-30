@@ -66,7 +66,6 @@ on it to make it easier to use."
 
 ### Unknown, check when keyboard arrives
 
-* Do the built-in functions, display commands (on the fly macro creation, calculator) still work? Likely not.
 * Does buzzer work?
 * What will the supply of these controllers be like in the future? They may not continue to be available.
 

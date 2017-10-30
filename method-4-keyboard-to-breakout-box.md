@@ -33,6 +33,7 @@ of the KVM to PS/2, and from there USB, if needed.
 * Simple solution in terms of hardware, if you can locate the boxes and cables. 
     - Do not have to open the keyboard
     - No special controller needed
+    - Power-supply likely included with the KVM so you don't have to make one
 * The built in functions, display commands (on the fly macro creation,
 calculator) still work.
 * The screen, keyboard and mouse switching would work, so you get a 2 or 3
@@ -45,7 +46,7 @@ won't find the right cables. (There also seems to be no documentation on the
 cable pinouts)
 * You have to create a custom cable, which shouldn't be too bad.
 * You'll need another converter if you want to get from PS/2 to USB. 
-* You'll have to use a Soarer (or similar?) converter if you want to get to USB and programmable. 
+* You'll have to use a Soarer (or similar?) converter if you want to get to USB and have a programmable keyboard.
 An [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Remapping-Macros-NKRO-Support-/282575686221) link.
 
 ### Unknowns:
