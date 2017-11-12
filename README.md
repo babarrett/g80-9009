@@ -39,6 +39,9 @@ verified your keyboard and revision could be different. The voltages are all, as
 far as I know, low 5V and 12V. It seems to me very unlikely that these voltages 
 will harm you, but reversing + and - could destroy some of your electronics.
 
+Special thanks to mwei (Geekhack name) (Meow Wei, Youtube name). Without his
+help much of my success would have been impossible. 
+
 ---
 ## Connection Methods
 
@@ -277,7 +280,7 @@ A description of [Display Functions](../master/display-functions.md "Display Fun
 3. Which keys will still not be sent out the "Desk PC / Workstation" port when using the "Direct" method?
 4. What triggers the buzzer?
 5. Do the LEDs work without a KVM box?
-6. 
+
 
 ---
 ### Videos:
