@@ -121,7 +121,7 @@ This is one datapoint, based upon my experience.
 | ------------------------------- |--------:|:----------:| :-----:| :------------:| :---:|
 | G80-9009 Keyboard*              | $111.01 |    Y       |  Y     |     Y         |  Y   |
 | Yang Controller*                |  $57.25 |    Y       |        |               |      |
-| PS/2 cable, 6' Male to Male     |   $3.62 |            |  Y     |               |      |
+| PS/2 cable, 6' Male to Male     |   $3.62 |            |  Y     |     Y         |      |
 | 12VDC/500mA, Jameco             |  $11.95 |            |  Y     |     Y         |  Y   | 
 | DB-15 extension cable, 6'       |   $5.95 |            |  Y     |     Y         |  Y   |
 | DB-9, Female,SOLDER CUP 22AWG   |   $0.85 |            |  Y     |     Y         |  Y   |
@@ -148,42 +148,66 @@ This is one datapoint, based upon my experience.
 * 12V 500mA = 6W on the label on the bottom, but Meow Wei (Youtube) found 12V
 (12.6V measured), 2.5A. 
 
-### Host port pins
-
-* The Host port is a male DB-15 connector
-* Meow Wei measured the voltage on the pins going from a Breakout
-Box to the keyboard. His results are in the table, below.
-* Bruce "traced" the pins on the connector where they either went to ground, or
-were tied together. See below.
-* From this I conclude (TODO: but have not tested) that Pins 4 and 5 should be used as ground, 
-and that pins 12, 13, and 14 should be used as power. (12V)
+### Host port pins, for power
 
 If you choose either option 2 (Direct) or 3 (Direct + Soarer) you'll need to
 provide power to the keyboard via the DB-15 "Host" port on the back of the
-keyboard.
+keyboard. Below is the the results of Mwei measuring the voltages on a cable
+from the breakout box, and my measurements of:
+
+* pins to the ground plane of the keyboard PCBs (Gnd)
+* pins to the fuse on the main keyboard PCB (Vin)
+* and other pins that where connected together (A). I don't know what these go to.
+
+From this I concluded that Pins 4 and 5 should be used as ground, 
+and that pins 12, 13, and 14 should be used as power. (+12V)
+
+TODO: Test with power-supply wired.
 
 ```
-Pin     Mwei    Bruce
-------  ----    ------
+Pin     Mwei    Bruce       Use
+------  ----    ------      ---
 Shield  .       Gnd
 1       .       Gnd
 2       .       .
 3       .       .
-4       Gnd     Gnd
-5       Gnd     Gnd
+4       Gnd     Gnd         Gnd
+5       Gnd     Gnd         Gnd
 6       Gnd     .
 7       .       .
 8       Gnd     .
 
 9       .       Gnd
-10      .       *
-11      .       *
-12      Vin     **
-13      Vin     **
-14      Vin     **
+10      .       A
+11      .       A
+12      Vin     Vin         Vin (+12V)
+13      Vin     Vin         Vin (+12V)
+14      Vin     Vin         Vin (+12V)
 15      .       .
 ```
 
+### Desk PC/Workstation pins
+
+If you choose either option 2 (Direct) or 3 (Direct + Soarer) you'll need to
+connect the keyboard via the DB-9 "Desk PC/Workstation" port on the back of the
+keyboard to a PS/2 connector.
+
+The DB9 (male on keyboard) connects to a DB-9 (female on cable) and from there
+to a PS/2 conector (male on cable). This then gets inserted into either the
+female PS/2 conector on the computer or the the female PS/2 conector on the
+Soarer converter.
+
+
+```
+DB-9    Signal name     PS/2 male
+----    -----------     ---------
+1       +5V             4
+7       Ground          3
+8       +Keyboard Data  1
+9       Clock           5
+    
+```
+I can't locate any of these that are commercially made. Likely you'll have to wire it yourself.
 
 ### Switches
 
