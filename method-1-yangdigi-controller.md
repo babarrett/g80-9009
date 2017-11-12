@@ -1,5 +1,7 @@
 ## Connection Method #1, Yangdigi's custom controller card to USB
 
+![The configuration](../master/images/Cherry%20G80-9009%20Yang%20Controller.png "Yang Controller connect diagram")
+
 ## What it is:
 
 * A "drop in" solution. A separate new electronic card that plugs into the

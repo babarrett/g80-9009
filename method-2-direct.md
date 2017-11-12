@@ -1,5 +1,7 @@
 ## Connection Method #2, Keyboard direct to computer
 
+![The configuration](../master/images/Cherry%20G80-9009%20Direct.png "Direct connect diagram")
+
 ### What it is:
 
 * This keyboard requires a 12V, 500mA power supply to operate. The power is
@@ -38,7 +40,6 @@ calculator) should all still work. TODO: test this.
 
 ---
 
-![The configuration](../master/images/Cherry%20G80-9009%20Direct.png "Direct connect diagram")
 ```
    Reuters AK124 Keyboard
    

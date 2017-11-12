@@ -1,5 +1,6 @@
 ## Connection Method #3, Keyboard direct to computer and a Soarer PS/2 to USB converter
 
+![The configuration](../master/images/Cherry%20G80-9009%20Direct+Soarer.png "Direct+Soarer connect diagram")
 
 ### What it is:
 

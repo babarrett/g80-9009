@@ -1,5 +1,7 @@
 ## Keyboard to Breakout Box
 
+![The configuration](../master/images/Cherry%20G80-9009%20KVM.png "KVM connect diagram")
+
 ### There are two "KVM" Boxes:
 
 * KMD-3		https://geekhack.org/index.php?topic=36702.0
