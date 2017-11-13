@@ -28,7 +28,7 @@ The Soarer converters are available on
 
 ### Cons:
 
-* You have to create a custom cable, which shouldn't be too bad.
+* You have to create a custom DB0 to PS/2 cable, which shouldn't be too hard.
 * You'll have to purchase and wire up a 12V, 500mA power-supply to a DB-15.
 
 ### Unknowns:
@@ -52,28 +52,7 @@ The Soarer converters are available on
 ```
 ### Connections
 
-* Serial communications takes place across both connectors. The host can assert control at any time. 
-* DB9 (male on keyboard, female on connector) -> PS/2 PIN pin (female on computer, male on cable) correspond to:
-    DB9 ---->>---- PS/2 male
-    ]≣≣≣≣≣≣≣≣≣≣≣≣|◼
-    * 1-> 4     +5V
-    * 7-> 3     Ground
-    * 8-> 1     +Keyboard Data
-    * 9-> 5     Clock
-    
-    I can't locate any of these that are commercially made. Likely you'll have to wire it yourself.
-
-* Power-supply connection/cable:
-    - DB15 Female 
-    - In the following, "ø" represents others pins, not used or used for non-power/ground reasons.
-```
-            • +12V, Vin on pins: 12, 13, 14
-                ø,  ø,   ø,   -,   -,   -,   ø,   - 
-                  ø,   ø,   ø,  12,  13,  14,  ø
-            • GND, on pins: 4, 5, 6, 8﻿
-                ø,  ø,   ø,   4,   5,   6,   ø,  8 
-                  ø,   ø,   ø,   +,   +,   +,  ø
-```
+See [Making Cables](../master/making-cables.md "Cable making instructions")
 
 Even though this seems to be a video of a kmd3 connection it looks like
 there is useful information for "direct connection and Soarer conversion:"

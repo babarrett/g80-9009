@@ -152,39 +152,10 @@ This is one datapoint, based upon my experience.
 
 If you choose either option 2 (Direct) or 3 (Direct + Soarer) you'll need to
 provide power to the keyboard via the DB-15 "Host" port on the back of the
-keyboard. Below is the the results of Mwei measuring the voltages on a cable
-from the breakout box, and my measurements of:
+keyboard.
 
-* pins to the ground plane of the keyboard PCBs (Gnd)
-* pins to the fuse on the main keyboard PCB (Vin)
-* and other pins that where connected together (A). I don't know what these go to.
+See [Making Cables](../master/making-cables.md "Cable making instructions")
 
-From this I concluded that Pins 4 and 5 should be used as ground, 
-and that pins 12, 13, and 14 should be used as power. (+12V)
-
-TODO: Test with power-supply wired.
-
-```
-Pin     Mwei    Bruce       Use
-------  ----    ------      ---
-Shield  .       Gnd
-1       .       Gnd
-2       .       .
-3       .       .
-4       Gnd     Gnd         Gnd
-5       Gnd     Gnd         Gnd
-6       Gnd     .
-7       .       .
-8       Gnd     .
-
-9       .       Gnd
-10      .       A
-11      .       A
-12      Vin     Vin         Vin (+12V)
-13      Vin     Vin         Vin (+12V)
-14      Vin     Vin         Vin (+12V)
-15      .       .
-```
 
 ### Desk PC/Workstation pins
 
@@ -192,22 +163,8 @@ If you choose either option 2 (Direct) or 3 (Direct + Soarer) you'll need to
 connect the keyboard via the DB-9 "Desk PC/Workstation" port on the back of the
 keyboard to a PS/2 connector.
 
-The DB9 (male on keyboard) connects to a DB-9 (female on cable) and from there
-to a PS/2 conector (male on cable). This then gets inserted into either the
-female PS/2 conector on the computer or the the female PS/2 conector on the
-Soarer converter.
+See [Making Cables](../master/making-cables.md "Cable making instructions")
 
-
-```
-DB-9    Signal name     PS/2 male
-----    -----------     ---------
-1       +5V             4
-7       Ground          3
-8       +Keyboard Data  1
-9       Clock           5
-    
-```
-I can't locate any of these that are commercially made. Likely you'll have to wire it yourself.
 
 ### Switches
 

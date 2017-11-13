@@ -21,7 +21,7 @@ the DB-15 HOST connector.
     Mouse connectors on the (multiple) attached computers.
 * The output keyboard ports on the KVM can be connected, via adapters, to the
 (multiple) attached computers.
-* DB9 -> PS/2 adapter pinout is, likely (unconfirmed):
+* DB9 -> PS/2 adapter pinout is, likely (unconfirmed) See [Making Cables](../master/making-cables.md "Cable making instructions"):
     * 1-> 4,
     * 7-> 3,
     * 8-> 1,

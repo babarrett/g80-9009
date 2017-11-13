@@ -105,7 +105,6 @@ correspond to the photos in the PDFs.
         cables, or remove the screw and entire plastic piece. Remove the ends of
         the two cables that attach to the main PCB. They are next to each other.
         
-    TODO: Add suggestion of insulation beneth the Yang controller.
     Step 4: There are two sets of holes in the controller. Conect the controller
         to the main PCB by carefully placing two sets of holes over the two sets
         of pins coming out of the board. (Where you just removed the gray ribbon
@@ -115,10 +114,14 @@ correspond to the photos in the PDFs.
         marked with square jumper pads. Unsoldering (if you ever change your
         mind) may prove dificult.
         
-        It turns out that my cable from the lower, main, keyboard PCB was too
+        It turns out that my cable from the lower, large, keyboard PCB was too
         short, even when flattened all the way out, to reach the closest row of
         pins on the controller. I had to move the controller toward the front of
-        the keyboard to get it to reach. YMMV.
+        the keyboard to get it to reach, so not all main PCB pins fit into the 
+        controller card. YMMV.
+        
+        You may want to add insulation beneth the Yang controller to prevent any 
+        possible shorts.
         
     Step 5: Re-plug the origional ribbon-cables back into the new controller card. 
         The keyboard ribbon-cable(s) will need to be re-folded like the original
