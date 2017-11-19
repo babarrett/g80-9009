@@ -23,6 +23,7 @@ TODO: Test with power-supply wired.
 Pin     Mwei    Bruce       Use     Conductor color
 ------  ----    ------      ---     ---------------
 Shield  .       Gnd                 bare wire
+
 1       .       Gnd                 white
 2       .       .                   brown
 3       .       .                   green
@@ -46,6 +47,9 @@ Shield  .       Gnd                 bare wire
 If you choose either option 2 (Direct) or 3 (Direct + Soarer) you'll need to
 connect the keyboard via the DB-9 "Desk PC/Workstation" port on the back of the
 keyboard to a PS/2 connector.
+
+If you are using the KVM method you may need to make one of these per outgoing
+keyboard port as well.
 
 The DB9 (male on keyboard) connects to a DB-9 (female on cable) and from there
 to a PS/2 conector (male on cable). This then gets inserted into either the
