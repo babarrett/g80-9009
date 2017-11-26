@@ -1,10 +1,11 @@
-## Display Functions available on the G80-9009 keyboard
+## Display Functions and Operations available on the G80-9009 keyboard
 
 ### What this is:
 
-TODO:  more here once I have the keyboard in hand.
+These tests were done with the keyboard powered up through the Host port, but
+not connected through PS/2 or USB to a computer.
 
-These are available with connection methods 2, 3, and 4.
+These are available with connection methods 2, 3, and 4, but not 1.
 
 ## Built-in functions
 
@@ -16,9 +17,9 @@ These are available with connection methods 2, 3, and 4.
     * Clearing FLASH-emergency-parameter space. Please wait . . . 
     * Version 1.20L01Ref4
 
-If you ignore the keyboard for a while the display lighting will go off
+If you ignore the keyboard for a while the display lighting will go off.
 
-* Interaction with Desk PC and Wkst buttons:
+* Interaction with Desk PC and Wkst keys:
     * Desk PC turns on its LED while turring off the Wkst LED.
     * Desk PC changes the first line of the display to Source:  **DESK PC**.
     * Desk PC changes the F1-F12 LCD labels to F1-F12
@@ -29,13 +30,14 @@ If you ignore the keyboard for a while the display lighting will go off
     * Wkst changes the second row (13-24) LCD labels to F13-F24.
 
 * Interaction with other Window/LED keys:
-    * Calc, illuminates Calc LED, enters Calc mode, see below
-    * Setup, see below
-    * Scrn 1-4, no apparent effect
+    * Calc, illuminates Calc LED, enters Calc mode, see below.
+    * Setup, see below.
+    * Scrn 1-4, no apparent effect.
     * Scroll lock, Num Lock, Caps Lock, no apparent effect
     
     
-    
+DESK PC
+WORKSTATION
 IBM PS/2
 
 
@@ -51,11 +53,11 @@ To exit Calc mode you must press the Desk PC or Wkst key.
 Keys that operate in Calc mode:
 
 * Numeric pad: 0-9
-* Keys on main keyboard: 0=9, -, =, +, Enter (=), 
-* Numeric pad: Operations:+, -, /, *, "Enter" (=),
+* Keys on main keyboard: 0=9, +, -, /, *, =, Enter (=)
+* Numeric pad: Operations: +, -, /, *, "Enter" (=)
 * F1-F12 (functions as displayed, see below)
 * The Reset key resets the Calculator back to start, including **all** 8 memories. 
-* Pressing either Shift key reveals Setup, M Up, M down for F1, F11, and F12. Memories number 1-8 are available.
+* Pressing either Shift key reveals Setup, M Up, M down for F1, F11, and F12. Memories numbered 1-8 are available.
 * Pressing either Control key clears the display of the Calc F1-F12 keys, but seems to have no other effect.
 
 Calc Setup
@@ -78,7 +80,10 @@ number of digits to display to the right of the decimal. The range is 0 to 8.
 
 ### Set up options:
 
-Macros up to 80 characters, stored in F1-F24
+1. Macros up to 80 characters, stored in F1-F24
+2. Changing the Legends for macro sets
+
+The Legends and Macros get set for either the Desk PC, or Workstation. Select the one you want before pressing Setup.
 
 ```
 USER SETUP MENU
