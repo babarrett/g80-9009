@@ -106,8 +106,8 @@ keyboard to a modern computer:
 | ---------------------------- |:----------:| :-----:| :------------:| :---:|
 | Maps all 149 keys            | y | n(141?) | n(141?) | n(141?) |
 | Display functions work       | n | y | y | y |
-| Req. hand-made power on Host | n | y | y | n |
-| Lock LEDs work               | n? | y? | n? | y? |
+| Req. hand-made power to Host | n | y | y | n |
+| Lock LEDs work               | n | y? | y? | y? |
 | Requires "rare" KVM box      | n | n | n | y |
 | Support kbd-only switching   | n | n | n | y |
 
@@ -194,9 +194,13 @@ Most are Double-shot ABS. "Super thick." TODO: measure once in hand
 
 * Top (51) keys are plate mounted
 * Lower (main 99 keys) are PCB mounted
+* The lower PCB is dropped into the case, held in place left/right and
+  top/bottom by plastic molding. There are no bolts, screws, or rivits.
 * Flip-out feet on bottom, at back
 * Under the rectangular plate on the bottom (4 screws) is a 27 x 2 pin ribbon cable, not connected. For expansion module?
 * Back of keyboard, left to right has the following: [Photos from imgur](http://i.imgur.com/lwkKiGb.jpg)
+* Although the back of the keyboard slopes inward, the connectors are parallel
+  to the base, so they are at an angle to the back.
 ```
     [Grill]    [Knob]   [Knob]      [button]
     Buzzer     Volume   Contrast    Reset 
