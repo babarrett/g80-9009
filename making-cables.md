@@ -19,26 +19,26 @@ and that pins 12, 13, and 14 should be used as power. (+12V)
 TODO: Test with power-supply wired.
 
 ```
-                                    Standard 
-Pin     Mwei    Bruce       Use     Conductor color
-------  ----    ------      ---     ---------------
-Shield  .       Gnd                 bare wire
+                                    Standard            Bruce's
+Pin     Mwei    Bruce       Use     Conductor color     Colors
+------  ----    ------      ---     ---------------     -----------
+Shield  .       Gnd                 bare wire   
 
-1       .       Gnd                 white
-2       .       .                   brown
-3       .       .                   green
-4       Gnd     Gnd         Gnd     YELLOW
-5       Gnd     Gnd         Gnd     GRAY
+1       .       Gnd                 white               
+2       .       .                   brown               
+3       .       .                   green               Orange
+4       Gnd     Gnd         Gnd     YELLOW              
+5       Gnd     Gnd         Gnd     GRAY                Yellow
 6       Gnd     .                   pink
 7       .       .                   blue
 8       Gnd     .                   red
 
-9       .       Gnd                 black
+9       .       Gnd                 black               Aqua
 10      .       A                   violet
 11      .       A                   gray-pink
-12      Vin     Vin         +12V    RED-BLUE
-13      Vin     Vin         +12V    WHITE-GREEN
-14      Vin     Vin         +12V    BROWN-GREEN
+12      Vin     Vin         +12V    RED-BLUE            ________
+13      Vin     Vin         +12V    WHITE-GREEN         Black
+14      Vin     Vin         +12V    BROWN-GREEN         ________
 15      .       .                   white-yellow
 ```
 
