@@ -16,30 +16,43 @@ from the breakout box, and my measurements of:
 From this I concluded that Pins 4 and 5 should be used as ground, 
 and that pins 12, 13, and 14 should be used as power. (+12V)
 
-TODO: Test with power-supply wired.
 
 ```
-                                    Standard            Bruce's
-Pin     Mwei    Bruce       Use     Conductor color     Colors
-------  ----    ------      ---     ---------------     -----------
-Shield  .       Gnd                 bare wire   
+Keyboard 
+connector
+DB-15M                           
+Pin     Mwei    Bruce       Use 
+------  ----    ------      --- 
+Shield  .       Gnd             
 
-1       .       Gnd                 white               
-2       .       .                   brown               
-3       .       .                   green               Orange
-4       Gnd     Gnd         Gnd     YELLOW              
-5       Gnd     Gnd         Gnd     GRAY                Yellow
-6       Gnd     .                   pink
-7       .       .                   blue
-8       Gnd     .                   red
+1       .       Gnd             
+2       .       .               
+3       .       .               
+4       Gnd     Gnd         Gnd 
+5       Gnd     Gnd         Gnd 
+6       Gnd     .               
+7       .       .               
+8       Gnd     .               
 
-9       .       Gnd                 black               Aqua
-10      .       A                   violet
-11      .       A                   gray-pink
-12      Vin     Vin         +12V    RED-BLUE            ________
-13      Vin     Vin         +12V    WHITE-GREEN         Black
-14      Vin     Vin         +12V    BROWN-GREEN         ________
-15      .       .                   white-yellow
+9       .       Gnd             
+10      .       A               
+11      .       A               
+12      Vin     Vin         +12V
+13      Vin     Vin         +12V
+14      Vin     Vin         +12V
+15      .       .               
+```
+```
+    Cable
+DB-15F 
+Pin     Use 
+------  --- 
+4       Gnd 
+5       Gnd 
+
+12      +12V
+13      +12V
+14      +12V          
 ```
 
 ### Desk PC/Workstation pins
@@ -58,7 +71,7 @@ Soarer converter.
 
 
 ```
-DB-9    Signal name     PS/2 male
+DB-9F   Signal name     PS/2 male
 ----    -----------     ---------
 1       +5V             4
 7       Ground          3
