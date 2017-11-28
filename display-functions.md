@@ -2,8 +2,8 @@
 
 ### What this is:
 
-These tests were done with the keyboard powered up through the Host port, but
-not connected through PS/2 or USB to a computer.
+This information was determined when the keyboard was powered up through the
+Host port, but not connected through PS/2 or USB to a computer.
 
 These are available with connection methods 2, 3, and 4, but not 1.
 
@@ -30,16 +30,18 @@ If you ignore the keyboard for a while the display lighting will go off.
     * Wkst changes the second row (13-24) LCD labels to F13-F24.
 
 * Interaction with other Window/LED keys:
-    * Calc, illuminates Calc LED, enters Calc mode, see below.
+    * Calc, illuminates Calc, Caps Lock, and Num Lock, LEDs, enters Calc mode, see below.
     * Setup, see below.
     * Scrn 1-4, no apparent effect.
     * Scroll lock, Num Lock, Caps Lock, no apparent effect
     
-    
-DESK PC
-WORKSTATION
-IBM PS/2
-
+16 legends available
+None support F130F24 on Desk PC setting
+ 
+31  WORKSTATION
+32  IBM PS/2
+33  DESK PC
+34-48  blank
 
 
 ### Calculator Mode
@@ -55,8 +57,9 @@ Keys that operate in Calc mode:
 * Numeric pad: 0-9
 * Keys on main keyboard: 0=9, +, -, /, *, =, Enter (=)
 * Numeric pad: Operations: +, -, /, *, "Enter" (=)
+* The Clear key (above Esc) clears the current amounts showing
 * F1-F12 (functions as displayed, see below)
-* The Reset key resets the Calculator back to start, including **all** 8 memories. 
+* The Reset key (red) resets the Calculator back to start, including **all** 8 memories. 
 * Pressing either Shift key reveals Setup, M Up, M down for F1, F11, and F12. Memories numbered 1-8 are available.
 * Pressing either Control key clears the display of the Calc F1-F12 keys, but seems to have no other effect.
 
@@ -109,4 +112,29 @@ USER SETUP MENU
         +-------------------------------+       +-------------------------------+       +-------------------------------+
 
 ```
-  
+### Keyboard mode (Desk PC)
+
+Keys that operate in Keyboard mode:
+
+* Keys on main keyboard, except bottom row, all
+* Control is Control, Alt and Alt Graph are Command.
+* Numeric pad, all
+* F1-F12
+* The 3 key shifted is #
+* The ' key shifted is "
+* The # key unshifted is \, and shifted is | << I should swap key caps for this.
+* The \ key unshifted is §, and shifted is ±
+* Reset button (not key) on the back of the keyboard does a power off/on cycle equivalent.
+
+Keys that do **not** operate in Keyboard mode:
+
+* ABBR and Deal on the bottom row
+* All colored keys except "0" and "Enter" on the numeric pad.
+* The entire first column from Interrupt to Raise Ordrs
+* Clear (above Esc)
+* F13-F24
+* The entire top-right grouping of 11 keys from Hold to Scrn 4.
+
+### Keyboard mode (Wkst)
+
+* No scan codes are sent out the Desk PC/workstation port. :-(
