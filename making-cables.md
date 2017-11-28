@@ -71,6 +71,7 @@ Soarer converter.
 
 
 ```
+        DB-9F to PS/2 M Cable
 DB-9F   Signal name     PS/2 male
 ----    -----------     ---------
 1       +5V             4
@@ -79,5 +80,8 @@ DB-9F   Signal name     PS/2 male
 9       Clock           5
     
 ```
+TODO: May be able to add pins for a second and third computer connection. If not
+here, then on the "Host" port. 
+
 I can't locate any of these that are commercially made. Likely you'll have to wire it yourself.
 
