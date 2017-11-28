@@ -17,28 +17,29 @@ the DB-15 HOST connector.
     - The Keyboard Desk PC/WorkStation port to KVM
     - The "Host" port to KVM
     - The desktop mouse (PS/2) to the KVM
-    - The rest of the connections go from the KVM to the Keyboard, Video, and
+    - The rest of the connections go from the KVM to the Keyboard, and
     Mouse connectors on the (multiple) attached computers.
 * The output keyboard ports on the KVM can be connected, via adapters, to the
 (multiple) attached computers.
-* DB9 -> PS/2 adapter pinout is, likely (unconfirmed) See [Making Cables](../master/making-cables.md "Cable making instructions"):
+* DB9 -> PS/2 adapter pinout is: 
     * 1-> 4,
     * 7-> 3,
     * 8-> 1,
     * 9-> 5.  
+    See [Making Cables](../master/making-cables.md "Cable making instructions")
 * Special keys are totally available. 
-* Scrn1/2/3/4 keys are usable. 
+* Scrn1/2/3/4 keys may be usable. I don't know how yet.
 
 ### Pros:
 * Everything works as designed, once you convert the serial keyboard out port(s)
-of the KVM to PS/2, and from there USB, if needed.
+of the KVM to PS/2, and from there to USB, if needed.
 * Simple solution in terms of hardware, if you can locate the boxes and cables. 
     - Do not have to open the keyboard
     - No special controller needed
     - Power-supply likely included with the KVM so you don't have to make one
 * The built in functions, display commands (on the fly macro creation,
 calculator) still work.
-* The screen, keyboard and mouse switching would work, so you get a 2 or 3
+* The keyboard and mouse switching would work, so you get a 2 or 3
 station KVM "for free."
 
 ### Cons:
@@ -53,7 +54,8 @@ An [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Rema
 
 ### Unknowns:
 
-* (none)
+* The inside og the breakout box is **very** simple. One 5V regulator, one 
+Hex inverter, a simple PCB, and all the connectors.
 
 ### Breakout Box Connectors:
 
@@ -62,34 +64,44 @@ An [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Rema
     properly) http://i.imgur.com/WrXa1Tl.jpg 
 
            (Unknown, speculation is
-            it is SUN workstations)--- DIN8 ---+                    +------ (4pin 12V power supply)
+            it is SUN workstations)-- DIN8 F --+                    +------ (4pin 12V power supply)
                                                |                    |
     +------------+                     +---(Work Station-Sun)-----(Power)---+
     |  Reuters   |                     |              Reuters                |
     |   AK124    |                     |         AK125 Breakout Box          |
     |            |                     |                                     |
-    |         (Host) --- DB15 --- (AK125-System)                       (HOST-SYSTEM)--(DB15 can supply power too)
+    |         (Host) --- DB15F --- (AK125-System)                       (HOST-SYSTEM)--(DB15M can supply power too?)
     |            |                     |                                     |      
-    |    (Desk PC/WkSt) -- DB9 -- (AK125-Desk-PC-Workstation)                |
+    |    (Desk PC/WkSt) -- DB9M -- (AK125-Desk-PC-Workstation)               |
     |            |                     |                                     |
-    |            |                     |                           (Workstation-Generic)--(DB9
-    |        (Mouse) ----- DB9 -- (AK125-Mouse)                              |             unknown)
+    |            |                     |                           (Workstation-Generic)--(DB9F maybe third computer)
+    |        (Mouse) ----- DB9F -- (AK125-Mouse)                             |
     |            |                     |                                     |
-    |            |                     |                           (Workstation-PC-Mouse)--(DB9)
+    |            |                     |                           (Workstation-PC-Mouse)--(DB9M)
     +------------+                     |                                     | Then the second machine
                                        |                                     |    mouse PS/2
                                        |                                     |
        (actual mouse,                  |                                     |
-        PS/2, sitting  -- PS/2 --- (Mouse IN)                     (Workstation-PC-KBD)----(DB9)
-        on the desktop)                |                                     | Then the second machine
-                                       |                                     |    Keyboard PS/2
+       PS/2, sitting  -- PS/2 F --- (Mouse IN)                     (Workstation-PC-KBD)----(DB9M)
+       on the desktop)           positioned above                            | Then the second machine
+                                  AK125-Mouse                                |    Keyboard PS/2
                                        |                                     |
                                        +-(Desk-PC-Mouse)-------(Desk-PC-KBD)-+
                                                |                      |
-      First computer mouse  ------- DB9 -------+                      |
-         Keyboard, PS/2  ------------------- DB9 ---------------------+
+      First computer mouse  ------- DB9M ------+                      |
+         Keyboard, PS/2  ------------------- DB9M --------------------+
 ```
 
+The Breakout Box only contains 2 ICs:
+    * L7805CV - 5V regulator
+    * SN7496 Hex inverter - These TTL hex inverter buffers/drivers feature
+    high-voltage open-collector outputs for interfacing with high-level circuits
+    (such as MOS) or for driving high-current loads (such as lamps or relays), and
+    also are characterized for use as inverter buffers for driving TTL inputs. The
+    SN7406 has a minimum breakdown voltage of 30 V. The maximum sink current is 
+    40 mA for the SN7406s.
+
+    
 TODO: logical diagram
 
 ### kmd3 Connectors
