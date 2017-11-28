@@ -3,9 +3,15 @@ Cherry built keyboard, G80-9009, and similar model numbers, for Reuters.
 The Reuters model number is AK124. 
 
 The variations in model numbers seem to reflect some specialized key labeling,
-some language variation in 3 of the main keys (for USA they are labeled "~ `",
-"| \", and "blank" near the left shift), and finally technology. I have seen 
+some language variation in 3 of the main keys, and finally technology. I have seen 
 photos of a G8-9039HAAUS that is all surface mount technology.
+
+```
+Country     Top-left    Near return     Near shift  3 key
+-------     --------    -----------     ----------  ---------
+USA         ` and ~     \ and |         "blank"     3 and # TODO: check
+UK          ` and ¬     # and ~         \ and |     3 and £
+```
 
 ### Presumption:
 Reuters is an old and current leading newswire service.
@@ -78,6 +84,7 @@ keyboard to a modern computer:
     keymap. If the LCD display being operational was a significant motivation
     for acquiring this keyboard, and having the whole keymap and layers be
     programable is unimportant, this is likely your best choice. 
+    The PC Desk version does nit send scan codes for 47 keys.
 3. [Direct+Soarer](../master/method-3-direct+soarer.md  ) from the "Desk
     PC/Workstation" connector to a PS/2 connector
     - Few parts, essentially one custom built DB-9 to PS/2 cable and
@@ -104,12 +111,14 @@ keyboard to a modern computer:
 
 | Feature                      | Controller | Direct | Direct+Soarer | KVM  |
 | ---------------------------- |:----------:| :-----:| :------------:| :---:|
-| Maps all 149 keys            | y | n(141?) | n(141?) | n(141?) |
+| Maps all 149 keys            | y | n(102) | n(102) | n(102) |
 | Display functions work       | n | y | y | y |
 | Req. hand-made power to Host | n | y | y | n |
-| Lock LEDs work               | n | y? | y? | y? |
+| Lock LEDs work               | n | y* | y? | y? |
 | Requires "rare" KVM box      | n | n | n | y |
 | Support kbd-only switching   | n | n | n | y |
+
+\* Caps lock and Scroll lock can be set by the computer. Num Lock is controlled by the keyboard.
 
 
 ---
@@ -146,7 +155,7 @@ This is one datapoint, based upon my experience.
 * Height: 3-1/4"
 * Depth: 10"
 * 12V 500mA = 6W on the label on the bottom, but Meow Wei (Youtube) found 12V
-(12.6V measured), 2.5A. 
+(12.6V measured), 2.5A. I have powered mine, successfully so far, with 12V at 500ma.
 
 ### Host port pins, for power
 
@@ -187,7 +196,8 @@ Most are Double-shot ABS. "Super thick." TODO: measure once in hand
     * Wkst
 * There are 2 more LEDs adjacent to the space bar, but no windows to shine through.
 * 10u space bar.
-* In spite of the odd bottom row with the extended spacebar, and stepped Caps Lock, pretty much everything will fit on a modern board.
+* In spite of the odd bottom row with the extended spacebar, and stepped Caps
+Lock, pretty much everything will fit on a modern board.
 
 
 ### Case:
@@ -196,7 +206,7 @@ Most are Double-shot ABS. "Super thick." TODO: measure once in hand
 * Lower (main 99 keys) are PCB mounted
 * The lower PCB is dropped into the case, held in place left/right and
   top/bottom by plastic molding. There are no bolts, screws, or rivits.
-* Flip-out feet on bottom, at back
+* Flip-out feet on bottom, at back. Single position. TODO: how high?
 * Under the rectangular plate on the bottom (4 screws) is a 27 x 2 pin ribbon cable, not connected. For expansion module?
 * Back of keyboard, left to right has the following: [Photos from imgur](http://i.imgur.com/lwkKiGb.jpg)
 * Although the back of the keyboard slopes inward, the connectors are parallel
@@ -230,14 +240,14 @@ Workstation" DB-9 port as PS/2 protocol. These are A-Z, 0-9, punctuation, etc.
 Normal keyboard operation. Also includes modifiers like Shift, Alt, Control.
 
 2. Keys sent to control the keyboard modes itself. "Calc" puts the keyboard into
-calculator mode (Likely exits the calc mode too) and "SetUp" lets you define
+calculator mode (Use Desk PC or Wkst to exit calc mode.) and "SetUp" lets you define
 macros, etc. These will never generate scan codes out the "Desk PC /
 Workstation" port, they are handled within the keyboard itself.
 
 3. "KVM" keys that control the switch boxes themselves. For example "Scrn 4" to
 change display to Screen 4. Also "Desk PC" and "Wkst" to select at least which
-computer to attach the keyboard to. They may also change which screen gets
-displayed too. These will send some form of signal put the "Host" port on the
+computer to attach the keyboard to. (TODO: unverified) They may also change which screen gets
+displayed. These will send some form of signal put the "Host" port on the
 keyboard to the KVM box. This would be done by changing the Host pins. Maybe by
 setting them high or low. Maybe by sending serial data to a small processor on
 the KVM Box. I have no ideas which or how, or what protocol. 
@@ -245,10 +255,11 @@ These will also never generate scan codes out the "Desk PC / Workstation" port.
 
 4. It looks like ABBR is another case we know little about. If the workstations
 come with special "workstation" functions that are activated by keys not found
-on "normal" keyboards. So pressing ABBR would get passed through the breakout
+on "normal" keyboards. So pressing ABBR may get passed through the breakout
 box to the Workstation port, but never to the "Desk PC / Workstation" port.
 There may be other keys that behave this way.
 
+TODO: Fix this. Most colored keys don't generate scan codes.
 So it looks like of the 149 keys on the keyboard, **most** except the cluster of
 8 at the top-right could be available. It's also possible that the F1-F24 don't
 send scan codes directly, but only play back your pre-programmed keyboard macros.
@@ -261,10 +272,11 @@ A description of [Display Functions](../master/display-functions.md "Display Fun
 ### Remaining open questions:
 
 1. Are the Yang controllers still generally available?
-2. What are the non-power, non-ground pins on the Host connector used for?
-3. Which keys will still not be sent out the "Desk PC / Workstation" port when using the "Direct" method?
-4. What triggers the buzzer?
-5. Do the LEDs work without a KVM box?
+2. What are the non-power, non-ground pins on the Host connector used for? What protocol?
+3. Which keys will still not be sent out the "Desk PC / Workstation" port when
+using the "Direct" method? TODO: now known.
+4. What triggers the buzzer? Bad Calc keys, bad macro definition keys, others.
+5. Do the LEDs work without a KVM box? Yes for Caps, Scroll, and Num with "direct" method.
 
 
 ---
@@ -296,12 +308,12 @@ tactile by swapping the springs with Cherry MX Black springs. These are
 currently one of my favorite switches. I find them to be very similar to Black
 Alps, but they're more consistent and snappy than Black Alps IMO.
 
-## Places to search for keyboards
 
 ### Terms:
 * Soarer PS/2 USB converter
 
-### Web sites:
+## Places to search for keyboards
+
 Add List of urls to be used for searching for sale items
 
 | Where | Notes |  |
