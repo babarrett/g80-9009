@@ -7,10 +7,10 @@ some language variation in 3 of the main keys, and finally technology. I have se
 photos of a G8-9039HAAUS that is all surface mount technology.
 
 ```
-Country     Top-left    Near return     Near shift  3 key
--------     --------    -----------     ----------  ---------
-USA         ` and ~     \ and |         "blank"     3 and # TODO: check
-UK          ` and ¬     # and ~         \ and |     3 and £
+Country     Top-left    Near return         Near shift  3 key
+-------     --------    -----------         ----------  ---------
+USA         ` and ~     ' and ", \ and |    "blank"     3 and # TODO: check
+UK          ` and ¬     ' and ", # and ~     \ and |    3 and £
 ```
 
 ### Presumption:
@@ -111,7 +111,7 @@ keyboard to a modern computer:
 
 | Feature                      | Controller | Direct | Direct+Soarer | KVM  |
 | ---------------------------- |:----------:| :-----:| :------------:| :---:|
-| Maps all 149 keys            | y | n(102) | n(102) | n(102) |
+| Maps all 149 keys            | y | n(102) | n(102) | y? |
 | Display functions work       | n | y | y | y |
 | Req. hand-made power to Host | n | y | y | n |
 | Lock LEDs work               | n | y* | y? | y? |
@@ -174,6 +174,8 @@ keyboard to a PS/2 connector.
 
 See [Making Cables](../master/making-cables.md "Cable making instructions")
 
+TODO: Note, it now appears like there may be pins on the Desk PC/Workstation 
+interface that will zsend out scan codes when in Wkst mode. 
 
 ### Switches
 
@@ -209,8 +211,9 @@ Lock, pretty much everything will fit on a modern board.
 * Flip-out feet on bottom, at back. Single position. TODO: how high?
 * Under the rectangular plate on the bottom (4 screws) is a 27 x 2 pin ribbon cable, not connected. For expansion module?
 * Back of keyboard, left to right has the following: [Photos from imgur](http://i.imgur.com/lwkKiGb.jpg)
-* Although the back of the keyboard slopes inward, the connectors are parallel
-  to the base, so they are at an angle to the back.
+* Although the back of the keyboard slopes inward toward the top, the connectors
+are parallel to the base, so they are at an angle to the back. The Reset button
+acts like a temporary power Off/On cycle.
 ```
     [Grill]    [Knob]   [Knob]      [button]
     Buzzer     Volume   Contrast    Reset 
@@ -237,7 +240,8 @@ It seems to me that keys on this keyboard fall into 4 groups:
 
 1. "Normal keys" When struck their keycode is sent out the "Desk PC /
 Workstation" DB-9 port as PS/2 protocol. These are A-Z, 0-9, punctuation, etc.
-Normal keyboard operation. Also includes modifiers like Shift, Alt, Control.
+Normal keyboard operation. Also includes modifiers like Shift, Command (Mac), 
+and Control.
 
 2. Keys sent to control the keyboard modes itself. "Calc" puts the keyboard into
 calculator mode (Use Desk PC or Wkst to exit calc mode.) and "SetUp" lets you define
@@ -247,10 +251,11 @@ Workstation" port, they are handled within the keyboard itself.
 3. "KVM" keys that control the switch boxes themselves. For example "Scrn 4" to
 change display to Screen 4. Also "Desk PC" and "Wkst" to select at least which
 computer to attach the keyboard to. (TODO: unverified) They may also change which screen gets
-displayed. These will send some form of signal put the "Host" port on the
-keyboard to the KVM box. This would be done by changing the Host pins. Maybe by
-setting them high or low. Maybe by sending serial data to a small processor on
-the KVM Box. I have no ideas which or how, or what protocol. 
+displayed. These may work in a couple different ways:
+    * Send some form of signal out the "Host" port on the keyboard to the KVM box. 
+    This could be done by changing the Host pins. Maybe by
+    setting them high or low. Maybe by sending serial data to a small processor on
+    the KVM Box. I have no ideas which or how, or what protocol. 
 These will also never generate scan codes out the "Desk PC / Workstation" port.
 
 4. It looks like ABBR is another case we know little about. If the workstations
