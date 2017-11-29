@@ -13,13 +13,13 @@ computer with:
     - a DB9 to PS/2 passive cable and a Soarer PS/2 to USB converter.
     (See the next method: Direct+Soarer method #3 for information on this this option.) 
 * Can End up with a PS/2 or USB option, your choice
-* The built in functions, display commands (on the fly macro creation,
-calculator) should all still work. TODO: test this.
 
 ---
 ### Pros:
 
-* Simplest solution in terms of hardware. 
+* The built in functions, display lighting up, commands (on the fly macro creation,
+calculator) all work. 
+* Simple solution in terms of hardware. 
     - Do not have to open the keyboard case
     - No special controller needed
     - No additional boxes (kdm3, Breakout Box) needed
@@ -27,16 +27,23 @@ calculator) should all still work. TODO: test this.
     - Need to create a 12V 500mA power-supply to DB-15 cable
     - Need to add a PS/2 to USB adapter, if you want USB
 * Cheapest hardware solution
+* Lock LEDs (caps, num) work
 
 ### Cons:
 
+* You lose the use of 48 keys on the keyboard. They do not send scan
+codes. These are all the colored keys (except the num pad), F13-F24, and the
+cluster of keys in the top-right. 
+* So you are left with 101 keys that work.
 * You have to create a custom cable, which shouldn't be too hard to do.
-* You'll have to purchase and wire up a 12V, 500mA power-supply to a second cable.
+* You'll have to purchase and wire up a 12V, 500mA power-supply to a DB-15.
 * You'll need another converter if you want to get from PS/2 to USB. 
+* Lock LED for scroll does not work
+* "Wkst" mode does not generate any scan codes
 
 ### Unknowns:
 
-* Lock LEDs (caps, scroll, num) might, or might not work
+* I'm still working on getting "Wkst" mode to generate all (most) scan codes
 
 ---
 
@@ -44,7 +51,7 @@ calculator) should all still work. TODO: test this.
    Reuters AK124 Keyboard
    
    (Host) ---------- DB15 <--- 12V power and ground to the keyboard
-   (Desk PC/WkSt) -- DB9 ----> (to 6 pin DIN PS/2) ---- (PS/2 to USB adapter) -- to computer
+   (Desk PC/WkSt) -- DB9 ----> (to 6 pin DIN PS/2) ---> (PS/2 to USB adapter) ---> to computer
    (Mouse) --------- DB9 ----- (not connected)
 ```
 ### Connections

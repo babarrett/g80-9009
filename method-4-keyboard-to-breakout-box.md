@@ -56,6 +56,7 @@ An [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Rema
 
 * The inside og the breakout box is **very** simple. One 5V regulator, one 
 Hex inverter, a simple PCB, and all the connectors.
+* It is not inconceivable that these could be reverse engineered and recreated.
 
 ### Breakout Box Connectors:
 
