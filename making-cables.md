@@ -16,6 +16,8 @@ from the breakout box, and my measurements of:
 From this I concluded that Pins 4 and 5 should be used as ground, 
 and that pins 12, 13, and 14 should be used as power. (+12V)
 
+According to the breakout box, the port 2, 3, 7 is also connected to the
+upstream system. There could be some data activity going on.
 
 ```
 Keyboard 
