@@ -86,8 +86,8 @@ DB-9F   Signal name     PS/2 male
 ----    -----------     ---------
 Shield  Ground          Shield
 7       Ground          3
-2       +Keyboard Data  1
-3       Clock           5
+3       +Keyboard Data  1
+2       Clock           5
     
 ```
 TODO: May be able to add pins for a second and third computer connection. If not
