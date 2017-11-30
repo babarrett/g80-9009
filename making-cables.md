@@ -16,6 +16,8 @@ from the breakout box, and my measurements of:
 From this I concluded that Pins 4 and 5 should be used as ground, 
 and that pins 12, 13, and 14 should be used as power. (+12V)
 
+According to the breakout box, the port 2, 3, 7 is also connected to the
+upstream system. There could be some data activity going on.
 
 ```
 Keyboard 
@@ -71,13 +73,21 @@ Soarer converter.
 
 
 ```
-        DB-9F to PS/2 M Cable
+ DB-9F to PS/2 M Cable (Desk PC)
 DB-9F   Signal name     PS/2 male
 ----    -----------     ---------
-1       +5V             4
+Shield  Ground          Shield
 7       Ground          3
 8       +Keyboard Data  1
 9       Clock           5
+
+   DB-9F to PS/2 M Cable (Wkst)
+DB-9F   Signal name     PS/2 male
+----    -----------     ---------
+Shield  Ground          Shield
+7       Ground          3
+3       +Keyboard Data  1
+2       Clock           5
     
 ```
 TODO: May be able to add pins for a second and third computer connection. If not
