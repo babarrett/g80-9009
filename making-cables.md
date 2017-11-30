@@ -95,14 +95,18 @@ Shield  Ground          Shield
 ```
 I can't locate any of these that are commercially made. Likely you'll have to wire it yourself.
 
-TODO: May be able to add pins for a second and third computer connection. If not
+TODO: Test: May be able to use more pins for a third computer connection. If not
 here, then on the "Host" port. 
+
+TODO: Test: May be able to use more pins for a mouse connection, but really why
+bother?
 
 I have tried the first cable, the Desk PC to PS/2. That works fine.
 I am about to try this one, which should allow both Desk PC and Wkst 
 modes to transmit key strokes. I hope.
 
 To be wired like this:
+
 ![The configuration](../master/images/Cherry%20G80-9009%20DB9%20to%202x%20PS2.png "DB-9 to Desk PC and Wkst")
 
 
