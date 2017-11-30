@@ -9,15 +9,12 @@ provide power to the keyboard via the DB-15 "Host" port on the back of the
 keyboard. Below are the the results of Mwei measuring the voltages on a cable
 from the breakout box, and my measurements of:
 
-* pins to the ground plane of the keyboard PCBs (Gnd)
-* pins to the fuse on the main keyboard PCB (assumed to be Vin, +12VDC)
-* and other pins that where connected together (A). I don't know what these go to.
+    * pins to the ground plane of the keyboard PCBs (Gnd)
+    * pins to the fuse on the main keyboard PCB (assumed to be Vin, +12VDC)
+    * and other pins that where connected together (A). I don't know what these go to.
 
 From this I concluded that Pins 4 and 5 should be used as ground, 
 and that pins 12, 13, and 14 should be used as power. (+12V)
-
-According to the breakout box, the port 2, 3, 7 is also connected to the
-upstream system. There could be some data activity going on.
 
 ```
 Keyboard 
@@ -80,8 +77,14 @@ Shield  Ground          Shield
 7       Ground          3
 8       +Keyboard Data  1
 9       Clock           5
+```
 
-   DB-9F to PS/2 M Cable (Wkst)
+According to the breakout box, the pins 2, 3, and 7 are also connected to the
+upstream system. There could be some data activity going on. (We are speculating
+Wkst keyboard scan code data. "PS/2 protocol.")
+
+```
+  DB-9F to PS/2 M Cable (Wkst)
 DB-9F   Signal name     PS/2 male
 ----    -----------     ---------
 Shield  Ground          Shield
@@ -90,8 +93,16 @@ Shield  Ground          Shield
 2       Clock           5
     
 ```
+I can't locate any of these that are commercially made. Likely you'll have to wire it yourself.
+
 TODO: May be able to add pins for a second and third computer connection. If not
 here, then on the "Host" port. 
 
-I can't locate any of these that are commercially made. Likely you'll have to wire it yourself.
+I have tried the first cable, the Desk PC to PS/2. That works fine.
+I am about to try this one, which should allow both Desk PC and Wkst 
+modes to transmit key strokes. I hope.
+
+To be wired like this:
+![The configuration](../master/images/Cherry%20G80-9009%20DB9%20to%202x%20PS2.png "DB-9 to Desk PC and Wkst")
+
 
