@@ -53,6 +53,19 @@ Pin     Use
 13      +12V
 14      +12V          
 ```
+According to the breakout box, the pins 2, 3, and 7 are also connected to the
+upstream system. There could be some data activity going on. (We are speculating
+Wkst keyboard scan code data. "PS/2 protocol.")
+
+```
+  DB-15F to PS/2 M Cable (Wkst)
+DB-15F  Signal name     PS/2 male
+----    -----------     ---------
+Shield  Ground          Shield
+7       Ground          3
+3       +Keyboard Data  1
+2       Clock           5
+```
 
 ### Desk PC/Workstation pins
 
@@ -79,20 +92,6 @@ Shield  Ground          Shield
 9       Clock           5
 ```
 
-According to the breakout box, the pins 2, 3, and 7 are also connected to the
-upstream system. There could be some data activity going on. (We are speculating
-Wkst keyboard scan code data. "PS/2 protocol.")
-
-```
-  DB-9F to PS/2 M Cable (Wkst)
-DB-9F   Signal name     PS/2 male
-----    -----------     ---------
-Shield  Ground          Shield
-7       Ground          3
-3       +Keyboard Data  1
-2       Clock           5
-    
-```
 I can't locate any of these that are commercially made. Likely you'll have to wire it yourself.
 
 TODO: Test: May be able to use more pins for a third computer connection. If not
