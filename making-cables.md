@@ -53,19 +53,6 @@ Pin     Use
 13      +12V
 14      +12V          
 ```
-According to the breakout box, the pins 2, 3, and 7 are also connected to the
-upstream system. There could be some data activity going on. (We are speculating
-Wkst keyboard scan code data. "PS/2 protocol.")
-
-```
-  DB-15F to PS/2 M Cable (Wkst)
-DB-15F  Signal name     PS/2 male
-----    -----------     ---------
-Shield  Ground          Shield
-7       Ground          3
-3       +Keyboard Data  1
-2       Clock           5
-```
 
 ### Desk PC/Workstation pins
 
@@ -106,6 +93,6 @@ modes to transmit key strokes. I hope.
 
 To be wired like this:
 
-![The configuration](../master/images/Cherry%20G80-9009%20DB9%20to%202x%20PS2.png "DB-9 to Desk PC and Wkst")
+![The configuration](../master/images/Cherry%20G80-9009%20DB9%20to%202x%20PS2.png "DB-9 to Desk PC")
 
 
