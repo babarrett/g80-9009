@@ -7,10 +7,10 @@ some language variation in 3 of the main keys, and finally technology. I have se
 photos of a G8-9039HAAUS that is all surface mount technology.
 
 ```
-Country     Top-left    Near return         Near shift  3 key
--------     --------    -----------         ----------  ---------
-USA         ` and ~     ' and ", \ and |    "blank"     3 and # TODO: check
-UK          ` and ¬     ' and ", # and ~     \ and |    3 and £
+Country     Top-left Shift-2 Shift-3  Near return      Near shift
+-------     -------- ------- -------  -----------      ----------
+USA         `, ~        @      #      ', " and \, |    "blank"   
+UK          `, ¬, |     "      £      ', @ and #, ~    \, | 
 ```
 
 ### Presumption:
@@ -32,11 +32,11 @@ It:
 "dot" wordmark) and in 1996 the rounded piece – or roundel – was developed. 1999
 the dots in the name gave way to a solid all-caps font with an orange dotted
 semi-circle, and a solid blue semicircle.
-* has 149 available keys
-* has a, primarily text, LCD display
-* can create macros on the fly that are stored in the keyboard. 
-* can select any 1 of 4 screens
-* can select any 1 of 2 workstations with a kmd3, or 4(?) for a "Breakout Box"
+* has 149 total keys. Not all generate scan codes to the attached computers
+* has a, primarily text, LCD display with 2 font sizes.
+* can create up to 72 macros on the fly that are stored in the keyboard. 
+* can select any 1 of 4 screens (Indicated by keys, unverified.)
+* can select any 1 of 2 workstations with a kmd3, or 3 or 4 for a "Breakout Box"
 * can perform calculations within the keyboard, displaying the results on the LCD display
 
 ---
@@ -84,7 +84,9 @@ keyboard to a modern computer:
     keymap. If the LCD display being operational was a significant motivation
     for acquiring this keyboard, and having the whole keymap and layers be
     programable is unimportant, this is likely your best choice. 
-    The PC Desk version does nit send scan codes for 47 keys.
+    - The "PC Desk" setting does not send scan codes for 47 keys.
+    - It is presumed that using the Wkst setting will cause the additional 
+    keys to send scan codes, but the method for this is still unknown.
 3. [Direct+Soarer](../master/method-3-direct+soarer.md  ) from the "Desk
     PC/Workstation" connector to a PS/2 connector
     - Few parts, essentially one custom built DB-9 to PS/2 cable and
@@ -92,12 +94,14 @@ keyboard to a modern computer:
     - Uses an active Soarer PS/2 to USB converter. The Soarer adds the
     ability to remap keys, add macros, add additional function layers, and be
     able to toggle different layouts.
-    - Special "workstation" keys do not generate scancodes.
+    - Special "workstation" keys do not generate scan codes with the "Desk PC"
+    setting and we do nit yet know how to get that to happen.
+    - The "PC Desk" setting does not send scan codes for 47 keys.
     - A good solution for getting everything you're likely to want out of the
-    keyboard: working display functions, with in-keyboard programmability and
-    keymap re-writing. If the LCD display being operational was a significant
-    motivation for acquiring this keyboard, and you want it to be programable
-    too, this is likely your best choice. 
+    keyboard except using every key: working display functions, with in-keyboard
+    programmability and keymap re-writing. If the LCD display being operational
+    was a significant motivation for acquiring this keyboard, and you want it to
+    be programable too, this is likely your best choice. 
 4. With (rare) [KVM](../master/method-4-keyboard-to-breakout-box.md) boxes
     - These are KVM switches (keyboard, video and mouse)
     - Special "workstation" keys and PC/Workstation, and Screen keys likely
@@ -174,14 +178,22 @@ keyboard to a PS/2 connector.
 
 See [Making Cables](../master/making-cables.md "Cable making instructions")
 
-TODO: Note, it now appears like there may be pins on the Desk PC/Workstation 
-interface that will zsend out scan codes when in Wkst mode. 
+Note: There may be signals on the pins on the Desk PC/Workstation 
+or Host ports that will send out signals when in Wkst mode. As of yet we have
+no idea which pins are used or what protocols are used.
 
 ### Switches
 
 * MX Clear switches, 149 of them. 
 * High force at end of stroke to discourage bottoming out.
 * Diode soldered into every switch.
+* Some switches are very stiff, especially:
+    - Interrupt
+    - Contact
+    - Accept
+    - ABBR
+    - Deal
+    - Cancel Orders
 
 ### Caps:
 
@@ -205,11 +217,12 @@ Lock, pretty much everything will fit on a modern board.
 ### Case:
 
 * Top (51) keys are plate mounted
-* Lower (main 99 keys) are PCB mounted
+* Lower (main 98 keys) are PCB mounted
 * The lower PCB is dropped into the case, held in place left/right and
   top/bottom by plastic molding. There are no bolts, screws, or rivits.
 * Flip-out feet on bottom, at back. Single position. TODO: how high?
-* Under the rectangular plate on the bottom (4 screws) is a 27 x 2 pin ribbon cable, not connected. For expansion module?
+* Under the rectangular plate on the bottom (4 screws) is a 27 x 2 pin ribbon
+cable, not connected. For expansion module?
 * Back of keyboard, left to right has the following: [Photos from imgur](http://i.imgur.com/lwkKiGb.jpg)
 * Although the back of the keyboard slopes inward toward the top, the connectors
 are parallel to the base, so they are at an angle to the back. The Reset button
@@ -236,22 +249,24 @@ The use of the mouse port is unknown to me.
 ---
 
 ### Key use groups
+
 It seems to me that keys on this keyboard fall into 4 groups:
 
 1. "Normal keys" When struck their keycode is sent out the "Desk PC /
 Workstation" DB-9 port as PS/2 protocol. These are A-Z, 0-9, punctuation, etc.
 Normal keyboard operation. Also includes modifiers like Shift, Command (Mac), 
-and Control.
+and Control. F1-F12 are also in this group and Print Scrn, Scroll Lock, and Pause
+are mapped to F13-F15.
 
 2. Keys sent to control the keyboard modes itself. "Calc" puts the keyboard into
-calculator mode (Use Desk PC or Wkst to exit calc mode.) and "SetUp" lets you define
+calculator mode (Use Desk PC or Wkst to exit calc mode) and "SetUp" lets you define
 macros, etc. These will never generate scan codes out the "Desk PC /
-Workstation" port, they are handled within the keyboard itself.
+Workstation" or "Host" ports, they are handled within the keyboard itself.
 
 3. "KVM" keys that control the switch boxes themselves. For example "Scrn 4" to
 change display to Screen 4. Also "Desk PC" and "Wkst" to select at least which
 computer to attach the keyboard to. (TODO: unverified) They may also change which screen gets
-displayed. These may work in a couple different ways:
+displayed. These may work in a couple different ways: (Unknown)
     * Send some form of signal out the "Host" port on the keyboard to the KVM box. 
     This could be done by changing the Host pins. Maybe by
     setting them high or low. Maybe by sending serial data to a small processor on
@@ -264,12 +279,11 @@ on "normal" keyboards. So pressing ABBR may get passed through the breakout
 box to the Workstation port, but never to the "Desk PC / Workstation" port.
 There may be other keys that behave this way.
 
-TODO: Fix this. Most colored keys don't generate scan codes.
-So it looks like of the 149 keys on the keyboard, **most** except the cluster of
-8 at the top-right could be available. It's also possible that the F1-F24 don't
-send scan codes directly, but only play back your pre-programmed keyboard macros.
-
-TODO: To be determined.
+Most colored keys don't generate scan codes with the Desk PC setting. It
+looks like of the 149 keys on the keyboard, **most** except the cluster of 8 at
+the top-right could be available with the Wkst setting. It's also possible that
+the F13-F24 don't send scan codes directly, but only play back your
+pre-programmed keyboard macros.
 
 A description of [Display Functions](../master/display-functions.md "Display Functions documentation") available on the G80-9009 keyboard.  
 
@@ -279,7 +293,7 @@ A description of [Display Functions](../master/display-functions.md "Display Fun
 1. Are the Yang controllers still generally available?
 2. What are the non-power, non-ground pins on the Host connector used for? What protocol?
 3. Which keys will still not be sent out the "Desk PC / Workstation" port when
-using the "Direct" method? TODO: now known.
+using the "Direct" method?
 4. What triggers the buzzer? Bad Calc keys, bad macro definition keys, others.
 5. Do the LEDs work without a KVM box? Yes for Caps, Scroll, and Num with "direct" method.
 
