@@ -31,19 +31,20 @@ calculator) all work.
 
 ### Cons:
 
-* You lose the use of 48 keys on the keyboard. They do not send scan
-codes. These are all the colored keys (except the num pad), F13-F24, and the
-cluster of keys in the top-right. 
-* So you are left with 101 keys that work.
+* To date I've only gotten the Desk PC setting to work. Wkst does not.
+* With the Desk PC and Wkst settings the cluster of keys in the top-right do not send scan codes.
+* Without Wkst working you lose the use of 39 keys on the keyboard. They do not send scan
+codes. These are all the colored keys (except the num pad), F13-F24.
+* So you are left with 102 keys that work.
 * You have to create a custom cable, which shouldn't be too hard to do.
 * You'll have to purchase and wire up a 12V, 500mA power-supply to a DB-15.
 * You'll need another converter if you want to get from PS/2 to USB. 
 * Lock LED for scroll does not work
-* "Wkst" mode does not generate any scan codes
+* "Wkst" setting does not generate any scan codes
 
 ### Unknowns:
 
-* I'm still working on getting "Wkst" mode to generate all (most) scan codes
+* I'm still working on getting "Wkst" mode to generate all (most) scan codes. Might never succeed.
 
 ---
 
@@ -51,7 +52,7 @@ cluster of keys in the top-right.
    Reuters AK124 Keyboard
    
    (Host) ---------- DB15 <--- 12V power and ground to the keyboard
-   (Desk PC/WkSt) -- DB9 ----> (to 6 pin DIN PS/2) ---> (PS/2 to USB adapter) ---> to computer
+   (Desk PC/WkSt) -- DB9 ----> (to 6 pin DIN PS/2) ---> (PS/2 to USB adapter) ---> to Desk PC
    (Mouse) --------- DB9 ----- (not connected)
 ```
 ### Connections

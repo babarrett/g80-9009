@@ -22,10 +22,8 @@ layouts (no need to compile the firmware!)
     * https://geekhack.org/index.php?topic=82693.msg2192962
     * https://geekhack.org/index.php?topic=82693.msg2398215#msg2398215
 
-* Available in world.taobao.com, search for G80-9009. Two are available today,
-October 2017:
-    * https://world.taobao.com/item/556346775610.htm?fromSite=main&spm=a230r.1.14.6.1cf2909ceoqXIX&ns=1&abbucket=18#detail
-    * https://world.taobao.com/item/556373603543.htm?fromSite=main&spm=a230r.1.14.12.1cf2909ceoqXIX&ns=1&abbucket=18#detail
+* Available at world.taobao.com, search for G80-9009. One is available today,
+December 2017:
     * The (translated) title of those pages is: Old mechanical keyboard to
     change usb, Reuters cherry g80-9009hau replace the master, the whole key can
     be programmed - Question and Answer on Alibaba
@@ -39,8 +37,7 @@ https://geekhack.org/index.php?topic=51252.msg2141040#msg2141040
 * The G80-9009HAU has two groups of keys. Upper part is a 6x10 matrix (51 keys)
 and the lower part is 10x10 (98 keys). Using a pro micro and one 74hc154 (4 to
 16 mux) with TMK to run a 16x10 matrix using 4+10=14 pins.
-* 2 x 32 pin ribbon cables connect to the top and bottom grpups of keys. (51 and 98 keys)
-* uses a 4 to 16 mux for the 16 lines (columns?)
+* 2 x 32 pin ribbon cables connect to the top and bottom groups of keys. (51 and 98 keys)
 * The USB connector on the controller is a USB Mini-b, (5 pin)
 * Yang once said: "Now I am using TMK to run 16x10 matrix. I want to try EasyAVR
 on it to make it easier to use."

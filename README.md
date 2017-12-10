@@ -194,6 +194,7 @@ no idea which pins are used or what protocols are used.
     - ABBR
     - Deal
     - Cancel Orders
+* There are no "home row" bumps on the F or J keys.
 
 ### Caps:
 

@@ -4,14 +4,14 @@
 
 ### There are two "KVM" Boxes:
 
-* KMD-3		https://geekhack.org/index.php?topic=36702.0
-* Reuters Breakout Box
+* KMD-3: Internally this box is "complex" with many integrated circuits.		https://geekhack.org/index.php?topic=36702.0
+* Reuters Breakout Box: Internally this box is "simple" with only one integrated circuit, and ond 5 volt regulator.
 
 ### What it is:
 
 * User Anfauglir (Jaws of Thirst) had access to a Reuters Breakout Box
 * Here: https://www.ptt.cc/bbs/Key_Mou_Pad/M.1499538853.A.F7F.html
-* This keyboard requires a 12V power supply to operate and can be supplied from
+* This keyboard requires a 12V power supply to operate and can be supplied to
 the DB-15 HOST connector.
 * The usual configuration is: 
     - The Keyboard Desk PC/WorkStation port to KVM
@@ -21,14 +21,9 @@ the DB-15 HOST connector.
     Mouse connectors on the (multiple) attached computers.
 * The output keyboard ports on the KVM can be connected, via adapters, to the
 (multiple) attached computers.
-* DB9 -> PS/2 adapter pinout is: 
-    * 1-> 4,
-    * 7-> 3,
-    * 8-> 1,
-    * 9-> 5.  
-    See [Making Cables](../master/making-cables.md "Cable making instructions")
-* Special keys are totally available. 
-* Scrn1/2/3/4 keys may be usable. I don't know how yet.
+* For the DB9 -> PS/2 adapter pinout see [Making Cables](../master/making-cables.md "Cable making instructions")
+* Special keys are totally available. (We presume. Unproven.)
+* Scrn1/2/3/4 keys may be usable. Unknown.
 
 ### Pros:
 * Everything works as designed, once you convert the serial keyboard out port(s)
@@ -54,7 +49,7 @@ An [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Rema
 
 ### Unknowns:
 
-* The inside og the breakout box is **very** simple. One 5V regulator, one 
+* The inside of the breakout box is **very** simple. One 5V regulator, one 
 Hex inverter, a simple PCB, and all the connectors.
 * It is not inconceivable that these could be reverse engineered and recreated.
 

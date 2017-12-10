@@ -15,7 +15,7 @@ The Soarer converters are available on
 [ebay](http://www.ebay.com/itm/NEW-PS-2-to-USB-Soarers-Converter-Adapter-Remapping-Macros-NKRO-Support-/282575686221).
 
 ### Pros:
-* Has the greatest capability of the 4 proposed methods. (Well, probably matched
+* Has the second greatest capability of the 4 proposed methods. (Exceeded only
 by the method #4 breakout box solution.)
     - The Soarer converter is programable. It adds the ability to remap keys,
     add macros, add additional function layers, and be able to toggle different
@@ -28,25 +28,24 @@ calculator) all work.
     - Do not have to open the keyboard case
     - No special controller needed
     - Need to create a DB-9 to PS/2 cable
-    - Need to add a PS/2 to USB adapter or Soarar, if you want USB
+    - Need to add a PS/2 to USB adapter or Soarer, if you want USB
     - No additional boxes (kdm3, Breakout Box) and their special cables needed
 * Fairly cheap hardware solution
 * Lock LEDs (caps, num) work
 
 ### Cons:
 
-* You lose the use of 48 keys on the keyboard. They do not send scan
-codes. These are all the colored keys (except the num pad), F13-F24, and the
-cluster of keys in the top-right. 
-* So you are left with 101 keys that work.
+* Without Wkst working you lose the use of 39 keys on the keyboard. They do not send scan
+codes. These are all the colored keys (except the num pad), F13-F24.
+* So you are left with 102 keys that work.
 * You have to create a custom DB0 to PS/2 cable, which shouldn't be too hard.
 * You'll have to purchase and wire up a 12V, 500mA power-supply to a DB-15.
 * Lock LED for scroll does not work
-* "Wkst" mode does not generate any scan codes
+* "Wkst" setting does not generate any scan codes
 
 ### Unknowns:
 
-* I'm still working on getting "Wkst" mode to generate all (most) scan codes
+* I'm still working on getting "Wkst" mode to generate all (most) scan codes. Might never succeed.
 
 ### Connectors:
 
