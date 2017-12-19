@@ -36,15 +36,26 @@ Arrow keys (Left/Right) are only used to set number of decimals, while in setup 
 
 Control keys change the Calc display (clear th Fn key legends) but seem to have no other effect.
 
-## Macro setup & use.
+## Defining Macros
 
 The Control keys display the Control+F1 to Control+F12 macro legends.
 The Shift keys display the Shift+F1 to Shift+F12 macro legends.
 Either Enter key can be used for programming macros.
 
+## Using Macros
+
+TODO: fill in
+
+## Selecting Desc PC legend
+
+TODO: fill in
 
 
+## Desk PC vs. Wkst selections
 
+With Wkst selected you can... but need to connect... TODO: complete when known.
+
+With Desk PC selected you can use a subset of the keys on the board, as indicated here:
 
 ![Unavailable keys in Desk PC mode](../master/images/Cherry%20G80-9009%20Unavailable%20keys%20in%20Desk%20mode.png "Unavailable keys in Desk PC mode")
 
