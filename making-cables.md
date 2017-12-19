@@ -47,6 +47,8 @@ Shield  .       Gnd
 14      Vin     Vin         +12V    +12V
 15      .       .           Gnd     
 ```
+![The configuration](../master/images/Cherry%20G80-9009%20Power%20to%20DB15.png "DB-9 to Desk PC")
+
 ```
     Cable
 DB-15F 
@@ -77,6 +79,7 @@ Soarer converter.
 
 The Desk PC/Workstation Connector (DB-9F) on keyboard goes to 
 to DB-9M connector on cable, and from there to the PS/2 M end of the cable.
+
 ![The configuration](../master/images/Cherry%20G80-9009%20DB9%20to%20PS2.png "DB-9 to Desk PC")
 
 ```
@@ -105,7 +108,8 @@ DB-9F   Signal name     Sun 8 pin mini DIN, male
 7       Sun mouse TX/RX 4
 ```
 
-TODO: Likely: You may be able to use more pins for a third computer connection.
+TODO: Likely: You may be able to use more pins for another, third, computer connection.
+Uses a PS/s keyboard connector.
 ```
 DB-9F   Signal name     PS/2 male
 ----    -----------     ---------
