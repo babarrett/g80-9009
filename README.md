@@ -84,7 +84,8 @@ keyboard to a modern computer:
     keymap. If the LCD display being operational was a significant motivation
     for acquiring this keyboard, and having the whole keymap and layers be
     programable is unimportant, this is likely your best choice. 
-    - The "PC Desk" setting does not send scan codes for 47 keys.
+    - The "PC Desk" setting does not send scan codes for 35 keys, and only sends
+    keyboard programmed macros for F13-F24.
     - It is presumed that using the Wkst setting will cause the additional 
     keys to send scan codes, but the method for this is still unknown.
 3. [Direct+Soarer](../master/method-3-direct+soarer.md  ) from the "Desk
@@ -96,7 +97,8 @@ keyboard to a modern computer:
     able to toggle different layouts.
     - Special "workstation" keys do not generate scan codes with the "Desk PC"
     setting and we do nit yet know how to get that to happen.
-    - The "PC Desk" setting does not send scan codes for 47 keys.
+    - The "PC Desk" setting does not send scan codes for 35 keys, and only sends
+    keyboard programmed macros for F13-F24.
     - A good solution for getting everything you're likely to want out of the
     keyboard except using every key: working display functions, with in-keyboard
     programmability and keymap re-writing. If the LCD display being operational

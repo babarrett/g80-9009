@@ -33,9 +33,10 @@ calculator) all work.
 
 * To date I've only gotten the Desk PC setting to work. Wkst does not.
 * With the Desk PC and Wkst settings the cluster of keys in the top-right do not send scan codes.
-* Without Wkst working you lose the use of 39 keys on the keyboard. They do not send scan
+* Without Wkst working you lose the use of 27 keys on the keyboard. They do not send scan
 codes. These are all the colored keys (except the num pad), F13-F24.
-* So you are left with 102 keys that work.
+* The "PC Desk" setting only sends keyboard programmed macros for F13-F24.
+* So you are left with 87+12=99 keys that work.
 * You have to create a custom cable, which shouldn't be too hard to do.
 * You'll have to purchase and wire up a 12V, 500mA power-supply to a DB-15.
 * You'll need another converter if you want to get from PS/2 to USB. 
