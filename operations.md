@@ -23,7 +23,7 @@ If you ignore the keyboard for five minutes the display lighting will go off.
 
 1. Macros up to 80 characters, stored in F1-F24.
 2. You can also store macros in Shift+Fn, and Control+Fn
-3. (?)Changing the Legends for macro sets
+3. TODO: Can you change the Legends for macro sets?
 
 The Legends and Macros get set for either the Desk PC, or Workstation. Select the one you want before pressing Setup.
 
@@ -37,7 +37,7 @@ USER SETUP MENU
                 Enter the desired macro (max. 80 char.) and confirm with F14 (enter text)
                 Busy with Flash! (Writing)
         
-            Delete key
+            Delete key Used to clear an macro and it's label.
             
     Select Desk PC Legend
 
@@ -118,7 +118,34 @@ TODO: fill in
 
 With Wkst selected you can... but need to connect... TODO: complete when known.
 
+### Keyboard mode (Desk PC)
+
+Keys that operate in Keyboard mode:
+
+* Keys on main keyboard, except bottom row, all
+* Control is Control, Alt and Alt Graph are Command.
+* Numeric pad, all
+* F1-F12
+* The 2 key shifted is @
+* The 3 key shifted is #
+* The ' key shifted is "
+* The # key unshifted is \, and shifted is | << I should swap key caps for this.
+* The \ key unshifted is §, and shifted is ±
+* Reset button (not key) on the back of the keyboard does a power off/on cycle equivalent.
+
+Keys that do **not** operate in Keyboard mode:
+
+* ABBR and Deal on the bottom row
+* All colored keys except "0" and "Enter" on the numeric pad.
+* The entire first column from Interrupt to Raise Ordrs
+* Clear (above Esc)
+* F13-F24
+* The entire top-right grouping of 11 keys from Hold to Scrn 4.
+
 With Desk PC selected you can use a subset of the keys on the board, as indicated here:
 
 ![Unavailable keys in Desk PC mode](../master/images/Cherry%20G80-9009%20Unavailable%20keys%20in%20Desk%20mode.png "Unavailable keys in Desk PC mode")
 
+### Keyboard mode (Wkst)
+
+* No scan codes are sent out the Desk PC/workstation port. Still working on this.
