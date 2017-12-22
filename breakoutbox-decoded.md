@@ -96,11 +96,10 @@ Starting at the top-left, and moving counter-clockwise.
 
 The breakout Box includes 12 connectors as follows:
 
-|                               |                       | Keyboard      |
 | Name, on case                 | Name, on PCB          | connector name| Protocol  |
 | ----------------------------- |-----------------------|---------------|-----------|
 |  Power Supply                 | (none)                |               | N/A       |
-|  Workstation-SUN              | Wkst-SUN 8-pos. female|               | Sun
+|  Workstation-SUN              | Wkst-SUN 8-pos. female|               | Sun       |
 |  AK125 System                 | AK125 "HOST" female   | Host          | N/A or unknown |
 |  AK125-Desk-PC-Workstation    | AK125 "Desk PC/Workstation male| Desk PC/Workstation male | PS/2, Sun |
 |  Mouse IN                     | Mouse IN 6-pos. female| Mouse         | PS/2     |
@@ -111,6 +110,8 @@ The breakout Box includes 12 connectors as follows:
 |  Workstation-PC-Mouse         | Wkst-PC-Mouse male    |     | Serial |
 |  Workstation-Generic          | Wkst-Generic female   |     | PS/2   |
 |  HOST-SYSTEM                  | System male           |     | Unknown |
+
+|                               |                       | Keyboard      |
 
 
 #### Connectors with data predominately going *IN TO* the breakout box
