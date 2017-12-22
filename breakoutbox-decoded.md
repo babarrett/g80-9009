@@ -96,8 +96,7 @@ Starting at the top-left, and moving counter-clockwise.
 
 The breakout Box includes 12 connectors as follows:
 
-|                               |                       | Keyboard      |           |
-| Name, on case                 | Name, on PCB          | connector name| Protocol  |
+| Name, on case                 | Name, on PCB          | Kbd connector name| Protocol  |
 | ----------------------------- |-----------------------|---------------|-----------|
 |  Power Supply                 | (none)                |               | N/A       |
 |  Workstation-SUN              | Wkst-SUN 8-pos. female|               | Sun       |
