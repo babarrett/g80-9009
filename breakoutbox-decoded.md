@@ -96,6 +96,7 @@ Starting at the top-left, and moving counter-clockwise.
 
 The breakout Box includes 12 connectors as follows:
 
+|                               |                       | Keyboard      |           |
 | Name, on case                 | Name, on PCB          | connector name| Protocol  |
 | ----------------------------- |-----------------------|---------------|-----------|
 |  Power Supply                 | (none)                |               | N/A       |
@@ -111,7 +112,6 @@ The breakout Box includes 12 connectors as follows:
 |  Workstation-Generic          | Wkst-Generic female   |     | PS/2   |
 |  HOST-SYSTEM                  | System male           |     | Unknown |
 
-|                               |                       | Keyboard      |
 
 
 #### Connectors with data predominately going *IN TO* the breakout box
