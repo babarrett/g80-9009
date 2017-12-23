@@ -5,9 +5,7 @@
 * TODO: Add photos and wiring graphs
 * By visual inspection of photographs of AK125
 * and reasoning.
-* c
-
-
+    
 --------------------------------------------------------------------------------------
 ## Summary
 
@@ -38,6 +36,8 @@ additional details)
     * Inverted, 1-wire (TX) RS232 serial communications for simulating a Sun mouse to a Sun workstation
 * The kbd handles all the "smarts" of routing the generated (kbd) and pass-through (    
     
+Visual summary:
+![Breakout visual summary](../master/images/breakout-decoded.png "Breakout visual summary")
 
 
 --------------------------------------------------------------------------------------
@@ -103,7 +103,7 @@ The breakout Box includes 12 connectors as follows:
 |  AK125 System                 | AK125 "HOST" female   | Host          | N/A or unknown |
 |  AK125-Desk-PC-Workstation    | AK125 "Desk PC/Workstation male| Desk PC/Workstation male | PS/2, Sun |
 |  Mouse IN                     | Mouse IN 6-pos. female| Mouse         | PS/2     |
-|  AK125-Mouse                  | AK126 "Mouse" female  |     | PS/2   |
+|  AK125-Mouse                  | AK125 "Mouse" female  |     | PS/2   |
 |  Desk PC-Mouse                | Desk-PC-Mouse male    |     | PS/2   |
 |  Desk-PC-KBD                  | Desk PC KBD male      |     | PS/2   |
 |  Workstation-PC-KBD           | Wkst-PC-KBD male      |     | Serial |
