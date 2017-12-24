@@ -153,7 +153,7 @@ pins are unknown. Most pass through to the HOST-SYSTEM connector.
 Sun Keyboard and mouse connector
 
 | Pin | Function    | Dir'n   | Destination                     | Protocol   | Comments  |
-+:---:+-------------+---------+---------------------------------+------------+-----------+
+|:---:|-------------|---------|---------------------------------|------------|-----------|
 |  4  | RX/TX mouse | From    | Pin 7 of Desk PC/Wkst, inverted | Sun Serial | TX only   |
 |     |             | Contact | Pin 9 of Workstation-PC-Mouse   | Serial     | .         |
 |  5  | Kbd RX      | From    | Pin 3 of Desk PC/Wkst           | Sun Serial | .         |
@@ -187,7 +187,7 @@ Sun Keyboard and mouse connector
 Goes to Keyboard "HOST"
 
 | Pin | Function          | Dir'n   | Destination                     | Protocol   | Comments  |
-+:---:+-------------------+---------+---------------------------------+------------+-----------+
+|:---:|-------------|---------|---------------------------------|------------|-----------|
 |  4,5,6    | Ground      | To      | Pin 6 of Desk PC/Wkst           | power      | .         |
 |  12,13,14 | Power, +12V | To      | Pin 6 of Desk PC/Wkst           | power      | .         |
  |    |       |  |    |      |          |
