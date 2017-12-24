@@ -186,12 +186,17 @@ Sun Keyboard and mouse connector
 ### AK125 System                                                        
 Goes to Keyboard "HOST"
 
-| Pin | Function          | Dir'n   | Destination                     | Protocol   | Comments  |
-|:---:|-------------|---------|---------------------------------|------------|-----------|
-|  4,5,6    | Ground      | To      | Pin 6 of Desk PC/Wkst           | power      | .         |
-|  12,13,14 | Power, +12V | To      | Pin 6 of Desk PC/Wkst           | power      | .         |
- |    |       |  |    |      |          |
-|    |       |  |    |      |          |
+| Pin       | Function    | Dir'n   | Destination               | Protocol   | Comments  |
+|:---------:|-------------|---------|---------------------------|------------|-----------|
+|  1        | Ground      | To      | Keyboard "HOST"           | power      | .        |
+|  4,5,6    | Ground      | To      | Keyboard "HOST"           | power      | .        |
+|  12,13,14 | Power +12V | To       | Keyboard "HOST"           | power      | .        |
+|  15       | Ground      | To      | Keyboard "HOST"           | power      | .        |
+|  2        | Unknown     | ?       | HOST-SYSTEM               | other      |          |
+|  3        | Unknown     | ?       | HOST-SYSTEM               | other      |          |
+|  7        | Unknown     | ?       | HOST-SYSTEM               | other      |          |
+|  10       | Unknown     | ?       | HOST-SYSTEM               | other      |          |
+|  11       | Unknown     | ?       | HOST-SYSTEM               | other      |          |
 
 ```
     1 ground 
