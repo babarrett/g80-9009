@@ -39,6 +39,9 @@ additional details)
 Visual summary:
 ![Breakout visual summary](../master/images/breakout-decoded.png "Breakout visual summary")
 
+* Red for keyboard data
+* Green for mouse data
+* Black for power and other
 
 --------------------------------------------------------------------------------------
 ### Power, and sources
@@ -76,8 +79,8 @@ TODO: Include more here. See summary for what cover.
 Earliest system, pre-PS/2. 1200 baud, fixed rate.
 
 #### Sun Serial (inverted TX and RX)
-Sun's take on RS232 Serial, where they invert the TX and RX signals. (+5V
-becomes ground, Ground becomes +5V)
+Sun's take on RS232 Serial, where they invert the TX and RX signals. TTL levels.
+(+5V becomes ground, Ground becomes +5V)
 
 #### PS/2
 Instead of transmitting at a fixed rate, say 1200 baud, the protocol uses one
@@ -148,6 +151,20 @@ pins are unknown. Most pass through to the HOST-SYSTEM connector.
 
 ### Workstation-SUN
 Sun Keyboard and mouse connector
+
+| Pin | Function    | Dir'n   | Destination                     | Protocol   | Comments  |
++:---:+-------------+---------+---------------------------------+------------+-----------+
+|  4  | RX/TX mouse | From    | Pin 7 of Desk PC/Wkst, inverted | Sun Serial | TX only   |
+|     |             | Contact | Pin 9 of Workstation-PC-Mouse   | Serial     | .         |
+|  5  | Kbd RX      | From    | Pin 3 of Desk PC/Wkst           | Sun Serial | .         |
+|     |             | Contact | Pin 8 of Workstation-PC-KBD     | Serial     | .         |
+|  6  | Kbd TX      | From    | Pin 2 of Desk PC/Wkst           | Sun Serial | .         |
+|     |             | Contact | Pin 9 of Workstation-PC-KBD     | Serial     | .         |
+|  8  | Power, +5V  | To      | Pin 6 of Desk PC/Wkst           | power      | .         |
+|     |             | To(?)   | Pin 6?, maybe, of Wkst-Generic  | power      | TODO: Which pin? |
+|    |       |  |    |      |          |
+|    |       |  |    |      |          |
+
 ```
     4   RX/TX mouse, but only using TX. Comes after being inverted. From: 
             Pin 7 of Desk PC/Wkst and 
@@ -168,6 +185,14 @@ Sun Keyboard and mouse connector
 
 ### AK125 System                                                        
 Goes to Keyboard "HOST"
+
+| Pin | Function          | Dir'n   | Destination                     | Protocol   | Comments  |
++:---:+-------------------+---------+---------------------------------+------------+-----------+
+|  4,5,6    | Ground      | To      | Pin 6 of Desk PC/Wkst           | power      | .         |
+|  12,13,14 | Power, +12V | To      | Pin 6 of Desk PC/Wkst           | power      | .         |
+ |    |       |  |    |      |          |
+|    |       |  |    |      |          |
+
 ```
     1 ground 
     2 Goes to HOST-SYSTEM male
