@@ -227,12 +227,12 @@ Goes to the "Desk PC/Wkst" connector on the kbd.
 
 | Pin       | Function    | Dir'n   | Destination               | Protocol   | Comments  |
 |:---------:|-------------|---------|---------------------------|------------|-----------|
-||||To Workstation-SUN connector|
+||||**To Workstation-SUN connector**|
 |  2         | Kbd TX     | To      | Pin 6 of Workstation-SUN | Sun Serial | Signal is inverted between here and Workstation-SUN |
 |  3         | Kbd RX     | From    | Pin 5 of Workstation-SUN | Sun Serial |  |
 |  6         | Power +5V  | From    | Pin 8 of Workstation-SUN | Power      |  |
 |  7         | Mouse TX   | To      | Pin 6 of Workstation-SUN | Sun Serial | Signal is inverted between here and Workstation-SUN |
-||||To Wkst-PC-KBD and -Mouse connector|
+||||**To Wkst-PC-KBD and -Mouse connector**|
 |  1         | UNKNOWN    | To      | Pin 8 of Wkst-PC-Mouse   | Serial |  |
 |  2         | Kbd TX     | To      | Pin 9 of Wkst-PC-KBD     | Serial |  |
 |  3         | Kbd RX     | From    | Pin 5 of Wkst-PC-KBD     | Serial |  |
