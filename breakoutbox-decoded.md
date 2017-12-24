@@ -162,8 +162,6 @@ Sun Keyboard and mouse connector
 |     |             | Contact | Pin 9 of Workstation-PC-KBD     | Serial     | .         |
 |  8  | Power, +5V  | To      | Pin 6 of Desk PC/Wkst           | power      | .         |
 |     |             | To(?)   | Pin 6?, maybe, of Wkst-Generic  | power      | TODO: Which pin? |
-|    |       |  |    |      |          |
-|    |       |  |    |      |          |
 
 ```
     4   RX/TX mouse, but only using TX. Comes after being inverted. From: 
@@ -190,7 +188,7 @@ Goes to Keyboard "HOST"
 |:---------:|-------------|---------|---------------------------|------------|-----------|
 |  1        | Ground      | To      | HOST-SYSTEM & Keyboard "HOST"| power      | .        |
 |  4,5,6    | Ground      | To      | HOST-SYSTEM & Keyboard "HOST"| power      | .        |
-|  15       | Ground      | To      | HOST-SYSTEM & Keyboard "HOST"| power      |NOT connected to HOST-SYSTEM connector.|
+|  15       | Ground      | To      | HOST-SYSTEM & Keyboard "HOST"| power      |NOT connected to <br>HOST-SYSTEM connector.|
 |  12,13,14 | Power +12V | To       | HOST-SYSTEM & Keyboard "HOST"| power      | .        |
 |  2        | Unknown     | ?       | HOST-SYSTEM               | other      |          |
 |  3        | Unknown     | ?       | HOST-SYSTEM               | other      |          |
@@ -212,12 +210,13 @@ Goes to Keyboard "HOST"
     15 grounded     Note: NOT connected to HOST-SYSTEM connector.
 ```
     
-Almost All Known, none very interesting:
+Much is known, none is very interesting:
 ```
     Only 12V ever used on the board. (Well, +5V can come in from the Sun
-    connector or the 5V regulator, butthose are minor.)
+    connector or the 5V regulator, but those are minor.)
     None of the pins go anywhere else on the board.
-    Therefore, the ONLY use for the host connector for our application is 12V power (and ground) in.
+    Therefore, the ONLY known use for the host connector for our application is
+    12V power (and ground) to the kbd.
 ```
 
 ### AK125-Desk-PC-Workstation
@@ -225,6 +224,21 @@ Almost All Known, none very interesting:
 TODO: Review, and double check all these.
 
 Goes to the "Desk PC/Wkst" connector on the kbd.
+| Pin       | Function    | Dir'n   | Destination               | Protocol   | Comments  |
+|:---------:|-------------|---------|---------------------------|------------|-----------|
+|To Workstation-SUN connector|
+|  2         | Kbd TX     | To      | Pin 6 of Workstation-SUN | Sun Serial | Signal is inverted between here and Workstation-SUN |
+|  3         | Kbd RX     | From    | Pin 5 of Workstation-SUN | Sun Serial |  |
+|  6         | Power +5V  | From    | Pin 8 of Workstation-SUN | Power      |  |
+|  7         | Mouse TX   | To      | Pin 6 of Workstation-SUN | Sun Serial | Signal is inverted between here and Workstation-SUN |
+|To Wkst-PC-KBD and -Mouse connector|
+|  1         | UNKNOWN    | To      | Pin 8 of Wkst-PC-Mouse   | Serial |  |
+|  2         | Kbd TX     | To      | Pin 9 of Wkst-PC-KBD     | Serial |  |
+|  3         | Kbd RX     | From    | Pin 5 of Wkst-PC-KBD     | Serial |  |
+|  6         | Power +5V  | Contact | Pin ? of Wkst-PC-KBD &<br>Pin ? of Wkst-PC-Mouse | Power      |  |
+|  7         | Mouse TX   | To      | Pin 9 of Wkst-PC-Mouse | Serial |  |
+|    |       |  |    |      |          |
+
 ```
         1      (+) Workstation-PC-Mouse, Pin 8. TODO: USE IN UNKNOWN
         2   (*)(§) Sun Kbd TX, Pin 6, inverted and Wkst-PC-KBD pin 9
