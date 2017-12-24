@@ -188,10 +188,10 @@ Goes to Keyboard "HOST"
 
 | Pin       | Function    | Dir'n   | Destination               | Protocol   | Comments  |
 |:---------:|-------------|---------|---------------------------|------------|-----------|
-|  1        | Ground      | To      | Keyboard "HOST"           | power      | .        |
-|  4,5,6    | Ground      | To      | Keyboard "HOST"           | power      | .        |
-|  12,13,14 | Power +12V | To       | Keyboard "HOST"           | power      | .        |
-|  15       | Ground      | To      | Keyboard "HOST"           | power      | .        |
+|  1        | Ground      | To      | HOST-SYSTEM & Keyboard "HOST"| power      | .        |
+|  4,5,6    | Ground      | To      | HOST-SYSTEM & Keyboard "HOST"| power      | .        |
+|  15       | Ground      | To      | HOST-SYSTEM & Keyboard "HOST"| power      |NOT connected to HOST-SYSTEM connector.|
+|  12,13,14 | Power +12V | To       | HOST-SYSTEM & Keyboard "HOST"| power      | .        |
 |  2        | Unknown     | ?       | HOST-SYSTEM               | other      |          |
 |  3        | Unknown     | ?       | HOST-SYSTEM               | other      |          |
 |  7        | Unknown     | ?       | HOST-SYSTEM               | other      |          |
