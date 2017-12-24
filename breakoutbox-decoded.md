@@ -223,29 +223,45 @@ Much is known, none is very interesting:
 
 TODO: Review, and double check all these.
 
-Goes to the "Desk PC/Wkst" connector on the kbd.
+Summary: This connector does almost all of the "heavy lifting" for keyboard
+functions. This connector goes to the "Desk PC/Wkst" connector on the kbd. Given
+that the other two connectors on the keyboard are only used for mouse functions
+and power, this is the main connector.
+
+The pins coming from the keyboard, through this connector, end up extending out 
+to up to four systems:
+
+* Desk PC
+* Workstation-SUN
+* Wkst-PC
+* Wkst-Generic
 
 | Pin       | Function    | Dir'n   | Destination               | Protocol   | Comments  |
 |:---------:|-------------|---------|---------------------------|------------|-----------|
-||||**To Workstation-SUN connector**|
+||||To **Workstation-SUN connector**|
 |  2         | Kbd TX     | To      | Pin 6 of Workstation-SUN | Sun Serial | Signal is inverted between here and Workstation-SUN |
 |  3         | Kbd RX     | From    | Pin 5 of Workstation-SUN | Sun Serial |  |
 |  6         | Power +5V  | From    | Pin 8 of Workstation-SUN | Power      |  |
 |  7         | Mouse TX   | To      | Pin 6 of Workstation-SUN | Sun Serial | Signal is inverted between here and Workstation-SUN |
-||||**To Wkst-PC-KBD and Wkst-PC--Mouse connector**|
-|  1         | UNKNOWN    | To      | Pin 8 of Wkst-PC-Mouse   | Serial |  |
+||||To **Wkst-PC-KBD** and **Wkst-PC--Mouse connector**|
+|  1         | UNKNOWN    | To      | Pin 8 of Wkst-PC-Mouse   | Serial | TODO: double check. Used for kbd to sense presence of Wkst? |
 |  2         | Kbd TX     | To      | Pin 9 of Wkst-PC-KBD     | Serial |  |
 |  3         | Kbd RX     | From    | Pin 5 of Wkst-PC-KBD     | Serial |  |
 |  6         | Power +5V  | Contact | Pin ? of Wkst-PC-KBD &<br>Pin ? of Wkst-PC-Mouse | Power      |  |
 |  7         | Mouse TX   | To      | Pin 9 of Wkst-PC-Mouse | Serial |  |
-|    |       |  |    |      |          |
+||||To **Wkst-Generic** PS/2 protocol|
+|  4  | Kbd Data(?) |To|Pin maybe 8 or 9 of Wkst-Generic    | PS/2 | White         |
+|  5  | Kbd Clock(?) |To|Pin maybe 9 or 8 of Wkst-Generic   | PS/2 | Black         |
+||||To **Desk-PC-KBD** PS/2 protocol|
+|  8  | Kbd Data |To |Pin 8 of Desk-PC-KBD  | PS/2 | green         |
+|  9  | Kbd Clock |To|Pin 9 of Desk-PC-KBD  | PS/2 | purple         |
 
 ```
-        1      (+) Workstation-PC-Mouse, Pin 8. TODO: USE IN UNKNOWN
+        1      (+) Workstation-PC-Mouse, Pin 8. TODO: USE IN UNKNOWN  ????POWER?????
         2   (*)(§) Sun Kbd TX, Pin 6, inverted and Wkst-PC-KBD pin 9
         3   (*)(§) Sun Kbd RX, Pin 5,          and Wkst-PC-KBD pin 8
         4   (^) [white] Wkst-Generic (unknown which pin, maybe 8 or 9) PS/2 protocol
-        5   (^) [black] Wkst-Generic (unknown which pin, maybe 8 or 9) PS/2 protocol
+        5   (^) [black] Wkst-Generic (unknown which pin, maybe 9 or 8) PS/2 protocol
         6   (*) Sun power +5V, pin 8,          and Workstation-Generic pin unknown, maybe 6
         7   (*)(+) Sun Mouse RX/TX, pin 4, inverted and Workstation-PC-Mouse, pin 9
         8   (=) [green]  Desk-PC-KBD, pin 8. PS/2 KBD DATA,  to Desk PC Kbd, pin 8(?)
@@ -277,7 +293,28 @@ Results:
     
 
 ### Mouse IN (PS/2)
-Pins are PS/2 connector pins, not PCB order
+Pins are PS/2 connector pins, not PCB order.
+
+From connector to Breakout Box:
+
+| Pin | Function    | Dir'n      | Destination               | Protocol   | Comments  |
+|:---:|-------------|------------|---------------------------|------------|-----------|
+| 1   | Mouse data  | To         | Pin 3 of AK125-Mouse   | PS/2  |          |
+| 4   | +5V         | From       |                        | Power |          |
+| 5   | Mouse Clock | To         | Pin 2 of AK125-Mouse   | PS/2  |          |
+| 3   | Ground      | Connect    | Ground plane           | Power |          |
+
+
+
+From connector to mouse:
+
+| Pin | Function    | Dir'n      | Destination               | Protocol   | Comments  |
+|:---:|-------------|------------|---------------------------|------------|-----------|
+| 1   | Mouse data  | From mouse |    | PS/2  |          |
+| 4   | +5V         | To mouse   |    | Power |          |
+| 5   | Mouse Clock | From mouse |    | PS/2  |          |
+| 3   | Ground      | To mouse   |    | Power |          |
+
 ```
     1   Data Pin 3 of AK125-Mouse
     4   +5V to power the mouse (from regulator)
@@ -287,7 +324,25 @@ Pins are PS/2 connector pins, not PCB order
   
 ### AK125-Mouse
 
-This distributes the PS/2 protocol mouse signals from the kbd to other connectors.
+This connector:
+    * receives the PS/2 mouse data and clock from Mouse-IN
+    * distributes the PS/2 protocol mouse signals from the kbd to other connectors.
+
+All 9 pins are used.
+
+| Pin | Function    | Dir'n      | Destination               | Protocol   | Comments  |
+|:---:|-------------|------------|---------------------------|------------|-----------|
+| 1   | ??          | ??         | Pin 1 of Desk-PC-Mouse<br> and Pin 1 of the Desk-PC-KBD    | ??         | TODO: PURPOSE? Perhaps to detect power from Desk system? |
+| 2   | Mouse Clock | From       | Pin 5 of Mouse-IN         | PS/2  |          |
+| 3   | Mouse data  | From       | Pin 1 of Mouse-IN         | PS/2  |          |
+| 4   |       | To  | Pin 5 of Wkst Generic    |      |√ light blue |
+| 5   |       | To  | Pin 8 of Desk-PC-Mouse   |      |√ pink  |
+| 6   |       | To  | Pin 6? of Desk-PC-Mouse  |      |√ white   |
+| 7   |       | To  | Pin 4 of Wkst-Generic    |      |√ brown   |
+| 8   |       | To  | Pin 3 of Wkst-Generic    |      |√ purple/dk blue  |
+| 9   |       | To  | Pin 2 of Wkst-Generic    |      | grey         |
+
+
 ```
     1   to Pin 1 of Desk-PC-Mouse   TODO: PURPOSE?
     2   from pin 5 of Mouse IN (PS/2 CLK)
