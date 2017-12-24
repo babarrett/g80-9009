@@ -224,6 +224,7 @@ Much is known, none is very interesting:
 TODO: Review, and double check all these.
 
 Goes to the "Desk PC/Wkst" connector on the kbd.
+
 | Pin       | Function    | Dir'n   | Destination               | Protocol   | Comments  |
 |:---------:|-------------|---------|---------------------------|------------|-----------|
 |To Workstation-SUN connector| | | | | |
