@@ -17,6 +17,9 @@ design match, though the connectors are all labeled the same.
 
 The complexity in the system is all handled within the keyboard.
 
+The knd-3 "breakout box" is a different system, with different connectors, and
+many active components created by a different company. It is unlikely that this
+document will be of much help there.
 
 * The Breakout Box is Simple.
     * One IC (Hex Inverter): SN7406
@@ -33,8 +36,8 @@ additional details)
     * Full duplex, 2-wire (TX and RX) RS232 serial communications for keyboard
     * Half duplex, 1-wire (TX) RS232 serial communications for mouse. Although this is also labeled with "RX" that direction appears not to be used.
     * Inverted, 1-wire (TX) RS232 serial communications for simulating a Sun keyboard to a Sun workstation
-    * Inverted, 1-wire (TX) RS232 serial communications for simulating a Sun mouse to a Sun workstation
-* The kbd handles all the "smarts" of routing the generated (kbd) and pass-through (    
+    * Inverted, 1-wire (RX) RS232 serial communications for simulating a Sun mouse to a Sun workstation
+* The kbd handles all the "smarts" of routing the generated (kbd) and pass-through (mouse) signals/
     
 Visual summary:
 ![Breakout visual summary](../master/images/breakout-decoded.png "Breakout visual summary")
@@ -61,31 +64,37 @@ box. In fact it should not be connected.
 ### +5V Derived from the +12V power source
 * Regardless of the source of the 12V (Power Supply or HOST-SYSTEM) the 5 volts
 is derived from a 5 volt regulator powered by the 12 volts.
-* The  volts are then used to:
-    * Power an inverter     TODO: which?
-    * Act, through a pull-up resistor, on the inverter output line going to the Sun RX/TX Mouse.
-    * Act, through a pull-up resister, on the inverter output line going to the Sun TX for the Sun Kbd.
+* The 5 volts are then used to:
+    * Power an SN7406 inverter
+    * Act, through a pull-up resistor, on the inverter output line going to the Sun RX/TX Mouse connector.
+    * Act, through a pull-up resister, on the inverter output line going to the Sun TX Kbd connector.
     * Go to the +5V pin of the "Mouse IN" connector (PS/2), to power an external, shared, mouse.
     
-### +5V Derived from the Workstation-SUN connector (Pin 8)
-* goes to pin 6 of AK125 "Desk PC/Workstation
-* also goes to pin 6(?) of Wkst-Generic
+### +5V Derived from the workstations:
+* Workstation-SUN connector (Pin 8)
+* Pins 6(?) of Workstation-Generic and 
+* other pins from Workstation-PC-KBD, and 
+* Workstation-PC-Mouse.
+
+It seems that all go to pin 6 of AK125 "Desk PC/Workstation. TODO: Why?
+Detecting Workstation presence?
 
 ### Protocols
 
-TODO: Include more here. See summary for what cover.
+TODO: Include more here. See summary for what to cover.
 
 #### RS232 Serial
-Earliest system, pre-PS/2. 1200 baud, fixed rate.
+Earliest system, pre-PS/2. 1200 baud, fixed rate. One start and one stop bit. No parity.
 
 #### Sun Serial (inverted TX and RX)
 Sun's take on RS232 Serial, where they invert the TX and RX signals. TTL levels.
-(+5V becomes ground, Ground becomes +5V)
+(+5V for zero, Ground for one)
+1200 baud, fixed rate. One start and one stop bit. No parity.
 
 #### PS/2
 Instead of transmitting at a fixed rate, say 1200 baud, the protocol uses one
-wire as a clock (cycles for every bit) and the other for data (+5V = 1 bit,
-ground for zero).
+wire as a clock (cycles once for every bit) and the other for data (+5V = 1 bit,
+ground for zero bit).
 
 
 
@@ -94,27 +103,28 @@ ground for zero).
 ## Connectors
 Starting at the top-left, and moving counter-clockwise.
 
+TODO: Insert small photo of the cover.
 --------------------------------------------------------------------------------------
 ### Connectors names and mapping
 
 The breakout Box includes 12 connectors as follows:
 
-| Name, on case                 | Name, on PCB          | Kbd connector name| Protocol  |
-| ----------------------------- |-----------------------|---------------|-----------|
-|  Power Supply                 | (none)                |               | N/A       |
-|  Workstation-SUN              | Wkst-SUN 8-pos. female|               | Sun       |
-|  AK125 System                 | AK125 "HOST" female   | Host          | N/A or unknown |
-|  AK125-Desk-PC-Workstation    | AK125 "Desk PC/Workstation male| Desk PC/Workstation male | PS/2, Sun |
-|  Mouse IN                     | Mouse IN 6-pos. female| Mouse         | PS/2     |
-|  AK125-Mouse                  | AK125 "Mouse" female  |     | PS/2   |
-|  Desk PC-Mouse                | Desk-PC-Mouse male    |     | PS/2   |
-|  Desk-PC-KBD                  | Desk PC KBD male      |     | PS/2   |
-|  Workstation-PC-KBD           | Wkst-PC-KBD male      |     | Serial |
-|  Workstation-PC-Mouse         | Wkst-PC-Mouse male    |     | Serial |
-|  Workstation-Generic          | Wkst-Generic female   |     | PS/2   |
-|  HOST-SYSTEM                  | System male           |     | Unknown |
+TODO: Add column: Direction WRT the box
 
-
+| Name, on case                 | Name, on PCB          | Kbd connector name| Protocol  | Dir'n |
+| ----------------------------- |-----------------------|---------------|-----------|------|
+|  Power Supply                 | (none)                |               | N/A       |In|
+|  Workstation-SUN              | Wkst-SUN 8-pos. female|               | Sun       |Out|
+|  AK125 System                 | AK125 "HOST" female   | Host          | N/A or unknown |??|
+|  AK125-Desk-PC-Workstation    | AK125 "Desk PC/Workstation male| Desk PC/Workstation male | PS/2, Sun |In|
+|  Mouse IN                     | Mouse IN 6-pos. female|          | PS/2     |In|
+|  AK125-Mouse                  | AK125 "Mouse" female  | Mouse    | PS/2   |**In**/Out|
+|  Desk PC-Mouse                | Desk-PC-Mouse male    |     | PS/2   |Out|
+|  Desk-PC-KBD                  | Desk PC KBD male      |     | PS/2   |Out|
+|  Workstation-PC-KBD           | Wkst-PC-KBD male      |     | Serial |Out|
+|  Workstation-PC-Mouse         | Wkst-PC-Mouse male    |     | Serial |Out|
+|  Workstation-Generic          | Wkst-Generic female   |     | PS/2   |Out|
+|  HOST-SYSTEM                  | System male           |     | Unknown|??|
 
 #### Connectors with data predominately going *IN TO* the breakout box
 
@@ -147,7 +157,7 @@ pins are unknown. Most pass through to the HOST-SYSTEM connector.
 
 ### Power Supply
     +12V
-    Ground
+    Ground plane
 
 ### Workstation-SUN
 Sun Keyboard and mouse connector
@@ -164,18 +174,18 @@ Sun Keyboard and mouse connector
 |     |             | To(?)   | Pin 6?, maybe, of Wkst-Generic  | power      | TODO: Which pin? |
 
 ```
-    4   RX/TX mouse, but only using TX. Comes after being inverted. From: 
-            Pin 7 of Desk PC/Wkst and 
-            Pin 9 of Workstation-PC-Mouse
-    5   Kbd RX (TTL) From:
-            Pin 3 of Desk PC/Wkst  
-            Pin 8 of Workstation-PC-KBD
-    6   Kbd TX (TTL), looks like TX only. Comes after being inverted. From:
+    4   RX/TX mouse, but only using TX. Sent after being inverted. From: 
+            Pin 7 of Desk PC/Wkst.
+            Also connected to Pin 9 of Workstation-PC-Mouse, uninverted.
+    5   Kbd RX (TTL) To:
+            Pin 3 of Desk PC/Wkst
+            Also connected to Pin 8 of Workstation-PC-KBD
+    6   Kbd TX (TTL). Comes after being inverted. From:
             Pin 2 of Desk PC/Wkst  
-            Pin 9 of Workstation-PC-KBD
+            Also connected to Pin 9 of Workstation-PC-KBD
     8   Power, +5V to: 
             Pin 6 of Desk PC/Wkst  
-            Pin ? maybe 6? of Wkst-Generic
+            Pin ? maybe 6? of Wkst-Generic. TODO: Determine pin.
 ```
 
 --------------------------------------------------------------------------------------
@@ -200,28 +210,28 @@ Goes to Keyboard "HOST"
     1 ground 
     2 Goes to HOST-SYSTEM male
     3 Goes to HOST-SYSTEM male
-    4, 5, 6 are grounded. 
+    4, 5, 6 are grounded. Go to Kbd "HOST" connector and HOST-SYSTEM
     7 Goes to HOST-SYSTEM male. 
     8 is N/C
     9 ground
     10 Goes to HOST-SYSTEM male
     11 Goes to HOST-SYSTEM male
-    12, 13, 14 are +12V, and do to HOST-SYSTEM male
+    12, 13, 14 are +12V, and go to HOST-SYSTEM and KBD HOST
     15 grounded     Note: NOT connected to HOST-SYSTEM connector.
 ```
     
 Much is known, none is very interesting:
 ```
-    Only 12V ever used on the board. (Well, +5V can come in from the Sun
-    connector or the 5V regulator, but those are minor.)
+    Only 12V ever used on the board. (Well, the 12V drives the +5V regulator for
+    a little on-board and Mouse-IN power. 5V can come in from the Sun connector.)
     None of the pins go anywhere else on the board.
-    Therefore, the ONLY known use for the host connector for our application is
+    Therefore, the ONLY KNOWN use for the host connector for our application is
     12V power (and ground) to the kbd.
 ```
 
 ### AK125-Desk-PC-Workstation
 
-TODO: Review, and double check all these.
+TODO: Review, and double check all these. Indicate direction.
 
 Summary: This connector does almost all of the "heavy lifting" for keyboard
 functions. This connector goes to the "Desk PC/Wkst" connector on the kbd. Given
@@ -229,12 +239,12 @@ that the other two connectors on the keyboard are only used for mouse functions
 and power, this is the main connector.
 
 The pins coming from the keyboard, through this connector, end up extending out 
-to up to four systems:
+to two systems, and three protocols:
 
-* Desk PC
-* Workstation-SUN
-* Wkst-PC
-* Wkst-Generic
+* Desk PC (PS/2)
+* Workstation-PC (PS/2)
+* Workstation-Generic (RS232 Serial)
+* Workstation-SUN (Sun Serial)
 
 | Pin       | Function    | Dir'n   | Destination               | Protocol   | Comments  |
 |:---------:|-------------|---------|---------------------------|------------|-----------|
@@ -258,14 +268,14 @@ to up to four systems:
 
 ```
         1      (+) Workstation-PC-Mouse, Pin 8. TODO: USE IN UNKNOWN  ????POWER?????
-        2   (*)(§) Sun Kbd TX, Pin 6, inverted and Wkst-PC-KBD pin 9
-        3   (*)(§) Sun Kbd RX, Pin 5,          and Wkst-PC-KBD pin 8
+        2   (*)(§) Sun Kbd TX, Pin 6, inverted and Wkst-PC-KBD pin 9 RS232 Serial
+        3   (*)(§) Sun Kbd RX, Pin 5,          and Wkst-PC-KBD pin 8 RS232 Serial
         4   (^) [white] Wkst-Generic (unknown which pin, maybe 8 or 9) PS/2 protocol
         5   (^) [black] Wkst-Generic (unknown which pin, maybe 9 or 8) PS/2 protocol
-        6   (*) Sun power +5V, pin 8,          and Workstation-Generic pin unknown, maybe 6
-        7   (*)(+) Sun Mouse RX/TX, pin 4, inverted and Workstation-PC-Mouse, pin 9
-        8   (=) [green]  Desk-PC-KBD, pin 8. PS/2 KBD DATA,  to Desk PC Kbd, pin 8(?)
-        9   (=) [purple] Desk-PC-KBD, pin 9. PS/2 KBD CLOCK  to Desk PC Kbd, pin 9(?)
+        6   (*)(^) Sun power +5V, pin 8, IN   and Workstation-Generic pin unknown, maybe 6
+        7   (*)(+) Sun Mouse RX/TX, pin 4, inverted and to Workstation-PC-Mouse, pin 9
+        8   (=) [green]  Desk-PC-KBD, pin 8. PS/2 KBD DATA
+        9   (=) [purple] Desk-PC-KBD, pin 9. PS/2 KBD CLOCK0
 ```
 
 Results:
@@ -276,19 +286,18 @@ Results:
 
         2 Sun signals, TX and Mouse(TX), inverted as they go to the Sun keyboard connector.
         1 Sun signal, RX, NOT inverted as it comes from the Sun keyboard connector.
-        1 Sun +5V. TODO: MAYBE THIS IS USED TO DETECT SUN KBD PRESENT?
+        1 Sun +5V. TODO: MAYBE THIS IS USED TO DETECT ANY KBD PRESENT?
 
-        The Sun Kbd TX signal also goes to (or comes from) Wkst-PC-KBD pin 9,
-        not inverted
-        The Sun TX Mouse signal also goes to (or comes from)
-        Workstation-PC-Mouse, pin 9
+        The "Sun Kbd TX signal" also goes to Wkst-PC-KBD pin 9, not inverted
+        (serial)
 
+        The Sun TX Mouse signal also goes to Workstation-PC-Mouse, pin 9
 
         One set of 2 pins (Serial protocol), pins 1, 7 go to
         Workstation-PC-Mouse, Pin 8, 9
 
-        One set of 2 pins (protocol??), 4 and 5 go to Workstation-Generic, Pin
-        8?, 9? (8 = Sun +5V. 9 = Sun mouse TX)
+        One set of 2 pins (PS/2), 4 and 5 go to Workstation-Generic, Pin 8?, 9?
+        (8 = Sun +5V. 9 = Sun mouse TX)
 ```    
     
 
@@ -300,31 +309,28 @@ From connector to Breakout Box:
 | Pin | Function    | Dir'n      | Destination               | Protocol   | Comments  |
 |:---:|-------------|------------|---------------------------|------------|-----------|
 | 1   | Mouse data  | To         | Pin 3 of AK125-Mouse   | PS/2  |          |
-| 4   | +5V         | From       |                        | Power |          |
 | 5   | Mouse Clock | To         | Pin 2 of AK125-Mouse   | PS/2  |          |
-| 3   | Ground      | Connect    | Ground plane           | Power |          |
-
-
 
 From connector to mouse:
 
 | Pin | Function    | Dir'n      | Destination               | Protocol   | Comments  |
 |:---:|-------------|------------|---------------------------|------------|-----------|
 | 1   | Mouse data  | From mouse |    | PS/2  |          |
+| 3   | Ground      | To mouse   |    | Power |          |
 | 4   | +5V         | To mouse   |    | Power |          |
 | 5   | Mouse Clock | From mouse |    | PS/2  |          |
-| 3   | Ground      | To mouse   |    | Power |          |
 
 ```
-    1   Data Pin 3 of AK125-Mouse
-    4   +5V to power the mouse (from regulator)
-    5   CLK to Pin 2 of AK125-Mouse
+    1   Data Pin 3 of AK125-Mouse in
     3   Gnd
+    4   +5V to power the mouse (from regulator) out
+    5   CLK to Pin 2 of AK125-Mouse out
 ```
   
 ### AK125-Mouse
 
 This connector:
+
     * receives the PS/2 mouse data and clock from Mouse-IN
     * distributes the PS/2 protocol mouse signals from the kbd to other connectors.
 
@@ -332,7 +338,7 @@ All 9 pins are used.
 
 | Pin | Function    | Dir'n      | Destination               | Protocol   | Comments  |
 |:---:|-------------|------------|---------------------------|------------|-----------|
-| 1   | ??          | ??         | Pin 1 of Desk-PC-Mouse<br> and Pin 1 of the Desk-PC-KBD    | ??         | TODO: PURPOSE? Perhaps to detect power from Desk system? |
+| 1   | ??          | ??         | Pin 1 of Desk-PC-Mouse<br> and Pin 1 of the Desk-PC-KBD    | ??         | TODO: PURPOSE?<br>Perhaps to detect power from Desk system? |
 | 2   | Mouse Clock | From       | Pin 5 of Mouse-IN         | PS/2  |          |
 | 3   | Mouse data  | From       | Pin 1 of Mouse-IN         | PS/2  |          |
 | 4   |       | To  | Pin 5 of Wkst Generic    |      |√ light blue |
@@ -340,7 +346,7 @@ All 9 pins are used.
 | 6   |       | To  | Pin 6? of Desk-PC-Mouse  |      |√ white   |
 | 7   |       | To  | Pin 4 of Wkst-Generic    |      |√ brown   |
 | 8   |       | To  | Pin 3 of Wkst-Generic    |      |√ purple/dk blue  |
-| 9   |       | To  | Pin 2 of Wkst-Generic    |      | grey         |
+| 9   |       | To  | Pin 2 of Wkst-Generic    |      |√ grey         |
 
 
 ```
@@ -348,7 +354,7 @@ All 9 pins are used.
     2   from pin 5 of Mouse IN (PS/2 CLK)
     3   From pin 1 of Mouse IN (PS/2 data)
     
-    4?  [light blue] pin 3 of Wkst Generic
+    4?  [light blue] pin 5 of Wkst Generic
     5?  [pink] pin 8 of Desk-PC-Mouse
     6?  [white] to pin 6? of Desk-PC-Mouse
     7   [brown] to pin 4 of Wkst Generic
@@ -360,18 +366,18 @@ All 9 pins are used.
 
 ### Desk-PC-Mouse
 ```
-    1   Desk PC KBD pin 1, AK125 Mouse pin 1. Unknown use/signal
+    1   Desk PC KBD pin 1, AK125 Mouse pin 1. Unknown use/signal. Power?
     8   Desk PC/Wkst pin 8, mouse Data??
     9   Desk PC/Wkst pin 9??, mouse Clock??
 ```
 
 Results:
-    Likely Desk PC will output PS/2 mouse info to here.
+    Likely Desk PC will output PS/2 mouse info to here. Untested.
     
     
 ### Desk-PC-KBD
 ```
-    1   Desk PC mouse pin 1, AK125 Mouse pin 1. Unknown use/signal
+    1   Desk PC mouse pin 1, AK125 Mouse pin 1. Unknown use/signal. Power?
     8   Desk AK125-Desk-PC-Workstation pin 8, Kbd Data.
     9   Desk AK125-Desk-PC-Workstation pin 9, Kbd Clock.
 ```
@@ -388,26 +394,24 @@ RS232 Serial protocol.
 
 ```
     1   Sun +5V power
-    8   RX, not inverted
-    9   TX, not inverted
+    8   RX, not inverted, from Workstation ports. We're simulatuing a kbd.
+    9   TX, not inverted, to Workstation ports. We're simulatuing a kbd.
 ```
  
 Results:
     This is a keyboard (not mouse) RS232 Serial protocol port coming through a DB9.
-    
     Pick this OR the Sun Din8, not both.
 
 ### Workstation-PC-Mouse
 RS232 Serial protocol.
 ```
     1   Sun +5V power
-    8   Desk PC/Wkst pin 1, unknown use.
-    9   Desk PC/Wkst pin 7, an RS232 Serial protocol TX Mouse
+    8   AK125-Desk-PC/Wkst pin 1, unknown use.
+    9   AK125-Desk-PC/Wkst pin 7, an RS232 Serial protocol TX Mouse
 ```
 
 Results:
     This is a mouse (not keyboard)  RS232 Serial protocol port coming through a DB9.
-    
     Pick this OR the Sun Din8, not both.
 
  

@@ -82,6 +82,8 @@ to DB-9M connector on cable, and from there to the PS/2 M end of the cable.
 
 ![The configuration](../master/images/Cherry%20G80-9009%20DB9%20to%20PS2.png "DB-9 to Desk PC")
 
+I have tried the first cable, the Desk PC to PS/2. That works fine.
+
 ```
 DB-9F   Signal name     PS/2 male
 ----    -----------     ---------
@@ -91,6 +93,7 @@ Shield  Ground          Shield
 ```
 
 You'll have to create this cable yourself.
+
 
 TODO: Very likely: You may be able to use more pins for Sun Systems keyboard
 protocol connection. I'm hoping that the Sun workstation keyboard connections
@@ -108,23 +111,18 @@ DB-9F   Signal name     Sun 8 pin mini DIN, male
 7       Sun mouse TX/RX 4
 ```
 
-TODO: Likely: You may be able to use more pins for another, third, computer connection.
-Uses a PS/s keyboard connector.
+TODO: Likely: You may be able to use more pins for another, third, computer
+connection. Uses a PS/s keyboard connector. I thought this would work for
+**Generic-Workstation**, but it didn't. Needs more research and testing, perhaps
+some logic analyzer work.
+
 ```
 DB-9F   Signal name     PS/2 male
 ----    -----------     ---------
-4       Data or clock   1       Wkst-Generic
-5       Data or clock   5       Wkst-Generic
+4       +Keyboard Data  1       Wkst-Generic
+5       Clock           5       Wkst-Generic
+6       +5V             4
 ```
 
 TODO: Test: May be able to use more pins for a mouse connection, but really why
 bother?
-
-I have tried the first cable, the Desk PC to PS/2. That works fine.
-I am about to try this one, which should allow both Desk PC and Wkst 
-modes to transmit key strokes. I hope.
-
-To be wired like this:
-
-
-

@@ -51,6 +51,8 @@ USER SETUP MENU
         +-------------------------------+   +-------------------------------+   +-------------------------------+
 
 ```
+16 legends sets are available.
+None support F13-F24 on Desk PC setting
 
 ## Calculator Mode:
 
@@ -136,7 +138,7 @@ Keys that operate in Keyboard mode:
 Keys that do **not** operate in Keyboard mode:
 
 * ABBR and Deal on the bottom row
-* All colored keys except "0" and "Enter" on the numeric pad.
+* All colored keys on the keyboard, except "0" and "Enter" on the numeric pad.
 * The entire first column from Interrupt to Raise Ordrs
 * Clear (above Esc)
 * F13-F24
@@ -148,4 +150,4 @@ With Desk PC selected you can use a subset of the keys on the board, as indicate
 
 ### Keyboard mode (Wkst)
 
-* No scan codes are sent out the Desk PC/workstation port. Still working on this.
+* No scan codes are sent out the Desk PC/Workstation port. Still working on this.
