@@ -133,7 +133,9 @@ Keys that operate in Keyboard mode:
 * The ' key shifted is "
 * The # key unshifted is \, and shifted is | << I should swap key caps for this.
 * The \ key unshifted is §, and shifted is ±
-* Reset button (not key) on the back of the keyboard does a power off/on cycle equivalent.
+* The reset button (not key)  on the back of the keyboard acts like a temporary
+power Off/On cycle.
+
 
 Keys that do **not** operate in Keyboard mode:
 

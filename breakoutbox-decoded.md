@@ -329,10 +329,14 @@ From connector to mouse:
   
 ### AK125-Mouse
 
-This connector:
-
-    * receives the PS/2 mouse data and clock from Mouse-IN
-    * distributes the PS/2 protocol mouse signals from the kbd to other connectors.
+The AK125-Mouse connector receives a PS/2 mouse singnal from the Brekout box
+"Mouse IN" connextor. The keboard logic then figures out where the mouse output
+needs to be directed (which of the four sets of ports) and sends the needed
+signals:
+* back out the AK125-Mouse connector on the Breakout box for the PS/2 signals:
+Desk-PC-Mouse and Workstation-Generic, or
+* out to the AK125-Desk-PC-Workstation for the RS232 and Sun serial signals:
+Workstation-Sun and Workstation-PC-Mouse.
 
 All 9 pins are used.
 

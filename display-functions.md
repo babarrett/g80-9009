@@ -3,7 +3,7 @@
 ### What this is:
 
 This information was determined when the keyboard was powered up through the
-Host port, but not connected through PS/2 or USB to a computer.
+Host port, and connected through PS/2, to USB to a computer.
 
 These are available with connection methods 2, 3, and 4, but not 1.
 
@@ -39,7 +39,7 @@ If you ignore the keyboard for five minutes the display lighting will go off.
 None support F13-F24 on Desk PC setting
 
 ```
-Position    Lable
+Position    Label
 31          WORKSTATION
 32          IBM PS/2
 33          DESK PC

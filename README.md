@@ -1,17 +1,22 @@
-# g80-9009
-Cherry built keyboard, G80-9009, and similar model numbers, for Reuters. 
-The Reuters model number is AK124. 
+# Cherry G80-9009 / Reuters AK124 Keyboard
+
+Cherry built keyboard, G80-9009, and similar model numbers for Reuters. The
+Reuters model numbers are AK124 (common) and AK125 (latest, but uncommon.) 
 
 The variations in model numbers seem to reflect some specialized key labeling,
-some language variation in 3 of the main keys, and finally technology. I have seen 
-photos of a G8-9039HAAUS that is all surface mount technology.
+some language variation, and finally technology. I have seen photos of a
+G8-9039HAAUS that is all surface mount technology.
 
-```
-Country     Top-left Shift-2 Shift-3  Near return      Near shift
--------     -------- ------- -------  -----------      ----------
-USA         `, ~        @      #      ', " and \, |    "blank"   
-UK          `, ¬, |     "      £      ', @ and #, ~    \, | 
-```
+Additional details are available:
+
+1.  [Operations](../master/operations.md "Operations"): The keyboard features and 
+how to operate them.
+2.  [Breakoutbox decoded](../master/breakoutbox-decoded.md "Breakoutbox decoded"): 
+"Dissecting" and examining an AK125 Breakout Box to determine it's functionality 
+and by extension the way the keyboard functions.
+3.  [Making Cables](../master/making-cables.md "Making Cables"): How to make the
+needed cables to connect the keyboard to computers via PS/2, RS232 serial, or
+Sun serial protocols.
 
 ### Presumption:
 Reuters is an old and current leading newswire service.
@@ -23,8 +28,11 @@ into the trading system (or network) and they need access to up to date news. So
 then, the "workstation" port is for the trading and the "PC" port is for the
 news.
 
-Two keys in the upper-right (Desk PC, Wkst) allow the trader to switch the
-keyboard from the desktop PC to Workstation, and back.
+The keyboard is designed to work with a multi-connector "Breakout BOX" models
+AK124 and AK125. The keyboard contains built-in circuitry, which in conjunction
+with the Breakout Box forms a KM (Keyboard/Mouse) switch. Two keys in the
+upper-right (Desk PC, Wkst) allow the trader to switch the keyboard and mouse
+from the desktop PC to Workstation, and back.
 
 It:
 
@@ -33,11 +41,14 @@ It:
 the dots in the name gave way to a solid all-caps font with an orange dotted
 semi-circle, and a solid blue semicircle.
 * has 149 total keys. Not all generate scan codes to the attached computers
-* has a, primarily text, LCD display with 2 font sizes.
+* has a, primarily text, 100 x 584 pixel LCD display with 2 font sizes.
 * can create up to 72 macros on the fly that are stored in the keyboard. 
 * can select any 1 of 4 screens (Indicated by keys, unverified.)
-* can select any 1 of 2 workstations with a kmd3, or 3 or 4 for a "Breakout Box"
-* can perform calculations within the keyboard, displaying the results on the LCD display
+* can select any 1 of 2 workstations with a "Breakout Box"
+* can use three different keyboard protocols (PS/2, RS232 Serial, and Sun serial)
+* is supported by a third-party kmd3 switch as well
+* can perform calculations within the keyboard, displaying the results on the
+LCD display
 
 ---
 **CAUTION!** Not everything in here has been verified, and even if it has been
@@ -63,15 +74,16 @@ keyboard to a modern computer:
     - Requires a USB to USB Mini-5 (5 pin) cable
     - Includes a Pro Micro (equivalent), running TMK software, allowing the
     mapping of all 149 keys. This includes special "workstation" keys that do
-    not generate scancodes in "normal" use.
+    not generate scancodes in "normal" use, and all keys that work in
+    "Workstation" mode, but not in the "Desk PC" mode.
     - Gets power from the USB connector. Does not require a 12V power connection
     to the keyboard.
     - Requires disassembly of your keyboard case.
-    - A good solution for getting up-and-running quickly, without much thinking
-    or assembly required. A known solution. Very useful if some part of your
-    keyboard's internals (other than the key matrixes) has failed. Unless the LCD
-    display being operational was a significant motivation for acquiring this
-    keyboard, this is likely your best and easiest choice.
+    - This is a good solution for getting up-and-running quickly, without much
+    thinking or assembly required. A known solution. Very useful if some part of
+    your keyboard's internals (other than the key matrixes) has failed. Unless
+    the LCD display being operational was a significant motivation for acquiring
+    this keyboard, this is likely your best and easiest choice.
 2. [Directly](../master/method-2-direct.md  ) from the "Desk PC/Workstation"
     connector to a PS/2 connector
     - Very few parts, essentially one custom built DB-9 to PS/2 cable and
@@ -86,8 +98,9 @@ keyboard to a modern computer:
     programable is unimportant, this is likely your best choice. 
     - The "PC Desk" setting does not send scan codes for 35 keys, and only sends
     keyboard programmed macros for F13-F24.
-    - It is presumed that using the Wkst setting will cause the additional 
-    keys to send scan codes, but the method for this is still unknown.
+    - It is presumed that using the Wkst setting will cause the additional keys
+    to send scan codes, but the additional wiring and other needs for this are
+    unknown.
 3. [Direct+Soarer](../master/method-3-direct+soarer.md  ) from the "Desk
     PC/Workstation" connector to a PS/2 connector
     - Few parts, essentially one custom built DB-9 to PS/2 cable and
@@ -96,21 +109,26 @@ keyboard to a modern computer:
     ability to remap keys, add macros, add additional function layers, and be
     able to toggle different layouts.
     - Special "workstation" keys do not generate scan codes with the "Desk PC"
-    setting and we do nit yet know how to get that to happen.
+    setting and we do not yet know how to get that to happen.
     - The "PC Desk" setting does not send scan codes for 35 keys, and only sends
     keyboard programmed macros for F13-F24.
+    - It is presumed that using the Wkst setting will cause the additional keys
+    to send scan codes, but the additional wiring and other needs for this are
+    unknown.
     - A good solution for getting everything you're likely to want out of the
     keyboard except using every key: working display functions, with in-keyboard
     programmability and keymap re-writing. If the LCD display being operational
     was a significant motivation for acquiring this keyboard, and you want it to
     be programable too, this is likely your best choice. 
-4. With (rare) [KVM](../master/method-4-keyboard-to-breakout-box.md) boxes
-    - These are KVM switches (keyboard, video and mouse)
-    - Special "workstation" keys and PC/Workstation, and Screen keys likely
-    control the attached KVM via the "Host" port.
+4. With (rare) [keyboard and mouse switche](../master/method-4-keyboard-to-breakout-box.md) boxes
+    - These are KM switches (keyboard and mouse)
+    - Special "Desk PC" and "Wkst" keys select the type of computer to talk to.  
+    The attached KM box will output three different protocols for the Wkst
+    computer.
     - kdm3 (keyboard, display and mouse)
     - Reuters Breakout Box
-    - Covered here in less detail as the boxes (and cables) are so rare.
+    - See [Breakoutbox decoded](../master/breakoutbox-decoded.md "Breakoutbox
+    decoded") for much more information.
     
 
 ## Method vs features  
@@ -121,8 +139,7 @@ keyboard to a modern computer:
 | Display functions work       | n | y | y | y |
 | Req. hand-made power to Host | n | y | y | n |
 | Lock LEDs work               | n | y* | y? | y? |
-| Requires "rare" KVM box      | n | n | n | y |
-| Support kbd-only switching   | n | n | n | y |
+| Requires "rare" KM box       | n | n | n | y |
 
 \* Caps lock and Scroll lock can be set by the computer. Num Lock is controlled by the keyboard.
 
@@ -142,7 +159,7 @@ This is one datapoint, based upon my experience.
 | DB-9, Female,SOLDER CUP 22AWG   |   $0.85 |            |  Y     |     Y         |  Y   |
 | DB-9, Hood, metalized           |   $0.85 |            |  Y     |     Y         |  Y   |
 | PS/2 to USB Soarer's Converter  |  $39.99 |            |        |     Y         |      |
-| KVM box                         |       † |            |        |               |  Y   |
+| KM box                          |       † |            |        |               |  Y   |
 | TOTALS                          |         |   $168.26  | $134.23 |   $170.60    | $130.61† |
 
 \* International shipping from China allocated among these two items.
@@ -180,9 +197,14 @@ keyboard to a PS/2 connector.
 
 See [Making Cables](../master/making-cables.md "Cable making instructions")
 
-Note: There may be signals on the pins on the Desk PC/Workstation 
-or Host ports that will send out signals when in Wkst mode. As of yet we have
-no idea which pins are used or what protocols are used.
+Note: There are some additional signals on the pins on the Desk PC/Workstation
+connector that map to the Workstation connectors on the Breakout Box. These map
+to the three different protocols supported by the keyboard and box: PS/2, RS232
+serial, and Sun serial. I still havent figured out what enables these signals,
+still working on that. Quite possibly it's pins on the keyboard "Host" port.
+
+See [Breakout Box Decoded](../master/breakoutbox-decoded.md "Breakout Box
+Decoded") for more.
 
 ### Switches
 
@@ -215,7 +237,14 @@ Most are Double-shot ABS. "Super thick." TODO: measure once in hand
 * 10u space bar.
 * In spite of the odd bottom row with the extended spacebar, and stepped Caps
 Lock, pretty much everything will fit on a modern board.
+* There are some key caps that vary by location:
 
+```
+        Country     Top-left Shift-2 Shift-3  Near return      Near shift
+        -------     -------- ------- -------  -----------      ----------
+        USA         `, ~        @      #      ', " and \, |    "blank"   
+        UK          `, ¬, |     "      £      ', @ and #, ~    \, | 
+```
 
 ### Case:
 
@@ -225,28 +254,35 @@ Lock, pretty much everything will fit on a modern board.
   top/bottom by plastic molding. There are no bolts, screws, or rivits.
 * Flip-out feet on bottom, at back. Single position. TODO: how high?
 * Under the rectangular plate on the bottom (4 screws) is a 27 x 2 pin ribbon
-cable, not connected. For expansion module?
+cable, not connected. Also, there's  removable back pannel plate. Perhaps
+intended for some expansion module. This would make a nice space for a custom
+board, if we needed one.
 * Back of keyboard, left to right has the following: [Photos from imgur](http://i.imgur.com/lwkKiGb.jpg)
 * Although the back of the keyboard slopes inward toward the top, the connectors
-are parallel to the base, so they are at an angle to the back. The Reset button
-acts like a temporary power Off/On cycle.
+are parallel to the base, so they are at an angle to the back.
+* The Reset button acts like a temporary power Off/On cycle.
 ```
-    [Grill]    [Knob]   [Knob]      [button]
-    Buzzer     Volume   Contrast    Reset 
+        [Grill]    [Knob]   [Knob]      [button]
+        Buzzer     Volume   Contrast    Reset 
     
-    Then, 3 ports                               [Female DB-9]   [Male DB-9]     [Male DB-15]
-                                                 Mouse           Desk PC/        Host
-                                                                 Workstation     
+        Then, 3 ports                               [Female DB-9]   [Male DB-9]     [Male DB-15]
+                                                     Mouse           Desk PC/        Host
+                                                                     Workstation     
 ```
 
-The use of the mouse port is unknown to me.
-
+The mouse port accepts a PS/2 mouse singnal in from the Brekout box. The keboard
+logic then figures out where the mouse output needs to be directed (which of the
+four sets of ports) and sends the needed signals:
+* back out the mouse connector to the Breakout box for the PS/2 signals:
+Desk-PC-Mouse and Workstation-Generic, or
+* out the AK125-Desk-PC-Workstation for the RS232 and Sun serial signals:
+Workstation-Sun and Workstation-PC-Mouse.
 ---
 ### Models:
 
 * G80-9009HAU
 * G80-9009HAG - Youtube Video
-* G80-9039HAAUS - Newer, SMT PCBs.
+* G80-9039HAAUS - Newer, SMT PCBs. AK125
 * G80-9035 - comment on youtube review
 
 ---
@@ -266,14 +302,13 @@ calculator mode (Use Desk PC or Wkst to exit calc mode) and "SetUp" lets you def
 macros, etc. These will never generate scan codes out the "Desk PC /
 Workstation" or "Host" ports, they are handled within the keyboard itself.
 
-3. "KVM" keys that control the switch boxes themselves. For example "Scrn 4" to
+3. "KM" keys that control the switch boxes themselves. For example "Scrn 4" to
 change display to Screen 4. Also "Desk PC" and "Wkst" to select at least which
-computer to attach the keyboard to. (TODO: unverified) They may also change which screen gets
-displayed. These may work in a couple different ways: (Unknown)
-    * Send some form of signal out the "Host" port on the keyboard to the KVM box. 
+computer to attach the keyboard to. (TODO: unverified) They may also change
+which screen gets displayed. These may work in a couple different ways: (Unknown)
+    * Send some form of signal out the "Host" port on the keyboard to the KM box. 
     This could be done by changing the Host pins. Maybe by
-    setting them high or low. Maybe by sending serial data to a small processor on
-    the KVM Box. I have no ideas which or how, or what protocol. 
+    setting them high or low.
 These will also never generate scan codes out the "Desk PC / Workstation" port.
 
 4. It looks like ABBR is another case we know little about. If the workstations
@@ -296,9 +331,9 @@ A description of [Display Functions](../master/display-functions.md "Display Fun
 1. Are the Yang controllers still generally available?
 2. What are the non-power, non-ground pins on the Host connector used for? What protocol?
 3. Which keys will still not be sent out the "Desk PC / Workstation" port when
-using the "Direct" method?
-4. What triggers the buzzer? Bad Calc keys, bad macro definition keys, others.
-5. Do the LEDs work without a KVM box? Yes for Caps, Scroll, and Num with "direct" method.
+using the "Direct" method and Wkst setting?
+4. What triggers the buzzer? Bad Calc keys, bad macro definition keys, others?
+5. Do the LEDs work without a KM box? Yes for Caps, Scroll, and Num with "direct" method.
 
 
 ---
