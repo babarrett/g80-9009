@@ -243,6 +243,10 @@ to two systems, and three protocols:
 * Workstation-Generic (RS232 Serial)
 * Workstation-SUN (Sun Serial)
 
+The Workstation-Generic and Workstation-SUN are connected together. You cannot
+send to one without sending to the other. This implies that you should connect
+one of these as a workstation, but not both.
+
 | Pin       | Function    | Dir'n   | Destination               | Protocol   | Comments  |
 |:---------:|-------------|---------|---------------------------|------------|-----------|
 ||||To **Workstation-SUN connector**|
@@ -250,17 +254,17 @@ to two systems, and three protocols:
 |  3         | Kbd RX     | From    | Pin 5 of Workstation-SUN | Sun Serial | Yellow |
 |  6         | Power +5V  | From    | Pin 8 of Workstation-SUN | Power      | Orange |
 |  7         | Mouse TX   | To      | Pin 4 of Workstation-SUN | Sun Serial | Lt. blue. Signal is inverted between here and Workstation-SUN |
-||||To **Wkst-PC-KBD** and **Wkst-PC-Mouse connector**|
-|  1         | UNKNOWN    | To      | Pin 8 of Wkst-PC-Mouse   | Serial | Brown TODO: double check. Used for kbd to sense presence of Wkst? |
+||||To **Wkst-PC-KBD** and **Wkst-PC-Mouse connector**| | Serial protocol |
+|  1         | Mouse, UNKNOWN| To?  | Pin 8 of Wkst-PC-Mouse   | Serial | Brown TODO: double check. Used for kbd to sense presence of Wkst? |
 |  2         | Kbd TX     | To      | Pin 9 of Wkst-PC-KBD     | Serial | Pink |
 |  3         | Kbd RX     | From    | Pin 8 of Wkst-PC-KBD     | Serial | Yellow |
 |  6         | Power +5V  | Contact | Pin 1 of Wkst-PC-KBD &<br>Pin 1 of Wkst-PC-Mouse | Power      | Orange |
 |  7         | Mouse TX   | To      | Pin 9 of Wkst-PC-Mouse   | Serial | Lt. blue |
-||||To **Wkst-Generic** PS/2 protocol|
+||||To **Wkst-Generic** | | PS/2 protocol|
 |  4         | Kbd Data(?) |To|Pin maybe 8 or 9 of Wkst-Generic| PS/2 | White TODO: Test to determine right pin # |
 |  5         | Kbd Clock(?)|To|Pin maybe 9 or 8 of Wkst-Generic| PS/2 | Black TODO: Test to determine right pin # |
 |  6         | Power +5V  | Contact | Pin 6? of Wkst-Generic   | Power | Orange |
-||||To **Desk-PC-KBD** PS/2 protocol|
+||||To **Desk-PC-KBD** | | PS/2 protocol|
 |  8         | Kbd Data   |To       | Pin 8 of Desk-PC-KBD     | PS/2 | green   |
 |  9         | Kbd Clock  |To       | Pin 9 of Desk-PC-KBD     | PS/2 | purple  |
 
