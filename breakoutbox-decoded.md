@@ -17,9 +17,32 @@ design match, though the connectors are all labeled the same.
 
 The complexity in the system is all handled within the keyboard.
 
-The knd-3 "breakout box" is a different system, with different connectors, and
-many active components created by a different company. It is unlikely that this
-document will be of much help there.
+The kmd-3 "breakout box" is a different system, with different connectors,
+contains many active components, and was created by a different company. It is
+unlikely that this document will be of much help there.
+
+The basis functionality is as follows:
+* Keyboard input comes from the keyboard "HOST" connector. It uses 3 sets of
+lines to talk to the different computers available:
+    1. Desk-PC-KBD (PS/2)
+    2. Workstation-Generic (PS/2)
+    3. Workstation-PC-KBD (RS22 Serial communication), or Workstation-SUN
+    (Sun Serial communication).
+* Mouse input comes in the Mouse IN (PS/2) connector and is sent, unchanged,
+to the AK-125 Mouse connector. That connector is connected to the Mouse
+connector on the keybord. From there the mouse signals use 3 sets of
+lines to talk to the different computers available:
+    1. Desk-PC-Mouse (PS/2), from the keyboard Mouse connector
+    2. Workstation-Generic (PS/2), from the keyboard Mouse connector
+    3. Workstation using either Sun Serial or RS22 Serial communication), from
+    the keyboard Desk PC/Workstation connector
+* There are 5 conneections of unknown purpose and direction from the AK125
+System connector to the HOST-SYSTEM connector.
+* Power (+12V) is provided by the Power Supply connector.
+
+Visual summary:
+![Breakout visual summary](../master/images/breakout-decoded.png "Breakout visual summary")
+
 
 * The Breakout Box is Simple.
     * One IC (Hex Inverter): SN7406
@@ -39,8 +62,6 @@ additional details)
     * Inverted, 1-wire (RX) RS232 serial communications for simulating a Sun mouse to a Sun workstation
 * The kbd handles all the "smarts" of routing the generated (kbd) and pass-through (mouse) signals/
     
-Visual summary:
-![Breakout visual summary](../master/images/breakout-decoded.png "Breakout visual summary")
 
 * Red for keyboard data
 * Green for mouse data
@@ -111,20 +132,20 @@ The breakout Box includes 12 connectors as follows:
 
 TODO: Add column: Direction WRT the box
 
-| Name, on case                 | Name, on PCB          | Kbd connector name| Protocol  | Dir'n |
-| ----------------------------- |-----------------------|---------------|-----------|------|
-|  Power Supply                 | (none)                |               | N/A       |In|
-|  Workstation-SUN              | Wkst-SUN 8-pos. female|               | Sun       |Out|
-|  AK125 System                 | AK125 "HOST" female   | Host          | N/A or unknown |??|
-|  AK125-Desk-PC-Workstation    | AK125 "Desk PC/Workstation male| Desk PC/Workstation male | PS/2, Sun |In|
-|  Mouse IN                     | Mouse IN 6-pos. female|          | PS/2     |In|
-|  AK125-Mouse                  | AK125 "Mouse" female  | Mouse    | PS/2   |**In**/Out|
-|  Desk PC-Mouse                | Desk-PC-Mouse male    |     | PS/2   |Out|
-|  Desk-PC-KBD                  | Desk PC KBD male      |     | PS/2   |Out|
-|  Workstation-PC-KBD           | Wkst-PC-KBD male      |     | Serial |Out|
-|  Workstation-PC-Mouse         | Wkst-PC-Mouse male    |     | Serial |Out|
-|  Workstation-Generic          | Wkst-Generic female   |     | PS/2   |Out|
-|  HOST-SYSTEM                  | System male           |     | Unknown|??|
+|Type  | Name, on case             | Name, on PCB      | Kbd connector name| Protocol  | Dir'n |
+|------| --------------------------|-------------------|---------------|-----------|------|
+| ?    |  Power Supply             | (none)            |               | N/A       |In|
+| 8DIN-F|  Workstation-SUN         | Wkst-SUN 8-pos.   |               | Sun       |Out|
+| DB15-F|  AK125 System            | AK125 "HOST"      | Host          | N/A or unknown |??|
+| DB9-M|  AK125-Desk-PC-Workstation| AK125 "Desk PC/Workstation" | Desk PC/Workstation | PS/2, Sun |In|
+| PS/2-F|  Mouse IN                | Mouse IN 6-pos.   |          | PS/2     |In|
+| DB9-F|  AK125-Mouse              | AK125 "Mouse"     | Mouse    | PS/2   |**In**/Out|
+| DB9-M|  Desk PC-Mouse            | Desk-PC-Mouse     |     | PS/2   |Out|
+| DB9-M|  Desk-PC-KBD              | Desk PC KBD       |     | PS/2   |Out|
+| DB9-M|  Workstation-PC-KBD       | Wkst-PC-KBD       |     | Serial |Out|
+| DB9-M|  Workstation-PC-Mouse     | Wkst-PC-Mouse     |     | Serial |Out|
+| DB9-F|  Workstation-Generic      | Wkst-Generic      |     | PS/2   |Out|
+| DB15-M|  HOST-SYSTEM             | System            |     | Unknown|??|
 
 #### Connectors with data predominately going *IN TO* the breakout box
 
@@ -164,29 +185,15 @@ Sun Keyboard and mouse connector
 
 | Pin | Function    | Dir'n   | Destination                     | Protocol   | Comments  |
 |:---:|-------------|---------|---------------------------------|------------|-----------|
-|  4  | RX/TX mouse | From    | Pin 7 of Desk PC/Wkst, inverted | Sun Serial | TX only   |
+|  4  | RX/TX mouse | From    | Pin 7 of Desk PC/Wkst, inverted | Sun Serial, TTL | TX only   |
 |     |             | Contact | Pin 9 of Workstation-PC-Mouse   | Serial     | .         |
-|  5  | Kbd RX      | From    | Pin 3 of Desk PC/Wkst           | Sun Serial | .         |
+|  5  | Kbd RX      | From    | Pin 3 of Desk PC/Wkst           | Sun Serial, TTL | .         |
 |     |             | Contact | Pin 8 of Workstation-PC-KBD     | Serial     | .         |
-|  6  | Kbd TX      | From    | Pin 2 of Desk PC/Wkst           | Sun Serial | .         |
+|  6  | Kbd TX      | From    | Pin 2 of Desk PC/Wkst, inverted | Sun Serial, TTL | .         |
 |     |             | Contact | Pin 9 of Workstation-PC-KBD     | Serial     | .         |
 |  8  | Power, +5V  | To      | Pin 6 of Desk PC/Wkst           | power      | .         |
 |     |             | To(?)   | Pin 6?, maybe, of Wkst-Generic  | power      | TODO: Which pin? |
 
-```
-    4   RX/TX mouse, but only using TX. Sent after being inverted. From: 
-            Pin 7 of Desk PC/Wkst.
-            Also connected to Pin 9 of Workstation-PC-Mouse, uninverted.
-    5   Kbd RX (TTL) To:
-            Pin 3 of Desk PC/Wkst
-            Also connected to Pin 8 of Workstation-PC-KBD
-    6   Kbd TX (TTL). Comes after being inverted. From:
-            Pin 2 of Desk PC/Wkst  
-            Also connected to Pin 9 of Workstation-PC-KBD
-    8   Power, +5V to: 
-            Pin 6 of Desk PC/Wkst  
-            Pin ? maybe 6? of Wkst-Generic. TODO: Determine pin.
-```
 
 --------------------------------------------------------------------------------------
 ## Bottom
@@ -200,33 +207,23 @@ Goes to Keyboard "HOST"
 |  4,5,6    | Ground      | To      | HOST-SYSTEM & Keyboard "HOST"| power      | .        |
 |  15       | Ground      | To      | HOST-SYSTEM & Keyboard "HOST"| power      |NOT connected to <br>HOST-SYSTEM connector.|
 |  12,13,14 | Power +12V | To       | HOST-SYSTEM & Keyboard "HOST"| power      | .        |
+|* * *|
 |  2        | Unknown     | ?       | HOST-SYSTEM               | other      |          |
 |  3        | Unknown     | ?       | HOST-SYSTEM               | other      |          |
 |  7        | Unknown     | ?       | HOST-SYSTEM               | other      |          |
 |  10       | Unknown     | ?       | HOST-SYSTEM               | other      |          |
 |  11       | Unknown     | ?       | HOST-SYSTEM               | other      |          |
 
-```
-    1 ground 
-    2 Goes to HOST-SYSTEM male
-    3 Goes to HOST-SYSTEM male
-    4, 5, 6 are grounded. Go to Kbd "HOST" connector and HOST-SYSTEM
-    7 Goes to HOST-SYSTEM male. 
-    8 is N/C
-    9 ground
-    10 Goes to HOST-SYSTEM male
-    11 Goes to HOST-SYSTEM male
-    12, 13, 14 are +12V, and go to HOST-SYSTEM and KBD HOST
-    15 grounded     Note: NOT connected to HOST-SYSTEM connector.
-```
+
     
 Much is known, none is very interesting:
 ```
-    Only 12V ever used on the board. (Well, the 12V drives the +5V regulator for
-    a little on-board and Mouse-IN power. 5V can come in from the Sun connector.)
-    None of the pins go anywhere else on the board.
-    Therefore, the ONLY KNOWN use for the host connector for our application is
-    12V power (and ground) to the kbd.
+    Only 12V ever used to supply the keyboard. None of the pins go anywhere on
+    the board except to the HOST-SYSTEM & keyboard "HOST" connectoes. Therefore,
+    the ONLY KNOWN use for the host connector for our application is 12V power
+    (and ground) to the kbd.
+    
+    There are a total of 5 pins of unknown functions that are still to be determined.
 ```
 
 ### AK125-Desk-PC-Workstation
@@ -236,7 +233,7 @@ TODO: Review, and double check all these. Indicate direction.
 Summary: This connector does almost all of the "heavy lifting" for keyboard
 functions. This connector goes to the "Desk PC/Wkst" connector on the kbd. Given
 that the other two connectors on the keyboard are only used for mouse functions
-and power, this is the main connector.
+and power, this is the main connector for keyboard use.
 
 The pins coming from the keyboard, through this connector, end up extending out 
 to two systems, and three protocols:
@@ -249,22 +246,23 @@ to two systems, and three protocols:
 | Pin       | Function    | Dir'n   | Destination               | Protocol   | Comments  |
 |:---------:|-------------|---------|---------------------------|------------|-----------|
 ||||To **Workstation-SUN connector**|
-|  2         | Kbd TX     | To      | Pin 6 of Workstation-SUN | Sun Serial | Signal is inverted between here and Workstation-SUN |
-|  3         | Kbd RX     | From    | Pin 5 of Workstation-SUN | Sun Serial |  |
-|  6         | Power +5V  | From    | Pin 8 of Workstation-SUN | Power      |  |
-|  7         | Mouse TX   | To      | Pin 6 of Workstation-SUN | Sun Serial | Signal is inverted between here and Workstation-SUN |
-||||To **Wkst-PC-KBD** and **Wkst-PC--Mouse connector**|
-|  1         | UNKNOWN    | To      | Pin 8 of Wkst-PC-Mouse   | Serial | TODO: double check. Used for kbd to sense presence of Wkst? |
-|  2         | Kbd TX     | To      | Pin 9 of Wkst-PC-KBD     | Serial |  |
-|  3         | Kbd RX     | From    | Pin 5 of Wkst-PC-KBD     | Serial |  |
-|  6         | Power +5V  | Contact | Pin ? of Wkst-PC-KBD &<br>Pin ? of Wkst-PC-Mouse | Power      |  |
-|  7         | Mouse TX   | To      | Pin 9 of Wkst-PC-Mouse | Serial |  |
+|  2         | Kbd TX     | To      | Pin 6 of Workstation-SUN | Sun Serial | Pink Signal is inverted between here and Workstation-SUN |
+|  3         | Kbd RX     | From    | Pin 5 of Workstation-SUN | Sun Serial | Yellow |
+|  6         | Power +5V  | From    | Pin 8 of Workstation-SUN | Power      | Orange |
+|  7         | Mouse TX   | To      | Pin 4 of Workstation-SUN | Sun Serial | Lt. blue. Signal is inverted between here and Workstation-SUN |
+||||To **Wkst-PC-KBD** and **Wkst-PC-Mouse connector**|
+|  1         | UNKNOWN    | To      | Pin 8 of Wkst-PC-Mouse   | Serial | Brown TODO: double check. Used for kbd to sense presence of Wkst? |
+|  2         | Kbd TX     | To      | Pin 9 of Wkst-PC-KBD     | Serial | Pink |
+|  3         | Kbd RX     | From    | Pin 8 of Wkst-PC-KBD     | Serial | Yellow |
+|  6         | Power +5V  | Contact | Pin 1 of Wkst-PC-KBD &<br>Pin 1 of Wkst-PC-Mouse | Power      | Orange |
+|  7         | Mouse TX   | To      | Pin 9 of Wkst-PC-Mouse   | Serial | Lt. blue |
 ||||To **Wkst-Generic** PS/2 protocol|
-|  4  | Kbd Data(?) |To|Pin maybe 8 or 9 of Wkst-Generic    | PS/2 | White         |
-|  5  | Kbd Clock(?) |To|Pin maybe 9 or 8 of Wkst-Generic   | PS/2 | Black         |
+|  4         | Kbd Data(?) |To|Pin maybe 8 or 9 of Wkst-Generic| PS/2 | White TODO: Test to determine right pin # |
+|  5         | Kbd Clock(?)|To|Pin maybe 9 or 8 of Wkst-Generic| PS/2 | Black TODO: Test to determine right pin # |
+|  6         | Power +5V  | Contact | Pin 6? of Wkst-Generic   | Power | Orange |
 ||||To **Desk-PC-KBD** PS/2 protocol|
-|  8  | Kbd Data |To |Pin 8 of Desk-PC-KBD  | PS/2 | green         |
-|  9  | Kbd Clock |To|Pin 9 of Desk-PC-KBD  | PS/2 | purple         |
+|  8         | Kbd Data   |To       | Pin 8 of Desk-PC-KBD     | PS/2 | green   |
+|  9         | Kbd Clock  |To       | Pin 9 of Desk-PC-KBD     | PS/2 | purple  |
 
 ```
         1      (+) Workstation-PC-Mouse, Pin 8. TODO: USE IN UNKNOWN  ????POWER?????
