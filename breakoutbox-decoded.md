@@ -77,7 +77,7 @@ connector to the HOST-SYSTEM connector.
 * Power (+12V) is provided by the Power Supply connector.
 
 Visual summary:
-![Breakout visual summary](../master/images/breakout-decoded.png "Breakout visual summary")
+![Breakout visual summary](../master/images/breakout-sys-decoded.png "Breakout visual summary")
 
 * Red for keyboard data
 * Green for mouse data
@@ -135,8 +135,8 @@ is derived from a 5 volt regulator powered by the 12 volts.
 * other pins from Workstation-PC-KBD, and 
 * Workstation-PC-Mouse.
 
-It seems that all go to pin 6 of AK125 "Desk PC/Workstation. TODO: Why?
-Detecting Workstation presence?
+It seems that all go to pin 6 of AK125 "Desk PC/Workstation. 
+TODO: Why? Perhaps it is used to detect Workstation presence?
 
 ### Protocols
 
@@ -162,7 +162,8 @@ ground for zero bit).
 ## Connectors
 Starting at the top-left, and moving counter-clockwise.
 
-TODO: Insert small photo of the cover.
+![Breakout Box cover](../master/images/breakout-box-decoded.png "Breakout Box cover")
+
 --------------------------------------------------------------------------------------
 ### Connectors names and mapping
 
