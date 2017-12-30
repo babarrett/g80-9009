@@ -37,7 +37,7 @@ Shield  .       Gnd
 5       Gnd     Gnd         Gnd     Gnd 
 6       Gnd     .           Gnd         
 7       .       .           HOST
-8       Gnd     .           N/C
+8       Gnd     .           N/C?
 
 9       .       Gnd         Gnd   
 10      .       A           HOST
@@ -126,3 +126,62 @@ DB-9F   Signal name     PS/2 male
 
 TODO: Test: May be able to use more pins for a mouse connection, but really why
 bother?
+
+-------------------------------------------
+
+## Summary
+
+### Keyboard Connectors:
+
+|Type   | Kbd connector name |
+|------ |--------------------|
+| DB15-M| Host               |
+| DB9-F | Desk PC/Workstation|
+| DB9-M | Mouse              |
+
+## Host:
+
+Used for power/ground only, so far
+
+| Pin | Function    | Connection |
+|:---:|-------------|---------|
+|  1  | N/C         | -       |
+|  2  | Unknown     | HOST-SYSTEM |
+|  3  | Unknown     | HOST-SYSTEM |
+|  4  | Ground      | Power supply |
+|  5  | Ground      | Power supply |
+|  7  | Unknown     | HOST-SYSTEM |
+|  8  | N/C         | -        |
+|  10 | Unknown     | HOST-SYSTEM |
+|  11 | Unknown     | HOST-SYSTEM |
+|  12 | Power +12V  | Power supply |
+|  13 | Power +12V  | Power supply |
+|  14 | Power +12V  | Power supply |
+|  15 | N/C         | -        |
+
+
+## Desk PC/Workstation
+
+
+| Pin | Function    | Connection |
+|:---:|-------------|---------|
+|||To **Desk-PC-KBD**, PS/2 protocol (known working)|
+|  8         | Kbd Data   |To       | Pin 8 of Desk-PC-KBD     | PS/2 | green   |
+|  9         | Kbd Clock  |To       | Pin 9 of Desk-PC-KBD     | PS/2 | purple  |
+|||To **Wkst-Generic**, PS/2 protocol|
+|  4         | Kbd Data(?) to pin 1  |
+|  5         | Kbd Clock(?) to pin 5 |
+|  6         | Power +5V  to pin 4 |
+|||To **Wkst-PC-KBD**, Serial protocol |
+|||and **Wkst-PC-Mouse**, Serial protocol |
+|  1         | Mouse, UNKNOWN. TODO: double check. Used for kbd to sense presence of Wkst mouse? |
+|  2         | Kbd TX |
+|  3         | Kbd RX |
+|  6         | Power +5V |
+|  7         | Mouse TX  |
+|||To **Workstation-SUN**, Sun Serial protocol (inverted) |
+|  2         | Kbd TX, Signal is inverted between here and Workstation-SUN |
+|  3         | Kbd RX |
+|  6         | Power +5V |
+|  7         | Mouse TX, Signal is inverted between here and Workstation-SUN |
+
