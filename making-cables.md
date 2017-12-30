@@ -165,21 +165,21 @@ Used for power/ground only, so far
 
 | Pin | Function    | Connection |
 |:---:|-------------|---------|
-|||To **Desk-PC-KBD**, PS/2 protocol (known working)|
-|  8         | Kbd Data   |To       | Pin 8 of Desk-PC-KBD     | PS/2 | green   |
-|  9         | Kbd Clock  |To       | Pin 9 of Desk-PC-KBD     | PS/2 | purple  |
-|||To **Wkst-Generic**, PS/2 protocol|
+||To **Desk-PC-KBD**, PS/2 protocol (known working)|
+|  8         | Kbd Data     |
+|  9         | Kbd Clock    |
+||To **Wkst-Generic**, PS/2 protocol|
 |  4         | Kbd Data(?) to pin 1  |
 |  5         | Kbd Clock(?) to pin 5 |
 |  6         | Power +5V  to pin 4 |
-|||To **Wkst-PC-KBD**, Serial protocol |
-|||and **Wkst-PC-Mouse**, Serial protocol |
+||To **Wkst-PC-KBD**, Serial protocol |
+||and **Wkst-PC-Mouse**, Serial protocol |
 |  1         | Mouse, UNKNOWN. TODO: double check. Used for kbd to sense presence of Wkst mouse? |
 |  2         | Kbd TX |
 |  3         | Kbd RX |
 |  6         | Power +5V |
 |  7         | Mouse TX  |
-|||To **Workstation-SUN**, Sun Serial protocol (inverted) |
+||To **Workstation-SUN**, Sun Serial protocol (inverted) |
 |  2         | Kbd TX, Signal is inverted between here and Workstation-SUN |
 |  3         | Kbd RX |
 |  6         | Power +5V |
