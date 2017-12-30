@@ -79,10 +79,11 @@ connector to the HOST-SYSTEM connector.
 Visual summary:
 ![Breakout visual summary](../master/images/breakout-sys-decoded.png "Breakout visual summary")
 
-* Red for keyboard data
-* Green for mouse data
-* Black for power and other
-
+```
+    * Red for keyboard data
+    * Green for mouse data
+    * Black for power and other
+```
 
 * The Breakout Box is Simple.
     * One IC (Hex Inverter): SN7406
@@ -129,7 +130,7 @@ is derived from a 5 volt regulator powered by the 12 volts.
     * Act, through a pull-up resister, on the inverter output line going to the Sun TX Kbd connector.
     * Go to the +5V pin of the "Mouse IN" connector (PS/2), to power an external, shared, mouse.
     
-### +5V Derived from the workstations:
+#### +5V Derived from the workstations:
 * Workstation-SUN connector (Pin 8)
 * Pins 6(?) of Workstation-Generic and 
 * other pins from Workstation-PC-KBD, and 
@@ -144,18 +145,44 @@ TODO: Include more here. See summary for what to cover.
 
 #### RS232 Serial
 Earliest system, pre-PS/2. 1200 baud, fixed rate. One start and one stop bit. No parity.
+RS232 standard pin assignments, should they prove useful, are:
+```
+    1 DCD
+    2 RX
+    3 TX
+    4 DTR
+    5 Ground
+    6 DSR
+    7 RTS
+    8 CTS
+    9 Ring indicator
+```
 
 #### Sun Serial (inverted TX and RX)
 Sun's take on RS232 Serial, where they invert the TX and RX signals. TTL levels.
-(+5V for zero, Ground for one)
-1200 baud, fixed rate. One start and one stop bit. No parity.
+(+5V for zero, Ground for one) 1200 baud, fixed rate. One start and one stop
+bit. No parity. Sun standard pin assignments, should they prove useful, are:
+```
+    Pin Function    Signal/Voltage
+    --- --------    --------------
+    1   Ground      0V
+    2   Ground      0V
+    3   Power       +5 Vdc
+    4   RX/TX       Mouse
+    5   RX          TTL
+    6   TX          TTL
+    7   Ground      0V
+    8   Power       +5 Vdc
+```
 
 #### PS/2
 Instead of transmitting at a fixed rate, say 1200 baud, the protocol uses one
 wire as a clock (cycles once for every bit) and the other for data (+5V = 1 bit,
 ground for zero bit).
 
-
+Serial data at 10.0–16.7 kHz with 1 start bit, 8 data bits (LSB first), 1 parity
+bit (odd), 1 stop bit, [1 ack bit (if host-to-device)]
+When the host pulls the clock low, communication from the device is inhibited.
 
 
 --------------------------------------------------------------------------------------
@@ -234,14 +261,14 @@ Sun Keyboard and mouse connector
 
 | Pin | Function    | Dir'n   | Destination                                 | Protocol   | Comments  |
 |:---:|-------------|---------|---------------------------------------------|------------|-----------|
-|  4  | RX/TX mouse | From    | Pin 7 of AK125-Desk-PC-Workstation, inverted| Sun Serial, TTL | TX only   |
+|  4  | (RX/)TX mouse | From    | Pin 7 of AK125-Desk-PC-Workstation, inverted| Sun Serial, TTL | TX only   |
 |     |             | Contact | Pin 9 of Workstation-PC-Mouse               | Serial     | .         |
-|  5  | Kbd RX      | From    | Pin 3 of AK125-Desk-PC-Workstation          | Sun Serial, TTL | .         |
+|  5  | Kbd RX      | To      | Pin 3 of AK125-Desk-PC-Workstation          | Sun Serial, TTL | .         |
 |     |             | Contact | Pin 8 of Workstation-PC-KBD                 | Serial     | .         |
 |  6  | Kbd TX      | From    | Pin 2 of AK125-Desk-PC-Workstation, inverted| Sun Serial, TTL | .         |
 |     |             | Contact | Pin 9 of Workstation-PC-KBD                 | Serial     | .         |
 |  8  | Power, +5V  | To      | Pin 6 of AK125-Desk-PC-Workstation          | power      | .         |
-|     |             | To(?)   | Pin 6?, maybe, of Workstation-Generic       | power      | TODO: Which pin? |
+|     |             | Contact | Pin 1 or 6?, maybe, of Workstation-Generic, and <br> Pin 1 of Workstation-PC-Mouse, and <br> Pin 1 of Workstation-PC-KBD | power      | TODO: Which pin? |
 
 
 --------------------------------------------------------------------------------------
