@@ -166,14 +166,13 @@ Used for power/ground only, so far
 | Pin | Function    | Connection |
 |:---:|-------------|---------|
 ||To **Desk-PC-KBD**, PS/2 protocol (known working)|
-|  8         | Kbd Data     |
-|  9         | Kbd Clock    |
+|  8         | Kbd Data     | (Brown) |
+|  9         | Kbd Clock    | (Green) |
 ||To **Wkst-Generic**, PS/2 protocol|
-|  4         | Kbd Data(?) to pin 1  |
-|  5         | Kbd Clock(?) to pin 5 |
-|  6         | Power +5V  to pin 4 |
-||To **Wkst-PC-KBD**, Serial protocol |
-||and **Wkst-PC-Mouse**, Serial protocol |
+|  4         | Kbd Data(?) to pin 1  | (Brown) |
+|  5         | Kbd Clock(?) to pin 5 | (Green) |
+|  6         | Power +5V  to pin 4 | (Yellow) |
+||To **Wkst-PC-KBD**, Serial protocol <br>and **Wkst-PC-Mouse**, Serial protocol |
 |  1         | Mouse, UNKNOWN. TODO: double check. Used for kbd to sense presence of Wkst mouse? |
 |  2         | Kbd TX |
 |  3         | Kbd RX |
