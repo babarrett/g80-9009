@@ -173,7 +173,7 @@ Used for power/ground only, so far
 |  5         | Kbd Clock(?) to pin 5 | (Green) |
 |  6         | Power +5V  to pin 4 | (Yellow) |
 ||To **Wkst-PC-KBD**, Serial protocol <br>and **Wkst-PC-Mouse**, Serial protocol |
-|  1         | Mouse, UNKNOWN. TODO: double check. Used for kbd to sense presence of Wkst mouse? |
+|  1         | Mouse, UNKNOWN. TODO: double check. <br>Used for kbd to sense presence of Wkst mouse? |
 |  2         | Kbd TX |
 |  3         | Kbd RX |
 |  6         | Power +5V |
