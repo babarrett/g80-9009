@@ -17,7 +17,23 @@ This is the keyboard layout for the UK version of keyboard:
 
 If you ignore the keyboard for five minutes the display lighting will go off.
 
+## Special key usage
 
+WEY, who create and sell similar keyboards define some of their special keys as follows (terms replaced with the G80-9009 labels):
+
+        Yours -	 Opens the YOURS window in matching
+        Mine -	 Opens the MINE window in matching
+        Bid -	 Opens the BID window in matching
+        Offer -	 Opens the OFFER window in matching
+        Reset -	 Reset values in the current opened window in matching
+        F## -	 Macro keys that can be programmed to generate a string or function 
+        Contact -	 Used to contact a counterparty in Dealing
+        Accept -	 accepts a conversation call from a counterparty in Dealing Confirm -	 Confirms a conversation deal in Dealing
+        Deal -	 Opens the deal window in Dealing
+        Tranfr -	 Transfers a dealing conversation to colleague
+        Interrupt -	 Interrupts the Dealing conversation to place in send mode 
+        Xmit -	 transfers conversation to counterparty
+        End cont -	 Ends a dealing conversation
 
 ## Set up options:
 
