@@ -36,17 +36,18 @@ from the desktop PC to Workstation, and back.
 
 It:
 
-* Was available in the 1990's. I have seen REUTERS logos created in 1965 (the
-"dot" wordmark) and in 1996 the rounded piece – or roundel – was developed. 1999
-the dots in the name gave way to a solid all-caps font with an orange dotted
-semi-circle, and a solid blue semicircle.
-* has 149 total keys. Not all generate scan codes to the attached computers
+* Was available from about 1995 to 2005. I have seen REUTERS logos created in
+1965 (the "dot" wordmark) and in 1996 the rounded piece – or roundel – was
+developed. 1999 the dots in the name gave way to a solid all-caps font with an
+orange dotted semi-circle, and a solid blue semicircle.
+* has 149 total keys. Not all generate scan codes when in "Desk PC" mode.
 * has a, primarily text, 100 x 584 pixel LCD display with 2 font sizes.
 * can create up to 72 macros on the fly that are stored in the keyboard. 
 * can select any 1 of 4 screens (Indicated by keys, unverified.)
 * can select any 1 of 2 workstations with a "Breakout Box"
 * can use three different keyboard protocols (PS/2, RS232 Serial, and Sun serial)
 * is supported by a third-party kmd3 switch as well
+* can be emulated by the Wey Tec HK2000C keyboard.
 * can perform calculations within the keyboard, displaying the results on the
 LCD display
 
@@ -253,10 +254,18 @@ Lock, pretty much everything will fit on a modern board.
 * The lower PCB is dropped into the case, held in place left/right and
   top/bottom by plastic molding. There are no bolts, screws, or rivits.
 * Flip-out feet on bottom, at back. Single position. TODO: how high?
-* Under the rectangular plate on the bottom (4 screws) is a 27 x 2 pin ribbon
-cable, not connected. Also, there's  removable back pannel plate. Perhaps
-intended for some expansion module. This would make a nice space for a custom
-board, if we needed one.
+* There is an "Expansion module? area accessable from the bottom of the keyboard.
+    * It is under the rectangular plate on the bottom (4 screws)
+    * The space is 4.75" across, 3.25" front to back, 0.75" deep. 
+    * There are 4 plastic standoffs, as though to support a small PCB within the module area.
+    * Within it is a 25 x 2 pin ribbon cable, not connected. 
+    * It is actually a grey ribbon cable, 2.5" wide, 50 conductors, 25 per row. Normal 0.1" centers. 
+    * There's removable back pannel plate is 2.5" wide and 0.75" high, perhaps
+    intended for some expansion module access. (Covering a hole that is a bit
+    smaller.)
+    * This would make a nice space for a custom controller board, if we needed one.
+    * I've never seen any reference to any modules for this area. Seems odd that
+    they'd spend he time to create it, and never populate it though.
 * Back of keyboard, left to right has the following: [Photos from imgur](http://i.imgur.com/lwkKiGb.jpg)
 * Although the back of the keyboard slopes inward toward the top, the connectors
 are parallel to the base, so they are at an angle to the back.
