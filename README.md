@@ -1,7 +1,7 @@
 # Cherry G80-9009 / Reuters AK124 Keyboard
 
 Cherry built keyboard, G80-9009, and similar model numbers for Reuters. The
-Reuters model numbers are AK124 (common) and AK125 (latest, but uncommon.) 
+Reuters model numbers are AK124 (common) and AK125 (latest, but uncommon.)
 
 The variations in model numbers seem to reflect some specialized key labeling,
 some language variation, and finally technology. I have seen photos of a
@@ -9,10 +9,10 @@ G8-9039HAAUS that is all surface mount technology.
 
 Additional details are available:
 
-1.  [Operations](../master/operations.md "Operations"): The keyboard features and 
+1.  [Operations](../master/operations.md "Operations"): The keyboard features and
 how to operate them.
-2.  [Breakoutbox decoded](../master/breakoutbox-decoded.md "Breakoutbox decoded"): 
-"Dissecting" and examining an AK125 Breakout Box to determine it's functionality 
+2.  [Breakoutbox decoded](../master/breakoutbox-decoded.md "Breakoutbox decoded"):
+"Dissecting" and examining an AK125 Breakout Box to determine it's functionality
 and by extension the way the keyboard functions.
 3.  [Making Cables](../master/making-cables.md "Making Cables"): How to make the
 needed cables to connect the keyboard to computers via PS/2, RS232 serial, or
@@ -42,7 +42,7 @@ developed. 1999 the dots in the name gave way to a solid all-caps font with an
 orange dotted semi-circle, and a solid blue semicircle.
 * has 149 total keys. Not all generate scan codes when in "Desk PC" mode.
 * has a, primarily text, 100 x 584 pixel LCD display with 2 font sizes.
-* can create up to 72 macros on the fly that are stored in the keyboard. 
+* can create up to 72 macros on the fly that are stored in the keyboard.
 * can select any 1 of 4 screens (Indicated by keys, unverified.)
 * can select any 1 of 2 workstations with a "Breakout Box"
 * can use three different keyboard protocols (PS/2, RS232 Serial, and Sun serial)
@@ -54,11 +54,11 @@ LCD display
 ---
 **CAUTION!** Not everything in here has been verified, and even if it has been
 verified your keyboard and revision could be different. The voltages are all, as
-far as I know, low 5V and 12V. It seems to me very unlikely that these voltages 
+far as I know, low 5V and 12V. It seems to me very unlikely that these voltages
 will harm you, but reversing + and - could destroy some of your electronics.
 
 Special thanks to mwei (Geekhack name) (Meow Wei, Youtube name). Without his
-help much of my success would have been impossible. 
+help much of my success would have been impossible.
 
 ---
 ## Connection Methods
@@ -85,6 +85,8 @@ keyboard to a modern computer:
     your keyboard's internals (other than the key matrixes) has failed. Unless
     the LCD display being operational was a significant motivation for acquiring
     this keyboard, this is likely your best and easiest choice.
+    - The biggest disadvantage is that these controllers are now **very** scarse,
+    hard to come by.
 2. [Directly](../master/method-2-direct.md  ) from the "Desk PC/Workstation"
     connector to a PS/2 connector
     - Very few parts, essentially one custom built DB-9 to PS/2 cable and
@@ -96,7 +98,7 @@ keyboard to a modern computer:
     while the keyboard itself is not programable and you cannot control the
     keymap. If the LCD display being operational was a significant motivation
     for acquiring this keyboard, and having the whole keymap and layers be
-    programable is unimportant, this is likely your best choice. 
+    programable is unimportant, this is likely your best choice.
     - The "PC Desk" setting does not send scan codes for 35 keys, and only sends
     keyboard programmed macros for F13-F24.
     - It is presumed that using the Wkst setting will cause the additional keys
@@ -120,19 +122,19 @@ keyboard to a modern computer:
     keyboard except using every key: working display functions, with in-keyboard
     programmability and keymap re-writing. If the LCD display being operational
     was a significant motivation for acquiring this keyboard, and you want it to
-    be programable too, this is likely your best choice. 
-4. With (rare) [keyboard and mouse switche](../master/method-4-keyboard-to-breakout-box.md) boxes
+    be programable too, this is likely your best choice.
+4. With (rare) [keyboard and mouse switch](../master/method-4-keyboard-to-breakout-box.md) boxes
     - These are KM switches (keyboard and mouse)
-    - Special "Desk PC" and "Wkst" keys select the type of computer to talk to.  
+    - Special "Desk PC" and "Wkst" keys select the type of computer to talk to.
     The attached KM box will output three different protocols for the Wkst
     computer.
     - kdm3 (keyboard, display and mouse)
     - Reuters Breakout Box
     - See [Breakoutbox decoded](../master/breakoutbox-decoded.md "Breakoutbox
     decoded") for much more information.
-    
 
-## Method vs features  
+
+## Method vs features
 
 | Feature                      | Controller | Direct | Direct+Soarer | KVM  |
 | ---------------------------- |:----------:| :-----:| :------------:| :---:|
@@ -148,14 +150,14 @@ keyboard to a modern computer:
 ---
 ## Costs for Keyboard and parts to assemble
 
-This is one datapoint, based upon my experience. 
+This is one datapoint, based upon my experience.
 
 | Item                            |   Price | Controller | Direct | Direct+Soarer | KVM  |
 | ------------------------------- |--------:|:----------:| :-----:| :------------:| :---:|
 | G80-9009 Keyboard*              | $111.01 |    Y       |  Y     |     Y         |  Y   |
 | Yang Controller*                |  $57.25 |    Y       |        |               |      |
 | PS/2 cable, 6' Male to Male     |   $3.62 |            |  Y     |     Y         |      |
-| 12VDC/500mA, Jameco             |  $11.95 |            |  Y     |     Y         |  Y   | 
+| 12VDC/500mA, Jameco             |  $11.95 |            |  Y     |     Y         |  Y   |
 | DB-15 extension cable, 6'       |   $5.95 |            |  Y     |     Y         |  Y   |
 | DB-9, Female,SOLDER CUP 22AWG   |   $0.85 |            |  Y     |     Y         |  Y   |
 | DB-9, Hood, metalized           |   $0.85 |            |  Y     |     Y         |  Y   |
@@ -201,15 +203,15 @@ See [Making Cables](../master/making-cables.md "Cable making instructions")
 Note: There are some additional signals on the pins on the Desk PC/Workstation
 connector that map to the Workstation connectors on the Breakout Box. These map
 to the three different protocols supported by the keyboard and box: PS/2, RS232
-serial, and Sun serial. I still havent figured out what enables these signals,
-still working on that. Quite possibly it's pins on the keyboard "Host" port.
+serial, and Sun serial. I still haven't figured out what enables these signals,
+still working on that. Quite possibly it's PC and Workstation keys on the keyboard.
 
 See [Breakout Box Decoded](../master/breakoutbox-decoded.md "Breakout Box
 Decoded") for more.
 
 ### Switches
 
-* MX Clear switches, 149 of them. 
+* MX Clear switches, 149 of them.
 * High force at end of stroke to discourage bottoming out.
 * Diode soldered into every switch.
 * Some switches are very stiff, especially:
@@ -243,8 +245,8 @@ Lock, pretty much everything will fit on a modern board.
 ```
         Country     Top-left Shift-2 Shift-3  Near return      Near shift
         -------     -------- ------- -------  -----------      ----------
-        USA         `, ~        @      #      ', " and \, |    "blank"   
-        UK          `, ¬, |     "      £      ', @ and #, ~    \, | 
+        USA         `, ~        @      #      ', " and \, |    "blank"
+        UK          `, ¬, |     "      £      ', @ and #, ~    \, |
 ```
 
 ### Case:
@@ -254,32 +256,32 @@ Lock, pretty much everything will fit on a modern board.
 * The lower PCB is dropped into the case, held in place left/right and
   top/bottom by plastic molding. There are no bolts, screws, or rivits.
 * Flip-out feet on bottom, at back. Single position. TODO: how high?
-* There is an "Expansion module? area accessable from the bottom of the keyboard.
+* There is an "Expansion module(?)" area accessable from the bottom of the keyboard.
     * It is under the rectangular plate on the bottom (4 screws)
-    * The space is 4.75" across, 3.25" front to back, 0.75" deep. 
+    * The space is 4.75" across, 3.25" front to back, 0.75" deep.
     * There are 4 plastic standoffs, as though to support a small PCB within the module area.
-    * Within it is a 25 x 2 pin ribbon cable, not connected. 
-    * It is actually a grey ribbon cable, 2.5" wide, 50 conductors, 25 per row. Normal 0.1" centers. 
+    * Within it is a 25 x 2 pin ribbon cable, not connected.
+    * It is actually a grey ribbon cable, 2.5" wide, 50 conductors, 25 per row. Normal 0.1" centers.
     * There's removable back pannel plate is 2.5" wide and 0.75" high, perhaps
     intended for some expansion module access. (Covering a hole that is a bit
     smaller.)
     * This would make a nice space for a custom controller board, if we needed one.
     * I've never seen any reference to any modules for this area. Seems odd that
-    they'd spend he time to create it, and never populate it though.
+    they'd spend the time to create it, and never populate it though.
 * Back of keyboard, left to right has the following: [Photos from imgur](http://i.imgur.com/lwkKiGb.jpg)
 * Although the back of the keyboard slopes inward toward the top, the connectors
 are parallel to the base, so they are at an angle to the back.
 * The Reset button acts like a temporary power Off/On cycle.
 ```
         [Grill]    [Knob]   [Knob]      [button]
-        Buzzer     Volume   Contrast    Reset 
-    
+        Buzzer     Volume   Contrast    Reset
+
         Then, 3 ports                               [Female DB-9]   [Male DB-9]     [Male DB-15]
                                                      Mouse           Desk PC/        Host
-                                                                     Workstation     
+                                                                     Workstation
 ```
 
-The mouse port accepts a PS/2 mouse singnal in from the Brekout box. The keboard
+The mouse port accepts a PS/2 mouse singnal in from the Brekout box. The keyboard
 logic then figures out where the mouse output needs to be directed (which of the
 four sets of ports) and sends the needed signals:
 * back out the mouse connector to the Breakout box for the PS/2 signals:
@@ -302,9 +304,9 @@ It seems to me that keys on this keyboard fall into 4 groups:
 
 1. "Normal keys" When struck their keycode is sent out the "Desk PC /
 Workstation" DB-9 port as PS/2 protocol. These are A-Z, 0-9, punctuation, etc.
-Normal keyboard operation. Also includes modifiers like Shift, Command (Mac), 
+Normal keyboard operation. Also includes modifiers like Shift, Command (Mac),
 and Control. F1-F12 are also in this group and Print Scrn, Scroll Lock, and Pause
-are mapped to F13-F15.
+are mapped to F13-F15, on Macintoshes.
 
 2. Keys sent to control the keyboard modes itself. "Calc" puts the keyboard into
 calculator mode (Use Desk PC or Wkst to exit calc mode) and "SetUp" lets you define
@@ -315,7 +317,7 @@ Workstation" or "Host" ports, they are handled within the keyboard itself.
 change display to Screen 4. Also "Desk PC" and "Wkst" to select at least which
 computer to attach the keyboard to. (TODO: unverified) They may also change
 which screen gets displayed. These may work in a couple different ways: (Unknown)
-    * Send some form of signal out the "Host" port on the keyboard to the KM box. 
+    * Send some form of signal out the "Host" port on the keyboard to the KM box.
     This could be done by changing the Host pins. Maybe by
     setting them high or low.
 These will also never generate scan codes out the "Desk PC / Workstation" port.
@@ -332,12 +334,12 @@ the top-right could be available with the Wkst setting. It's also possible that
 the F13-F24 don't send scan codes directly, but only play back your
 pre-programmed keyboard macros.
 
-A description of [Display Functions](../master/display-functions.md "Display Functions documentation") available on the G80-9009 keyboard.  
+A description of [Display Functions](../master/display-functions.md "Display Functions documentation") available on the G80-9009 keyboard.
 
 ---
 ### Remaining open questions:
 
-1. Are the Yang controllers still generally available?
+1. Are the Yang controllers still generally available? Where?
 2. What are the non-power, non-ground pins on the Host connector used for? What protocol?
 3. Which keys will still not be sent out the "Desk PC / Workstation" port when
 using the "Direct" method and Wkst setting?
@@ -352,8 +354,10 @@ using the "Direct" method and Wkst setting?
 Review](https://www.youtube.com/watch?v=N8FXw_QelQc) Published on Feb 28, 2016.
 A detailed overview of the keyboard, but with little about the operation. His
 keyboard was never powered up.
+* Chyrosran22's [Cherry G80-9009 review Redux, Cherry MX Clear](https://www.youtube.com/watch?v=lUVVxrL6VGU)
+Published on Sep 6, 2019. Working keyboard with Breakout Box and keyboard AK125.
 
-    
+
 ### Photos:
 
 * Total teardown article with photos, [here](https://tieba.baidu.com/p/3742466012?red_tag=3259945445)
@@ -363,7 +367,7 @@ all angles. [Photos](https://deskthority.net/photos-f62/reuters-battlecruiser-ch
 * More photos some of the PCB. [Photos](http://www.kbdmania.net/xe/photo/7635809)
 
 ### Disassembly and Yang's development:
-* *yangdigi's* early controller development with [Photos](http://tieba.baidu.com/p/4489516023)
+* *yangdigi's* early controller development with [Photos](http://tieba.baidu.com/p/4489516023) All in Japanese.
 * Only four more photos including a Breakout Box in the original keyboard box: [Photos](https://www.wstx.com/p-15490)
 
 ---
@@ -384,11 +388,11 @@ Add List of urls to be used for searching for sale items
 
 | Where | Notes |  |
 | ------------------ | ---------------- | --------- |
-| [eBay.com](eBay.com)  | Soarer PS/2 USB converter, and others      |
-| [item.taobao.com](item.taobao.com)      | | |
-| [world.taobao.com](world.taobao.com)     | | |
-| [www.taodepot.com](www.taodepot.com)  |  Min Order Quantity: 10   | China |
-| [www.hxlstore.com](www.hxlstore.com)  |  (https://www.hxlstore.com/buy-g80-9009.html)   |    | China |
+| [eBay.com](https://eBay.com)  | Soarer PS/2 USB converter, and others      |
+| [item.taobao.com](https://item.taobao.com)      | | |
+| [world.taobao.com](https://world.taobao.com)     | | |
+| [www.taodepot.com](https://www.taodepot.com)  |  Min Order Quantity: 10   | China |
+| [www.hxlstore.com](https://www.hxlstore.com)  |  (https://www.hxlstore.com/buy-g80-9009.html)   |    | China |
 | [https://shop35553647.taobao.com](https://shop35553647.taobao.com)  |  Yang store, for Yang controller. | click on "shop positive stuff" in upper left   |
 
 
