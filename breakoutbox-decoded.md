@@ -2,34 +2,39 @@
 
 ## Process of developing this document
 
-* TODO: Add photos and wiring graphs
 * By visual inspection of photographs of AK125
+* Additional traces conectivity information from varszegimarcell (geekhack name)
 * and reasoning.
-    
+* TODO: Add photos and wiring graphs
+
 --------------------------------------------------------------------------------------
 ## Summary
 
 ### Things this taught us about the three keyboard connectors:
 
 1. HOST:
-    * Connects (straight through, we assume) to AK125 System
+    * Connects (straight through, we assume) to AK125 System, whatever that is.
     * 12DC (3 pins) and ground (6 pins) in.
     * 5 unknown pins that connect to the "HOST-SYSTEM" connector on the other
-    side of the Breakout Box. 
+    side of the Breakout Box.
     * It may be that some of the unknown pins are used for either "Scrn"
-    selection or Workstation prortocol choices. TODO: TBD
+    selection or Workstation protocol choices. TODO: TBD
 
 2. Desk PC/Workstation:
-    * Connects (straight through, we assume) to AK125-Desk-PC-Workstation.
+    * Connects (straight through, we assume TBD) to AK125-Desk-PC-Workstation.
     * All 9 pins are used.
     * None of the pins is used to power the keyboard. (mine works fine only
     connected to the +12VDC in the Host connector.)
-    * Pin 6, + 5V will be present if any of workstation PC-KBD, PC-Mouse,
-    Generic, or Sun are present. That 5VDC power is supplied by each computer.
-    * Keyboard TX and RX (pin 6) go to/come from both Workstation Sun and 
-    Workstation PC-KBD at the same time. It doesn't make sense to have computers 
+    * Pin 6, +5VDC will be present if some of the following are atached: TODO: True?
+        * Workstation-Generic (it's pin 6)
+        * Workstation-PC-Mouse (it'pin 1) TBD: Does it actually provide power?
+        * Workstation-PC-KBD (it'pin 1) TBD: Does it actually provide power?
+        * Workstation-SUN (Sun pin 8, TBD: should provide power.)
+    That 5VDC power is supplied by each computer.
+    * Keyboard TX and RX (pin 6) go to/come from both Workstation Sun and
+    Workstation-PC-KBD at the same time. It doesn't make sense to have computers
     connected to both of these at once. Pick one (or none).
-    * Mouse TX (pin 7) goes to/comes from both Workstation Sun and 
+    * Mouse TX (pin 7) goes to/comes from both Workstation Sun and
     Workstation PC-Mouse at the same time. Again, it doesn't make sense to have
     computers connected to both of these at once. Pick one (or none).
     * PS/2 signals (pins 4,5) go to Workstation-Generic.
@@ -37,33 +42,43 @@
     could operate separate Workstation/Desk-PC at the same time without conclict.
     * TODO: The purpose and use of pin 1 is unknown, but it goes to (or comes
     from) pin 8 of Workstation-PC-Mouse.
-    
+
 3. Mouse
-    * Receives Mouse (PS/2) data in from the AK125-Mouse. 
+    * Receives Mouse (PS/2) data in from the breakout box, AK125-Mouse.
     * Passes the data back to the appropriate Desk PC or Workstation-Generic via
     this connector or uses the AK125-Desk-PC-Workstation connector for serial
     workstation protocol.
-    
+
 
 ### Breakout Box Overview
+The AK125 Breakout Box, in conjunction with the keyboard logic is capable
+of being a two-port KVM. The ports are labeled "Desk PC" and "Wkst." Furthermore,
+there are three posible "Workstation" ports available on the breakout box: TODO:  confirm this
+    1. Workstation-Generic, kbd and mouse
+    2. Workstation-PC-KBD & Workstation-PC-Mouse, together (RS232 communication)
+    3. Workstation-SUN, kbd and mouse (Sun Serial communication)
+The configuration / choice of which of these to select/use is done with the keyboad
+setup screens.
+
 The AK125 Breakout Box is fairly simple, mostly just tying different pins on
-different connectors together. The AK124 keyboards and I presume Breakout Boxes
+different connectors together. The AK124 keyboards, and I presume Breakout Boxes
 seem to be much more common. I have not confirmed that the functionality and
 design match, though the connectors are all labeled the same.
 
-The complexity in the system is all handled within the keyboard.
+The complexity in the system is all handled within the keyboard. There are
+no "decision-making" circuits or controls in the breakout box.
 
 The kmd-3 "breakout box" is a different system, with different connectors,
 contains many active components, and was created by a different company. It is
 unlikely that this document will be of much help there.
 
 The basic AK125 Breakout Box functionality is as follows:
-* Keyboard input comes from the keyboard "Desk PC/Workstation" connector. It
-uses 3 sets of lines to talk to the different computers available:
-    1. Desk-PC-KBD (PS/2)
-    2. Workstation-Generic (PS/2)
-    3. Workstation-PC-KBD (RS22 Serial communication), and Workstation-SUN
-    (Sun Serial communication).
+* Keyboard input comes from the keyboard's "Desk PC/Workstation" connector. It
+uses 3 sets of lines to talk to the four possible computer configurations available:
+    1. Desk-PC-KBD, pins 8 & 9 (PS/2)
+    2. Workstation-Generic, pins 4 & 5 (PS/2?+ or RS232?- TBD)
+    3. Workstation-PC-KBD, pins 2 & 3 (RS232 Serial communication)
+    4. Workstation-SUN, pins 2 & 3 (Sun Serial communication)
 * Mouse input comes in the Mouse IN (PS/2) connector and is sent, unchanged,
 to the AK-125 Mouse connector. That connector is connected to the Mouse
 connector on the keybord. From there the mouse signals use 3 sets of
@@ -74,7 +89,7 @@ lines to talk to the different computers available:
     the keyboard Desk PC/Workstation connector
 * There are 5 pins of unknown purpose and direction from the AK125 System
 connector to the HOST-SYSTEM connector.
-* Power (+12V) is provided by the Power Supply connector.
+* Power (+12VDC) is provided by the Power Supply connector.
 
 Visual summary:
 ![Breakout visual summary](../master/images/breakout-sys-decoded.png "Breakout visual summary")
@@ -87,7 +102,7 @@ Visual summary:
 
 * The Breakout Box is Simple.
     * One IC (Hex Inverter): SN7406
-    * One 5V regulator: L7805CV
+    * One 5VDC regulator: L7805CV
     * Three bypass capacitors (for power systems)
     * Two pull-up resisters on inverter output lines.
     * 12 connectors, around the edge of the box.
@@ -104,39 +119,39 @@ additional details)
     * Inverted, 1-wire (TX) RS232 serial communications for simulating a Sun keyboard to a Sun workstation
     * Inverted, 1-wire (RX) RS232 serial communications for simulating a Sun mouse to a Sun workstation
 * The keyboard handles all the "smarts" of routing the generated (kbd) and pass-through (mouse) signals.
-    
+
 
 --------------------------------------------------------------------------------------
 ### Power, and sources
 
 #### +12VDC
-The main, required, voltage to power the AK125 kbd is +12V. The 12 volts needs
+The main, required, voltage to power the AK125 kbd is +12VDC. The 12 volts needs
 to be applied to pins 12, 13, and/or 14 of the keyboard's "HOST" connector. (All
 three pins are tied together inside the kbd anyway.) When a breakout box is
-involved the 12V comes from the "AK125 System" connector of the box.
+involved the 12VDC comes from the "AK125 System" connector of the box.
 
-The 12V can, conceivably enter the box one of 2 ways:
+The 12VDC can, conceivably enter the box one of 2 ways:
 * (Confirmed) through the Power Supply connector, or
 * (Possible, unknown) through the HOST-SYSTEM connector. If the HOST-SYSTEM does
-provide +12V then there is no  need for a power supply to be connected to the
+provide +12VDC then there is no  need for a power supply to be connected to the
 box. In fact it should not be connected.
 
-### +5V Derived from the +12V power source
-* Regardless of the source of the 12V (Power Supply or HOST-SYSTEM) the 5 volts
+### +5VDC Derived from the +12VDC power source
+* Regardless of the source of the 12VDC (Power Supply or HOST-SYSTEM) the 5 volts
 is derived from a 5 volt regulator powered by the 12 volts.
 * The 5 volts are then used to:
     * Power an SN7406 inverter
     * Act, through a pull-up resistor, on the inverter output line going to the Sun RX/TX Mouse connector.
     * Act, through a pull-up resister, on the inverter output line going to the Sun TX Kbd connector.
-    * Go to the +5V pin of the "Mouse IN" connector (PS/2), to power an external, shared, mouse.
-    
-#### +5V Derived from the workstations:
+    * Go to the +5VDC pin of the "Mouse IN" connector (PS/2), to power an external, shared, mouse.
+
+#### +5VDC Derived from the workstations:
 * Workstation-SUN connector (Pin 8)
-* Pins 6(?) of Workstation-Generic and 
-* other pins from Workstation-PC-KBD, and 
+* Pins 6(?) of Workstation-Generic and
+* other pins from Workstation-PC-KBD, and
 * Workstation-PC-Mouse.
 
-It seems that all go to pin 6 of AK125 "Desk PC/Workstation. 
+It seems that all go to pin 6 of AK125 "Desk PC/Workstation.
 TODO: Why? Perhaps it is used to detect Workstation presence?
 
 ### Protocols
@@ -160,7 +175,7 @@ RS232 standard pin assignments, should they prove useful, are:
 
 #### Sun Serial (inverted TX and RX)
 Sun's take on RS232 Serial, where they invert the TX and RX signals. TTL levels.
-(+5V for zero, Ground for one) 1200 baud, fixed rate. One start and one stop
+(+5VDC for zero, Ground for one) 1200 baud, fixed rate. One start and one stop
 bit. No parity. Sun standard pin assignments, should they prove useful, are:
 ```
     Pin Function    Signal/Voltage
@@ -177,7 +192,7 @@ bit. No parity. Sun standard pin assignments, should they prove useful, are:
 
 #### PS/2
 Instead of transmitting at a fixed rate, say 1200 baud, the protocol uses one
-wire as a clock (cycles once for every bit) and the other for data (+5V = 1 bit,
+wire as a clock (cycles once for every bit) and the other for data (+5VDC = 1 bit,
 ground for zero bit).
 
 Serial data at 10.0–16.7 kHz with 1 start bit, 8 data bits (LSB first), 1 parity
@@ -238,12 +253,12 @@ a desktop "Workstation" system.
 
 #### Connectors with *BIDIRECTIONAL* data
 * **AK125-Mouse**: The "raw" PS/2 mouse data from "Mouse IN" exits the breakout
-box here, and is sent to the keyboard. From there the mouse data either comes 
+box here, and is sent to the keyboard. From there the mouse data either comes
 back to this connector (for PS/2) or is sent to the AK125-Desk-PC-Workstation
 connector, changed into a serial protocol.
 
 #### Connectors with *UNKNOWN* direction
-* **AK125 System**: +12V (and ground) is available from this connector to the
+* **AK125 System**: +12VDC (and ground) is available from this connector to the
 keyboard, but other pins are unknown. Most are shared with the HOST-SYSTEM
 connector, direction unknown.
 * **HOST-SYSTEM**: At least five signals shared with the "AK125 System"
@@ -253,7 +268,7 @@ connector. TODO: Find out more.
 ## Left side
 
 ### Power Supply
-    +12V
+    +12VDC
     Ground plane
 
 ### Workstation-SUN
@@ -261,7 +276,7 @@ Sun Keyboard and mouse connector
 
 | Pin | Function    | Dir'n   | Destination                                 | Protocol   | Comments  |
 |:---:|-------------|---------|---------------------------------------------|------------|-----------|
-|  4  | (RX/)TX mouse | From    | Pin 7 of AK125-Desk-PC-Workstation, inverted| Sun Serial, TTL | TX only   |
+|  4  | (RX/)TX mouse | From  | Pin 7 of AK125-Desk-PC-Workstation, inverted| Sun Serial, TTL | TX only   |
 |     |             | Contact | Pin 9 of Workstation-PC-Mouse               | Serial     | .         |
 |  5  | Kbd RX      | To      | Pin 3 of AK125-Desk-PC-Workstation          | Sun Serial, TTL | .         |
 |     |             | Contact | Pin 8 of Workstation-PC-KBD                 | Serial     | .         |
@@ -274,7 +289,7 @@ Sun Keyboard and mouse connector
 --------------------------------------------------------------------------------------
 ## Bottom
 
-### AK125 System                                                        
+### AK125 System
 Goes to Keyboard "HOST"
 
 | Pin       | Function    | Dir'n   | Destination               | Protocol   | Comments  |
@@ -290,15 +305,15 @@ Goes to Keyboard "HOST"
 |* * * |
 |  8        | Unused?     | ?       | (none?)                   |            |          |
 
-    
-Six pins are grounded, three more carry +12V power. The remaining six all have
+
+Six pins are grounded, three more carry +12VDC power. The remaining six all have
 unknown functions.
 ```
-    Only 12V is ever used to supply the keyboard. None of the pins go anywhere
+    Only 12VDC is ever used to supply the keyboard. None of the pins go anywhere
     on the breakout board except to the HOST-SYSTEM & keyboard "HOST"
     connectors. Therefore, the ONLY KNOWN use for the host connector for our
-    application is 12V power (and ground) to the kbd.
-    
+    application is 12VDC power (and ground) to the kbd.
+
     There are a total of 5 pins of unknown functions that are still to be
     determined. Interestingly, 4 come in 2 pairs, on adjacent pins.
 ```
@@ -312,7 +327,7 @@ functions. This connector goes to the "Desk PC/Wkst" connector on the kbd. Given
 that the other two connectors on the keyboard are only used for mouse functions
 and power, this is the main connector for keyboard use.
 
-The pins coming from the keyboard, through this connector, end up extending out 
+The pins coming from the keyboard, through this connector, end up extending out
 to two systems, and three protocols:
 
 * Desk-PC (PS/2)
@@ -354,7 +369,7 @@ Results:
 
         2 Sun signals, TX and Mouse(TX), inverted as they go to the Sun keyboard connector.
         1 Sun signal, RX, NOT inverted as it comes from the Sun keyboard connector.
-        1 Sun +5V. TODO: MAYBE THIS IS USED TO DETECT ANY WKST IS PRESENT?
+        1 Sun +5VDC. TODO: MAYBE THIS IS USED TO DETECT ANY WKST IS PRESENT?
 
         The "Sun Kbd TX signal" also goes to Wkst-PC-KBD pin 9, not inverted
         (serial)
@@ -365,9 +380,9 @@ Results:
         Workstation-PC-Mouse, Pin 8, 9
 
         One set of 2 pins (PS/2), 4 and 5 go to Workstation-Generic, Pin 8?, 9?
-        (8 = Sun +5V. 9 = Sun mouse TX)
-```    
-    
+        (8 = Sun +5VDC. 9 = Sun mouse TX)
+```
+
 ### Mouse IN (PS/2)
 Pins are PS/2 connector pins, not PCB order.
 
@@ -384,10 +399,10 @@ From connector to mouse:
 |:---:|-------------|------------|---------------------------|------------|-----------|
 | 1   | Mouse data  | From mouse |    | PS/2  |          |
 | 3   | Ground      | To mouse   |    | Power |          |
-| 4   | +5V         | To mouse   |    | Power |          | from regulator
+| 4   | +5VDC         | To mouse   |    | Power |          | from regulator
 | 5   | Mouse Clock | From mouse |    | PS/2  |          |
 
-  
+
 ### AK125-Mouse
 
 The AK125-Mouse connector receives a PS/2 mouse signal from the Brekout box
@@ -435,8 +450,8 @@ Results:
 
 Results:
     Likely Desk PC will output PS/2 mouse info to here. Untested.
-    
-    
+
+
 ### Desk-PC-KBD
 
 | Pin | Function    | Dir'n| Destination              | Protocol   | Comments  |
@@ -450,8 +465,8 @@ Results:
 
 --------------------------------------------------------------------------------------
 ## Top
- 
- 
+
+
 ### Workstation-PC-KBD
 RS232 Serial protocol.
 
@@ -479,7 +494,7 @@ Results:
     This is a mouse (not keyboard)  RS232 Serial protocol port coming through a DB9.
     Pick this OR the Sun Din8, not both.
 
- 
+
 ### Workstation-Generic
 PS/2 protocol (Data and Clock)
 
@@ -499,11 +514,11 @@ TODO: It's quite hard to map the pins going into this connector. Waiting for mor
 
     Two mouse pins
     Two Kbd pins
-    +5V if Sun keyboard is connected to Workstation-Sun
- 
+    +5VDC if Sun keyboard is connected to Workstation-Sun
+
 ### HOST-SYSTEM
- 
-TODO: Mostly a pass through from the AK125 System connector. 
+
+TODO: Mostly a pass through from the AK125 System connector.
 
 | Pin       | Function    | Dir'n   | Destination               | Protocol   | Comments |
 |:---------:|-------------|---------|---------------------------|------------|----------|
