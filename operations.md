@@ -12,7 +12,7 @@ This is the keyboard layout for the UK version of keyboard:
 * On power-on, displays in order:
     * **REUTERS** all caps, in center of LCD
     * Clearing FLASH-Code. Please wait...
-    * Clearing FLASH-emergency-parameter space. Please wait . . . 
+    * Clearing FLASH-emergency-parameter space. Please wait . . .
     * Version 1.20L01Ref4
 
 If you ignore the keyboard for five minutes the display lighting will go off.
@@ -26,18 +26,18 @@ WEY, who create and sell similar keyboards define some of their special keys as 
         Bid -	 Opens the BID window in matching
         Offer -	 Opens the OFFER window in matching
         Reset -	 Reset values in the current opened window in matching
-        F## -	 Macro keys that can be programmed to generate a string or function 
+        F## -	 Macro keys that can be programmed to generate a string or function
         Contact -	 Used to contact a counterparty in Dealing
         Accept -	 accepts a conversation call from a counterparty in Dealing Confirm -	 Confirms a conversation deal in Dealing
         Deal -	 Opens the deal window in Dealing
         Tranfr -	 Transfers a dealing conversation to colleague
-        Interrupt -	 Interrupts the Dealing conversation to place in send mode 
+        Interrupt -	 Interrupts the Dealing conversation to place in send mode
         Xmit -	 transfers conversation to counterparty
         End cont -	 Ends a dealing conversation
 
 ## Set up options:
 
-1. Macros up to 80 characters, stored in F1-F24.
+1. Macros up to 80 characters, with name you assign, stored in F1-F24.
 2. You can also store macros in Shift+Fn, and Control+Fn
 3. TODO: Can you change the Legends for macro sets?
 
@@ -52,9 +52,9 @@ USER SETUP MENU
                 Enter Soft Key Name of F14: LOREMIPSUM
                 Enter the desired macro (max. 80 char.) and confirm with F14 (enter text)
                 Busy with Flash! (Writing)
-        
-            Delete key Used to clear an macro and it's label.
-            
+
+            Delete key Used to clear a macro and it's label.
+
     Select Desk PC Legend
 
         Source: IBM PS/2
@@ -80,12 +80,12 @@ It's a floating-point calculator. Largest representable number seems to be 9.000
 
 Has eight memories, ```√⎺```, percent, etc. functions.
 
-Enter Calc mode with the Calc key. Exit with either "Desk PC" or Wkst" keys.
+Enter Calc mode with the Calc key. Exit with either "Desk PC" or "Wkst" keys.
 
 Calc, Num Lock and Caps Lock LEDs are illuminated in Calc mode, and cannot be turned off .
 
 * Number keys, both sets, both decimal points, +, -, /, and = all work as expected.
-* Backspace deletes the most eecent digit entered. 1,2,3, Backspace, Backspace yields "1."
+* Backspace deletes the most recent digit entered. 1,2,3, Backspace, Backspace yields "1."
 * Clear clears the current calculation, but not memories.
 * Delete clears the current (pending) operation and entry.
 * Reset clears the current entry, calculation, and memories. It does not change the decimal setting.
@@ -109,6 +109,7 @@ Negative exponents can be entered as well: 1 3 EXP 4 5 +/- = 1.3E-044
 
 
 Setup operations, accessible by taping the Shift key:
+
     * Shift+F1  -> Setup. Allows changing of decimals from 0 to 8 places.
     Left/Right arrow to change. Either Enter key to set and exit.
     * Shift+F11 -> M up.  Select a memory form 1 to 8
@@ -162,7 +163,7 @@ Keys that do **not** operate in Keyboard mode:
 * F13-F24
 * The entire top-right grouping of 11 keys from Hold to Scrn 4.
 
-With Desk PC selected you can use a subset of the keys on the board, as indicated here:
+With Desk PC selected you can not use a subset of the keys on the board, as indicated here:
 
 ![Unavailable keys in Desk PC mode](../master/images/Cherry%20G80-9009%20Unavailable%20keys%20in%20Desk%20mode.png "Unavailable keys in Desk PC mode")
 
