@@ -56,6 +56,7 @@ in 2000 says:
     protocol with negative logic. The communication is full duplex at 1200 baud. The
     data has 1 start bit, 8 data bits, 1 stop bit and no parity.
 
+* can, aparently, use three different mouse protocols (unverified). PS/2, RS232 Serial, and Sun serial.
 * is supported by a third-party kmd3 switch as well
 * can be emulated by the Wey Tec HK2000C keyboard.
 * can perform calculations within the keyboard, displaying the results on the
@@ -68,7 +69,9 @@ far as I know, low 5V and 12V. It seems to me very unlikely that these voltages
 will harm you, but reversing + and - could destroy some of your electronics.
 
 Special thanks to mwei (Geekhack name) (Meow Wei, Youtube name). Without his
-help much of my success would have been impossible.
+help much of my success would have been impossible. ALso, special thanks to
+varszegimarcell (Geekhack name) for his additional assistance decoding the
+breakout box.
 
 ---
 ## Connection Methods
@@ -97,7 +100,7 @@ keyboard to a modern computer:
     this keyboard, this is likely your best and easiest choice.
     - The biggest disadvantage is that these controllers are now **very** scarse,
     hard to come by.
-2. [Directly](../master/method-2-direct.md  ) from the "Desk PC/Workstation"
+2. [Direct](../master/method-2-direct.md  ) from the "Desk PC/Workstation"
     connector to a PS/2 connector
     - Very few parts, essentially one custom built DB-9 to PS/2 cable and
     - a 12V power-supply and connection to the keyboard (host port, DB-15)
@@ -110,13 +113,14 @@ keyboard to a modern computer:
     for acquiring this keyboard, and having the whole keymap and layers be
     programable is unimportant, this is likely your best choice.
     - The "PC Desk" setting does not send scan codes for 35 keys, and only sends
-    keyboard programmed macros for F13-F24.
+    keyboard programmed macros for F13-F24. I've assigned these to Shft+F1
+    through Shift+f12. I then use host-side software to take action on these keys.s
     - It is presumed that using the Wkst setting will cause the additional keys
     to send scan codes, but the additional wiring and other needs for this are
     unknown.
 3. [Direct+Soarer](../master/method-3-direct+soarer.md  ) from the "Desk
     PC/Workstation" connector to a PS/2 connector.
-    This is like the "Directly" plus the Soarer converter for layers and key mapping.
+    This is like the "Direct," plus using the Soarer converter for layers and key mapping.
     - Few parts, essentially one custom built DB-9 to PS/2 cable and
     - a 12V power connection to the keyboard (host port, DB-15)
     - Uses an active Soarer PS/2 to USB converter. The Soarer adds the
@@ -145,7 +149,7 @@ keyboard to a modern computer:
 5. With new, replacement, breakout box.
     This is currently under development, but I now believe is possible to achieve. The AK125
     breakout boxes are, electrically, very simple. One 5V regulator, one inverter DIP chip, a
-    couple capacetors, traces and connectors. Plus a 12VDC power supply.
+    couple capacitors, traces and connectors. Plus a 12VDC power supply.
 
 ## Method vs features
 
@@ -246,9 +250,9 @@ Most are Double-shot ABS. "Super thick." TODO: measure once in hand
     * Num Lock
     * (4) Scrn 1-4
     * Desk PC
+    * Wkst
     * Calc
     * Setup
-    * Wkst
 * There are 2 more LEDs adjacent to the space bar, but no windows to shine through.
 * 10u space bar.
 * In spite of the odd bottom row with the extended spacebar, and stepped Caps
@@ -270,6 +274,9 @@ Lock, pretty much everything will fit on a modern board.
   top/bottom by plastic molding. There are no bolts, screws, or rivits.
 * Flip-out feet on bottom, at back. Single position. TODO: how high?
 * There is an "Expansion module" area accessable from the bottom of the keyboard.
+    * I've seen one reference to a "Reuters ISA four monitor graphics card." I presume it goes into
+    this area. I've never seen one though. If that's what goes here then the keyboard becomes a
+    complete KVM switch system with the screen buttons controlling these.
     * It is under the rectangular plate on the bottom (4 screws)
     * The space is 4.75" across, 3.25" front to back, 0.75" deep.
     * There are 4 plastic standoffs, as though to support a small PCB within the module area.
@@ -277,9 +284,6 @@ Lock, pretty much everything will fit on a modern board.
     * There's removable back pannel plate is 2.5" wide and 0.75" high,
     intended for the expansion module access. (Covering a hole that is a bit
     smaller.)
-    * I've seen one reference to a "Reuters ISA four monitor graphics card." I presume it goes into
-    this area. I've never seen one though. If that's what goes here then the keyboard becomes a
-    complete KVM switch system with the screen buttons controlling these.
     * This would make a nice space for a custom controller board, if we needed one.
 * Although the back of the keyboard slopes inward toward the top, the connectors
 are parallel to the desk (base), so they are at an angle to the back.
@@ -294,9 +298,12 @@ are parallel to the desk (base), so they are at an angle to the back.
                                                                      Workstation
 ```
 
+TODO: Verify
+
 The mouse port accepts a PS/2 mouse signal in from the Brekout box. The keyboard
 logic then figures out where the mouse output needs to be directed (which of the
 four sets of ports) and sends the needed signals:
+
     * back out the mouse connector to the Breakout box for the PS/2 signals:
     Desk-PC-Mouse and Workstation-Generic, or
     * out the AK125-Desk-PC-Workstation for the RS232 and Sun serial signals:
@@ -405,7 +412,7 @@ Add List of urls to be used for searching for sale items
 | Where | Notes |  |
 | ------------------ | ---------------- | --------- |
 | [eBay.com](https://eBay.com)  | Soarer PS/2 USB converter, and others      |
-| [item.taobao.com](https://item.taobao.com/item.htm?spm=a230r.1.14.325.THFAVS&id=13621819071)      | Still available Nov 2019| |
+| [item.taobao.com](https://item.taobao.com/item.htm?spm=a230r.1.14.325.THFAVS&id=13621819071)      | Still available Nov 2019| China |
 | [world.taobao.com](https://world.taobao.com)     | | |
 | [www.taodepot.com](https://www.taodepot.com)  |  Min Order Quantity: 10   | China |
 | [www.hxlstore.com](https://www.hxlstore.com)  |  (https://www.hxlstore.com/buy-g80-9009.html)   |    | China |

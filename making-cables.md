@@ -11,55 +11,58 @@ from the breakout box, and my measurements of:
 
     * pins to the ground plane of the keyboard PCBs (Gnd)
     * pins to the fuse on the main keyboard PCB (assumed to be Vin, +12VDC)
-    * and other pins that where connected together (A). I don't know what these go to.
+    * and other pins that were connected together (pins 10 and 11, labeled: A). I don't know what these go to.
 
-Furthermore I have visually traced the circuitboard of the AK12 breakout box and found:
+Furthermore I have visually traced the circuitboard of the AK125 breakout box and found:
 pins 2, 3, 7, 10, and 11 go straight across the board to the "HOST_SYSTEM" connector.
 
 From this I concluded that:
-    * Pins 4 and 5 should be used as ground
-    * Pins 12, 13, and 14 should be used as power. (+12V)
+    * Pins 4 and 5, at least, should be used as ground
+    * Pins 12, 13, and 14 should be used as power. (+12VDC)
     * None of the other pins are used for keyboard or mouse controls.
 
 ```
-Keyboard 
+Keyboard
 connector
-DB-15M                        
-                            AK125   
-Pin     Mwei    Bruce       Brkout  Use 
+DB-15M
+                            AK125
+Pin     Mwei    Bruce       Brkout  Use
 ------  ----    ------      ------  -------
-Shield  .       Gnd             
+Shield  .       Gnd
 
-1       .       Gnd         Gnd    
-2       .       .           HOST    
-3       .       .           HOST    
-4       Gnd     Gnd         Gnd     Gnd 
-5       Gnd     Gnd         Gnd     Gnd 
-6       Gnd     .           Gnd         
+1       .       Gnd         Gnd     Gnd
+2       .       .           HOST
+3       .       .           HOST
+4       Gnd     Gnd         Gnd     Gnd
+5       Gnd     Gnd         Gnd     Gnd
+6       Gnd     .           Gnd     Gnd
 7       .       .           HOST
 8       Gnd     .           N/C?
 
-9       .       Gnd         Gnd   
+9       .       Gnd         Gnd
 10      .       A           HOST
 11      .       A           HOST
 12      Vin     Vin         +12V    +12V
 13      Vin     Vin         +12V    +12V
 14      Vin     Vin         +12V    +12V
-15      .       .           Gnd     
+15      .       .           Gnd     Gnd
 ```
 ![The configuration](../master/images/Cherry%20G80-9009%20Power%20to%20DB15.png "DB-9 to Desk PC")
 
 ```
     Cable
-DB-15F 
-Pin     Use 
-------  --- 
-4       Gnd 
-5       Gnd 
+DB-15F
+Pin     Use
+------  ---
+1       Gnd
+4       Gnd
+5       Gnd
+6       Gnd
+15      Gnd
 
 12      +12V
 13      +12V
-14      +12V          
+14      +12V
 ```
 
 ### Desk PC/Workstation Connector
@@ -69,7 +72,7 @@ connect the keyboard via the DB-9 "Desk PC/Workstation" port on the back of the
 keyboard to a PS/2 connector.
 
 If you are using the KVM method you may need to make one of these per outgoing
-keyboard port as well.
+keyboard port as well. TBD.
 
 The DB9 (male on keyboard) connects to a DB-9 (female on cable) and from there
 to a PS/2 conector (male on cable). This then gets inserted into either the
@@ -77,7 +80,7 @@ female PS/2 conector on the computer or the the female PS/2 conector on the
 Soarer converter.
 
 
-The Desk PC/Workstation Connector (DB-9F) on keyboard goes to 
+The Desk PC/Workstation Connector (DB-9F) on keyboard goes to
 to DB-9M connector on cable, and from there to the PS/2 M end of the cable.
 
 ![The configuration](../master/images/Cherry%20G80-9009%20DB9%20to%20PS2.png "DB-9 to Desk PC")
@@ -99,7 +102,7 @@ TODO: Very likely: You may be able to use more pins for Sun Systems keyboard
 protocol connection. I'm hoping that the Sun workstation keyboard connections
 will support more of the "colored" keys on the keyboard.
 
-There are a number of Sun kbd interface to USB adapters available, including 
+There are a number of Sun kbd interface to USB adapters available, including
 TMK based ones from Hasu. [For sale](https://geekhack.org/index.php?topic=72052.0)
 
 TODO: Create, configure, and test.
@@ -125,7 +128,7 @@ DB-9F   Signal name     PS/2 male
 ```
 
 TODO: Test: May be able to use more pins for a mouse connection, but really why
-bother?
+bother, unless ou want the KVM feature to work with a single mouse.
 
 -------------------------------------------
 
@@ -137,7 +140,7 @@ bother?
 |------ |--------------------|
 | DB15-M| Host               |
 | DB9-F | Desk PC/Workstation|
-| DB9-M | Mouse              |
+| DB9-M | Mouse IN           |
 
 ## Host:
 
@@ -162,25 +165,26 @@ Used for power/ground only, so far
 
 ## Desk PC/Workstation
 
+TODO: re-verify this list
 
-| Pin | Function    | Connection |
-|:---:|-------------|---------|
+| Pin | Function     | Connection |
+|:---:|--------------|------------|
 ||To **Desk-PC-KBD**, PS/2 protocol (known working)|
-|  8         | Kbd Data     | (Brown) |
-|  9         | Kbd Clock    | (Green) |
+|  8  | Kbd Data     | (Brown) |
+|  9  | Kbd Clock    | (Green) |
 ||To **Wkst-Generic**, PS/2 protocol|
-|  4         | Kbd Data(?) to pin 1  | (Brown) |
-|  5         | Kbd Clock(?) to pin 5 | (Green) |
-|  6         | Power +5V  to pin 4 | (Yellow) |
+|  4  | Kbd Data(?) to pin 1  | (Brown) |
+|  5  | Kbd Clock(?) to pin 5 | (Green) |
+|  6  | Power +5V  to pin 4 | (Yellow) |
 ||To **Wkst-PC-KBD**, Serial protocol <br>and **Wkst-PC-Mouse**, Serial protocol |
-|  1         | Mouse, UNKNOWN. TODO: double check. <br>Used for kbd to sense presence of Wkst mouse? |
-|  2         | Kbd TX |
-|  3         | Kbd RX |
-|  6         | Power +5V |
-|  7         | Mouse TX  |
+|  1  | Mouse, UNKNOWN. TODO: double check. <br>Used for kbd to sense presence of Wkst mouse? |
+|  2  | Kbd TX       |
+|  3  | Kbd RX       |
+|  6  | Power +5V    |
+|  7  | Mouse TX     |
 ||To **Workstation-SUN**, Sun Serial protocol (inverted) |
-|  2         | Kbd TX, Signal is inverted between here and Workstation-SUN |
-|  3         | Kbd RX |
-|  6         | Power +5V |
-|  7         | Mouse TX, Signal is inverted between here and Workstation-SUN |
+|  2  | Kbd TX, Signal is inverted between here and Workstation-SUN |
+|  3  | Kbd RX       |
+|  6  | Power +5V    |
+|  7  | Mouse TX, Signal is inverted between here and Workstation-SUN |
 
