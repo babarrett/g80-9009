@@ -43,9 +43,19 @@ orange dotted semi-circle, and a solid blue semicircle.
 * has 149 total keys. Not all generate scan codes when in "Desk PC" mode.
 * has a, primarily text, 100 x 584 pixel LCD display with 2 font sizes.
 * can create up to 72 macros on the fly that are stored in the keyboard.
-* can select any 1 of 4 screens (Indicated by keys, unverified.)
+* can select any 1 of 4 screens (Indicated by keys, unverified. Mechanism reportedly
+as being "a Reuters ISA four monitor graphics card" that aparently goes into the
+rectangular space in the bottom of the keyboard.)
 * can select any 1 of 2 workstations with a "Breakout Box"
-* can use three different keyboard protocols (PS/2, RS232 Serial, and Sun serial)
+* can use three different keyboard protocols. PS/2, RS232 Serial, and Sun serial.
+Sun serial is an inverted version of RS232 serial. I've heard that "Workstation mode"
+sends scan codes for almost all keys via 9600 bit/sec serial port. Sun's documentation
+in 2000 says:
+
+    The keyboard communicates with the system using asynchronous serial
+    protocol with negative logic. The communication is full duplex at 1200 baud. The
+    data has 1 start bit, 8 data bits, 1 stop bit and no parity.
+
 * is supported by a third-party kmd3 switch as well
 * can be emulated by the Wey Tec HK2000C keyboard.
 * can perform calculations within the keyboard, displaying the results on the
@@ -66,7 +76,7 @@ help much of my success would have been impossible.
 Let's start with what I presume everyone cares most about. "How to I connect
 this to my computer?"
 
-As near as I can tell there are three ways and one variation for connecting this
+As near as I can tell there are three or four ways and one variation for connecting this
 keyboard to a modern computer:
 
 1. Yangdigi's [controller card](../master/method-1-yangdigi-controller.md "Yangdigi controller instructions")
@@ -105,20 +115,20 @@ keyboard to a modern computer:
     to send scan codes, but the additional wiring and other needs for this are
     unknown.
 3. [Direct+Soarer](../master/method-3-direct+soarer.md  ) from the "Desk
-    PC/Workstation" connector to a PS/2 connector
+    PC/Workstation" connector to a PS/2 connector.
+    This is like the "Directly" plus the Soarer converter for layers and key mapping.
     - Few parts, essentially one custom built DB-9 to PS/2 cable and
     - a 12V power connection to the keyboard (host port, DB-15)
     - Uses an active Soarer PS/2 to USB converter. The Soarer adds the
     ability to remap keys, add macros, add additional function layers, and be
     able to toggle different layouts.
-    - Special "workstation" keys do not generate scan codes with the "Desk PC"
-    setting and we do not yet know how to get that to happen.
     - The "PC Desk" setting does not send scan codes for 35 keys, and only sends
     keyboard programmed macros for F13-F24.
-    - It is presumed that using the Wkst setting will cause the additional keys
-    to send scan codes, but the additional wiring and other needs for this are
-    unknown.
-    - A good solution for getting everything you're likely to want out of the
+    - Special "workstation" keys do not generate scan codes with the "Desk PC"
+    setting and we do not yet know how to get that to happen. Perhaps using the
+    "Sun" Soarer converter, and reconfiguring the keyboard and adapter wiring
+    will start supporting the additional "Workstation" keys. TBD
+   - A good solution for getting everything you're likely to want out of the
     keyboard except using every key: working display functions, with in-keyboard
     programmability and keymap re-writing. If the LCD display being operational
     was a significant motivation for acquiring this keyboard, and you want it to
@@ -128,11 +138,14 @@ keyboard to a modern computer:
     - Special "Desk PC" and "Wkst" keys select the type of computer to talk to.
     The attached KM box will output three different protocols for the Wkst
     computer.
-    - kdm3 (keyboard, display and mouse)
     - Reuters Breakout Box
+    - kdm3 (keyboard, display and mouse)
     - See [Breakoutbox decoded](../master/breakoutbox-decoded.md "Breakoutbox
     decoded") for much more information.
-
+5. With new, replacement, breakout box.
+    This is currently under development, but I now believe is possible to achieve. The AK125
+    breakout boxes are, electrically, very simple. One 5V regulator, one inverter DIP chip, a
+    couple capacetors, traces and connectors. Plus a 12VDC power supply.
 
 ## Method vs features
 
@@ -240,14 +253,14 @@ Most are Double-shot ABS. "Super thick." TODO: measure once in hand
 * 10u space bar.
 * In spite of the odd bottom row with the extended spacebar, and stepped Caps
 Lock, pretty much everything will fit on a modern board.
-* There are some key caps that vary by location:
+* There are some key caps that vary by locale:
 
-```
-        Country     Top-left Shift-2 Shift-3  Near return      Near shift
-        -------     -------- ------- -------  -----------      ----------
-        USA         `, ~        @      #      ', " and \, |    "blank"
-        UK          `, ¬, |     "      £      ', @ and #, ~    \, |
-```
+
+    | Country  | Top-left | Shift-2 | Shift-3 | Near return  | Near shift |
+    | -------- |:--------:| :------:| :------:| :-----------:| :---------:|
+    | USA      | `, ~     | @       | #       | ', " and \\, \| | "blank" |
+    | UK       | `, ¬, \| | "       | £       | ', @ and #, ~ | \\, \|    |
+
 
 ### Case:
 
@@ -256,22 +269,22 @@ Lock, pretty much everything will fit on a modern board.
 * The lower PCB is dropped into the case, held in place left/right and
   top/bottom by plastic molding. There are no bolts, screws, or rivits.
 * Flip-out feet on bottom, at back. Single position. TODO: how high?
-* There is an "Expansion module(?)" area accessable from the bottom of the keyboard.
+* There is an "Expansion module" area accessable from the bottom of the keyboard.
     * It is under the rectangular plate on the bottom (4 screws)
     * The space is 4.75" across, 3.25" front to back, 0.75" deep.
     * There are 4 plastic standoffs, as though to support a small PCB within the module area.
-    * Within it is a 25 x 2 pin ribbon cable, not connected.
-    * It is actually a grey ribbon cable, 2.5" wide, 50 conductors, 25 per row. Normal 0.1" centers.
-    * There's removable back pannel plate is 2.5" wide and 0.75" high, perhaps
-    intended for some expansion module access. (Covering a hole that is a bit
+    * Within it is a 25 x 2 pin ribbon cable, normal 0.1" centers, one end connected to the keyboard PCB.
+    * There's removable back pannel plate is 2.5" wide and 0.75" high,
+    intended for the expansion module access. (Covering a hole that is a bit
     smaller.)
+    * I've seen one reference to a "Reuters ISA four monitor graphics card." I presume it goes into
+    this area. I've never seen one though. If that's what goes here then the keyboard becomes a
+    complete KVM switch system with the screen buttons controlling these.
     * This would make a nice space for a custom controller board, if we needed one.
-    * I've never seen any reference to any modules for this area. Seems odd that
-    they'd spend the time to create it, and never populate it though.
-* Back of keyboard, left to right has the following: [Photos from imgur](http://i.imgur.com/lwkKiGb.jpg)
 * Although the back of the keyboard slopes inward toward the top, the connectors
-are parallel to the base, so they are at an angle to the back.
+are parallel to the desk (base), so they are at an angle to the back.
 * The Reset button acts like a temporary power Off/On cycle.
+* Back of keyboard, left to right has the following: [Photos from imgur](http://i.imgur.com/lwkKiGb.jpg)
 ```
         [Grill]    [Knob]   [Knob]      [button]
         Buzzer     Volume   Contrast    Reset
@@ -281,13 +294,13 @@ are parallel to the base, so they are at an angle to the back.
                                                                      Workstation
 ```
 
-The mouse port accepts a PS/2 mouse singnal in from the Brekout box. The keyboard
+The mouse port accepts a PS/2 mouse signal in from the Brekout box. The keyboard
 logic then figures out where the mouse output needs to be directed (which of the
 four sets of ports) and sends the needed signals:
-* back out the mouse connector to the Breakout box for the PS/2 signals:
-Desk-PC-Mouse and Workstation-Generic, or
-* out the AK125-Desk-PC-Workstation for the RS232 and Sun serial signals:
-Workstation-Sun and Workstation-PC-Mouse.
+    * back out the mouse connector to the Breakout box for the PS/2 signals:
+    Desk-PC-Mouse and Workstation-Generic, or
+    * out the AK125-Desk-PC-Workstation for the RS232 and Sun serial signals:
+    Workstation-Sun and Workstation-PC-Mouse.
 ---
 ### Models:
 
@@ -313,13 +326,14 @@ calculator mode (Use Desk PC or Wkst to exit calc mode) and "SetUp" lets you def
 macros, etc. These will never generate scan codes out the "Desk PC /
 Workstation" or "Host" ports, they are handled within the keyboard itself.
 
-3. "KM" keys that control the switch boxes themselves. For example "Scrn 4" to
+3. "KVM" keys that control the switch boxes themselves. For example "Scrn 4" to
 change display to Screen 4. Also "Desk PC" and "Wkst" to select at least which
 computer to attach the keyboard to. (TODO: unverified) They may also change
-which screen gets displayed. These may work in a couple different ways: (Unknown)
+which screen gets displayed. These may work in a couple different ways: (Unknown which.)
     * Send some form of signal out the "Host" port on the keyboard to the KM box.
-    This could be done by changing the Host pins. Maybe by
-    setting them high or low.
+    This could be done by changing the Host pins. Maybe by setting them high or low.
+    * For the screen/monitor selection it seems the kbd PCB controls the video
+    card, selecting which monitor input goes to the to video out. (Assumed, not verified.)
 These will also never generate scan codes out the "Desk PC / Workstation" port.
 
 4. It looks like ABBR is another case we know little about. If the workstations
@@ -334,7 +348,8 @@ the top-right could be available with the Wkst setting. It's also possible that
 the F13-F24 don't send scan codes directly, but only play back your
 pre-programmed keyboard macros.
 
-A description of [Display Functions](../master/display-functions.md "Display Functions documentation") available on the G80-9009 keyboard.
+A description of [Display Functions](../master/display-functions.md "Display Functions documentation")
+available on the G80-9009 keyboard.
 
 ---
 ### Remaining open questions:
@@ -380,7 +395,8 @@ Alps, but they're more consistent and snappy than Black Alps IMO.
 
 
 ### Terms:
-* Soarer PS/2 USB converter
+* Soarer PS/2 USB converter -- For sale on Amazon: https://www.ebay.com/itm/282575686221
+* Hasu PS/2 to USB converted (I haven't tried) -- https://geekhack.org/index.php?topic=72052.msg1751398
 
 ## Places to search for keyboards
 
@@ -389,7 +405,7 @@ Add List of urls to be used for searching for sale items
 | Where | Notes |  |
 | ------------------ | ---------------- | --------- |
 | [eBay.com](https://eBay.com)  | Soarer PS/2 USB converter, and others      |
-| [item.taobao.com](https://item.taobao.com)      | | |
+| [item.taobao.com](https://item.taobao.com/item.htm?spm=a230r.1.14.325.THFAVS&id=13621819071)      | Still available Nov 2019| |
 | [world.taobao.com](https://world.taobao.com)     | | |
 | [www.taodepot.com](https://www.taodepot.com)  |  Min Order Quantity: 10   | China |
 | [www.hxlstore.com](https://www.hxlstore.com)  |  (https://www.hxlstore.com/buy-g80-9009.html)   |    | China |
